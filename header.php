@@ -1,7 +1,7 @@
 <section id="hero" class="d-flex flex-column align-items-center justify-content-center">
     <div class="row" style="margin: auto; padding-top: 30px;">
       <div class="col-lg-12 d-flex align-items-center justify-content-center">
-        <img class="image img-fluid" src="assets/img/hero1.png">
+        <img class="image img-fluid" src="assets/img/logo_22.png">
       </div>
       <div class="col-lg-12 d-flex align-items-center justify-content-center">
           <h2>IEEE STUDENTS CHAPTER 12951</h2>
@@ -14,7 +14,7 @@
         <img class="image" src="assets/img/cyan-srishti.png">
       </div>
       <div class="col-lg-9">
-        <img class="image1" src="assets/img/SRiSHTi 2k21 logo part-cyan-1.png">
+        <img class="image1" src="assets/img/SRiSHTi 2k22 logo part-cyan-1.png">
       </div> -->
     </div>
     

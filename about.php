@@ -10,7 +10,7 @@ session_start();
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Shristi 2k21 - ABOUT</title>
+  <title>SRiSHTi 2k22 - ABOUT</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -38,6 +38,8 @@ session_start();
   <link href="assets/css/navbar.css" rel="stylesheet">
   <link href="assets/css/footer.css" rel="stylesheet">
   <link href="assets/css/common-styles.css" rel="stylesheet">
+  <link href="assets/css/background.css" rel="stylesheet">
+
   
   <link rel="stylesheet" href="https://unpkg.com/flickity@2.0/dist/flickity.min.css">
 <script src="https://unpkg.com/flickity@2.0/dist/flickity.pkgd.min.js"></script>
@@ -51,21 +53,33 @@ session_start();
 </head>
 
 <body>
+<ul class="circles">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
 
-  <i class="bi bi-list mobile-nav-toggle d-xl-none" style="color: #66fcf1"></i>
+  <i class="bi bi-list mobile-nav-toggle d-xl-none" ></i>
 
   <header id="header" class="d-flex flex-column justify-content-center">
 
     <nav id="navbar" class="navbar nav-menu">
     <ul>
       <?php require_once 'user.php'; ?>
-        <li><a href="HOME" class="nav-link scrollto"><i class="fas fa-home"></i> <span>Home</span></a></li>
-        <li><a href="EVENTS" class="nav-link scrollto"><i class="fas fa-calendar-day"></i> <span>Events</span></a></li>
-        <li><a href="WORKSHOPS" class="nav-link scrollto "><i class="fas fa-chalkboard-teacher"></i> <span>Workshop</span></a></li>
+        <li><a href="index.php" class="nav-link scrollto"><i class="fas fa-home"></i> <span>Home</span></a></li>
         <li><a href="#" class="nav-link scrollto active"><i class="fas fa-info-circle"></i> <span>About</span></a></li>
-        <li><a href="TEAM" class="nav-link scrollto"><i class="fas fa-users"></i> <span>Team</span></a></li>
-        <li><a href="SCHEDULE" class="nav-link scrollto"><i class="fas fa-hourglass-half"></i><span>Schedule</span></a></li>
-      <li><a href="FAQ-CONTACT" class="nav-link scrollto"><i class="fas fa-question"></i> <span>FAQ / Contact</span></a></li>
+        <li><a href="events.php" class="nav-link scrollto"><i class="fas fa-calendar-day"></i> <span>Events</span></a></li>
+        <li><a href="workshop.php" class="nav-link scrollto "><i class="fas fa-chalkboard-teacher"></i> <span>&nbsp &nbsp &nbsp Workshop /<br>Paper Presentation</span></a></li>
+        <li><a href="team.php" class="nav-link scrollto"><i class="fas fa-users"></i> <span>Team</span></a></li>
+        <li><a href="schedule.php" class="nav-link scrollto"><i class="fas fa-hourglass-half"></i><span>Schedule</span></a></li>
+      <li><a href="contact.php" class="nav-link scrollto"><i class="fas fa-question"></i> <span>FAQ / Contact</span></a></li>
       </ul>
     </nav><!-- .nav-menu -->
 
@@ -95,7 +109,7 @@ session_start();
     <div class="row feture-tabs" data-aos="fade-up">
       <div class="col-lg-6 head-titles">
       
-        <h3>Shristi 2k21</h3>
+        <h3>Srishti 2k22</h3>
       
        
 
@@ -103,7 +117,7 @@ session_start();
         <div class="tab-content">
 
           <div class="tab-pane fade show active" id="tab1">
-          <p>PSG College of Technology is always known for the quality of the outgoing engineers who are enriched with experience and skills The institution has always backed the students by providing platforms to establish themselves as unique individuals. one such platform was The Students Chapter of IEEE which was initiated in the year 1974 with much enthusiasm.<br><br> To make the IEEE Students Chapter 12951 as a talking point in the academia, an annual technical symposium was set into motion from the year 2006. And till date SRISHTI adheres to the standards of the institution. Encompassing a plethora of workshops, events, guest lectures and seminars, SRISHTI strives to <b>UNLEASH THE TALENT WITHIN</b></p>
+          <p>PSG College of Technology is always known for the quality of the outgoing engineers who are enriched with experience and skills. The institution has always backed the students by providing platforms to establish themselves as unique individuals. One such platform was the Students Chapter of IEEE which was initiated in the year 1974.<br><br> To make the IEEE Students Chapter 12951 as a talking point in the academia, an annual technical symposium was set into motion from the year 2006. And till date SRISHTI adheres to the standards of the institution. Encompassing a plethora of workshops, events, guest lectures and seminars, SRISHTI strives to <b>UNLEASH THE TALENT WITHIN.</b></p>
             
             
             
@@ -142,10 +156,7 @@ session_start();
             
           
           <div class="text-center text-lg-start">
-            <a href="#" class="btn-read-more d-inline-flex align-items-center justify-content-center align-self-center">
-              <span>Read More</span>
-              <i class="bi bi-arrow-right"></i>
-            </a>
+            
           </div>
       </div>
 
@@ -173,14 +184,11 @@ session_start();
             
             <h2>IEEE</h2>
             <p>
-            Institute of Electrical and Electronics Engineers (IEEE) is the world's largest technical professional organization dedicated to advancing technology for the benefit of humanity.IEEE and its members inspire a global community to innovate for a better tomorrow, through its more than 420,000 members in over 160 countries, and by means of its highly cited publications, conferences, technology standards, and professional and educational activities. The core mission of IEEE is to fasten technological innovation and excellence for the benefit of humanity.
+            Institute of Electrical and Electronics Engineers (IEEE) is the world's largest technical professional organization dedicated to advancing technology for the benefit of humanity. IEEE and its members inspire a global community to innovate for a better tomorrow, through its more than 420,000 members in over 160 countries, and by means of its highly cited publications, conferences, technology standards, and professional and educational activities. The core mission of IEEE is to fasten technological innovation and excellence for the benefit of humanity.
             </p>
             
             <div class="text-center text-lg-start">
-              <a href="#" class="btn-read-more d-inline-flex align-items-center justify-content-center align-self-center">
-                <span>Read More</span>
-                <i class="bi bi-arrow-right"></i>
-              </a>
+              
             </div>
           </div>
         </div>
@@ -197,42 +205,62 @@ session_start();
 
   <div class="container"data-aos="fade-up">>
     <div class="row">
-        <div class="col-md-3 col-sm-6">
+        <!-- <div class="col-md-1 col-sm-6"></div> -->
+        <div class="col-md-2 col-sm-6">
             <div class="counter">
                 <div class="counter-icon">
-                    <i class="fa fa-globe"></i>
+                    <img src="assets/img/icons/technical-c.png" style="height: 50px; width: 50px;">
                 </div>
-                <h3>Technical Event</h3>
-                <span class="counter-value">15</span>
+                <h3>Technical Events</h3>
+                <span class="counter-value">5</span>
             </div>
         </div>
-        <div class="col-md-3 col-sm-6">
+        <div class="col-md-2 col-sm-6">
             <div class="counter purple">
                 <div class="counter-icon">
-                    <i class="fa fa-briefcase"></i>
+                    <img src="assets/img/icons/nontech-c.png" style="height: 50px; width: 50px;">
                 </div>
-                <h3>Nontechnical Event</h3>
-                <span class="counter-value">12</span>
-            </div>
-        </div>
-        <div class="col-md-3 col-sm-6">
-            <div class="counter">
-                <div class="counter-icon">
-                    <i class="fa fa-globe"></i>
-                </div>
-                <h3>Workshop</h3>
-                <span class="counter-value">4</span>
-            </div>
-        </div>
-        <div class="col-md-3 col-sm-6">
-            <div class="counter purple">
-                <div class="counter-icon">
-                    <i class="fa fa-briefcase"></i>
-                </div>
-                <h3>paper presentation</h3>
+                <h3>Non-Technical Events</h3>
                 <span class="counter-value">6</span>
             </div>
         </div>
+        <div class="col-md-2 col-sm-6">
+            <div class="counter">
+                <div class="counter-icon">
+                    <img src="assets/img/icons/bot_event-c.png" style="height: 50px; width: 50px;">
+                </div>
+                <h3><br>Bot Event</h3>
+                <span class="counter-value">2</span>
+            </div>
+        </div>
+        <div class="col-md-2 col-sm-6">
+            <div class="counter purple">
+                <div class="counter-icon">
+                    <img src="assets/img/icons/flagship-c.png" style="height: 50px; width: 50px;">
+                </div>
+                <h3>Flagship Event</h3>
+                <span class="counter-value">2</span>
+            </div>
+        </div>
+        <div class="col-md-2 col-sm-6">
+            <div class="counter">
+                <div class="counter-icon">
+                    <img src="assets/img/icons/workshop-c.png" style="height: 50px; width: 50px;">
+                </div>
+                <h3><br>Workshop</h3>
+                <span class="counter-value">5</span>
+            </div>
+        </div>
+        <div class="col-md-2 col-sm-6">
+            <div class="counter purple">
+                <div class="counter-icon">
+                    <img src="assets/img/icons/paper-pres-c.png" style="height: 50px; width: 50px;">
+                </div>
+                <h3>paper presentation</h3>
+                <span class="counter-value">5</span>
+            </div>
+        </div>
+        <!-- <div class="col-md-1 col-sm-6"></div> -->
     </div>
 </div>
 </div>

@@ -6,37 +6,71 @@ if(!isset($_SESSION['email'])){
 
 ?>
 
+
 <!DOCTYPE html>
 <html lang="en">
-
   <head>
-    <meta charset="utf-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    
-    <title>login page</title>
-    
-    <!-- Favicons -->
-  <link href="assets/img/favicon.ico" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SRiSHTi 2k22 - LOGIN</title>
+    <link rel="stylesheet" href="assets/css/login.css" />
+    <link rel="stylesheet" href="assets/css/common-styles.css" />
+    <link rel="stylesheet" href="assets/css/background.css" />
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src = "assets/js/login.js"></script>
-    
-    <link rel="stylesheet" href="assets/css/login.css">
-    <link href="assets/css/common-styles.css" rel="stylesheet">
-
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
-
-
     <script src="https://kit.fontawesome.com/a74d0f3882.js" crossorigin="anonymous"></script>
 
-    <!-- login -->
+ 
+     
+ <!-- Sign Up -->
     <script type="text/javascript">
+ 
+ $(document).ready(function(e){
+
+     $("#file").change(function() {
+     var file = this.files[0];
+     var fileType = file.type;
+     var match = ['application/pdf', 'application/msword', 'application/vnd.ms-office', 'image/jpeg', 'image/png', 'image/jpg'];
+     if(!((fileType == match[0]) || (fileType == match[1]) || (fileType == match[2]) || (fileType == match[3]) || (fileType == match[4]) || (fileType == match[5]))){
+         alert('Sorry, only PDF, DOC, JPG, JPEG, & PNG files are allowed to upload.');
+         $("#file").val('');
+         return false;
+     }
+   });
+   // Submit form data via Ajax
+   $("#supForm").on('submit', function(e){
+       e.preventDefault();
+       $.ajax({
+           type: 'POST',
+           url: 'modules/adduser.php',
+           data: new FormData(this),
+           dataType: 'json',
+           contentType: false,
+           cache: false,
+           processData:false,
+           beforeSend: function(){
+               $('.submitBtn').attr("disabled","disabled");
+               $('#add_err2').html('<p>Loading...</p>');
+           },
+           success: function(response){ //console.log(response);
+               $('.statusMsg').html('');
+               if(response.status == 1){
+                   $('#supForm')[0].reset();
+                   $('#add_err2').html('<p >'+response.message+'</p>');
+                   window.location.href = "index.php";
+               }else{
+                   alert(response.message);
+               }
+               $('#supForm').css("opacity","");
+               $(".submitBtn").removeAttr("disabled");
+           }
+       });
+     });
+   });
+ </script>
+ <!-- Login -->
+ <script type="text/javascript">
         		$(document).ready(function(){
 			
 			   $("#login").click(function(){
@@ -55,7 +89,7 @@ if(!isset($_SESSION['email'])){
 													<strong>Authenticated</strong> \ \
 												</div>');
 
-							window.location.href = "index.php";
+							  window.location.href = "index.php";
 						  
 						  } else if (html=='false') {
 								$("#add_err1").html('<div class="alert alert-danger"> \
@@ -85,58 +119,73 @@ if(!isset($_SESSION['email'])){
 				});
       });
     </script>
-
-    <!-- sign up -->
-
-    <script type="text/javascript">
- 
-    $(document).ready(function(e){
-
-        $("#file").change(function() {
-        var file = this.files[0];
-        var fileType = file.type;
-        var match = ['application/pdf', 'application/msword', 'application/vnd.ms-office', 'image/jpeg', 'image/png', 'image/jpg'];
-        if(!((fileType == match[0]) || (fileType == match[1]) || (fileType == match[2]) || (fileType == match[3]) || (fileType == match[4]) || (fileType == match[5]))){
-            alert('Sorry, only PDF, DOC, JPG, JPEG, & PNG files are allowed to upload.');
-            $("#file").val('');
-            return false;
-        }
-      });
-      // Submit form data via Ajax
-      $("#supForm").on('submit', function(e){
-          e.preventDefault();
-          $.ajax({
-              type: 'POST',
-              url: 'adduser.php',
-              data: new FormData(this),
-              dataType: 'json',
-              contentType: false,
-              cache: false,
-              processData:false,
-              beforeSend: function(){
-                  $('.submitBtn').attr("disabled","disabled");
-                  $('#add_err2').html('<p>Loading...</p>');
-              },
-              success: function(response){ //console.log(response);
-                  $('.statusMsg').html('');
-                  if(response.status == 1){
-                      $('#supForm')[0].reset();
-                      $('#add_err2').html('<p >'+response.message+'</p>');
-                      window.location.href = "index.php";
-                  }else{
-                      $('#add_err2').html('<p>'+response.message+'</p>');
-                  }
-                  $('#supForm').css("opacity","");
-                  $(".submitBtn").removeAttr("disabled");
-              }
-          });
+        <!-- check box -->
+        <script type="text/javascript">
+            $(document).ready(function() {
+            $("#cgcheck").click(
+                function () {
+                    if ($("#cgcheck").is(":checked")) {
+                        $("#cgname").val("PSG College of Technology");
+                        $("#cgname").prop("readonly", true);
+                    }   
+                    else {
+                        $('#cgname').val("");
+                        $("#cgname").prop("readonly", false);
+                    }
+            });
         });
-      });
-    </script>
+        </script>
 
-    
-    <!-- reset password -->
-    <script type="text/javascript">
+        <!-- sign up -->
+
+        <script type="text/javascript">
+            $(document).ready(function(e) {
+
+                $("#file").change(function() {
+                    var file = this.files[0];
+                    var fileType = file.type;
+                    var match = ['application/pdf', 'application/msword', 'application/vnd.ms-office', 'image/jpeg', 'image/png', 'image/jpg'];
+                    if (!((fileType == match[0]) || (fileType == match[1]) || (fileType == match[2]) || (fileType == match[3]) || (fileType == match[4]) || (fileType == match[5]))) {
+                        alert('Sorry, only PDF, DOC, JPG, JPEG, & PNG files are allowed to upload.');
+                        $("#file").val('');
+                        return false;
+                    }
+                });
+                // Submit form data via Ajax
+                $("#supForm").on('submit', function(e) {
+                    e.preventDefault();
+                    $.ajax({
+                        type: 'POST',
+                        url: 'adduser.php',
+                        data: new FormData(this),
+                        dataType: 'json',
+                        contentType: false,
+                        cache: false,
+                        processData: false,
+                        beforeSend: function() {
+                            $('.submitBtn').attr("disabled", "disabled");
+                            $('#add_err2').html('<p>Loading...</p>');
+                        },
+                        success: function(response) { //console.log(response);
+                            $('.statusMsg').html('');
+                            if (response.status == 1) {
+                                $('#supForm')[0].reset();
+                                $('#add_err2').html('<p >' + response.message + '</p>');
+                                window.location.href = "index.php";
+                            } else {
+                                $('#add_err2').html('<p>' + response.message + '</p>');
+                            }
+                            $('#supForm').css("opacity", "");
+                            $(".submitBtn").removeAttr("disabled");
+                        }
+                    });
+                });
+            });
+        </script>
+
+
+ <!-- reset password -->
+ <script type="text/javascript">
         	$(document).ready(function(){
 			
 			   $("#request").click(function(){
@@ -181,25 +230,97 @@ if(!isset($_SESSION['email'])){
   </script>
 
 
-
-  </head>
-
-
-
+</head>
   <body>
-    <button  class="closebtn" title="closebtn" style="width:auto;" onclick = "history.back()"><i class="fas fa-reply"></i></button>
-   
-    <div class="d-flex justify-content-center">
-	<input class="hidden-input" type="checkbox" id="toggle"/>
-	<label id="toglabel" for="toggle"></label>
-</div>
-    <div class="form-collection">
+  <ul class="circles">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+
+<div id="container" class="container">
+<a href="index.php"><button class="homebtn" title="Home"><i class="fas fa-home" aria-hidden="true"></i></button></a>
+    <!-- FORM SECTION -->
+    <div id="func" class="row">
+        <!-- SIGN UP -->
+        <div class="col align-items-center flex-col sign-up sign-up-div">
+            <div class="form-wrapper align-items-center">
+                <div class="form sign-up sign-up-wrap">
+                <form id="supForm" enctype="multipart/form-data">
+                    <div id="add_err2" ></div>
+                    <div class="input-group">
+                        <i class='bx bxs-user'></i>
+                        <input type="text" class="form-control" id="name" name="name" placeholder="Full Name">
+                    </div>
+                    <div class="input-group">
+                        <i class='bx bx-mail-send'></i>
+                        <input type="email"class="form-control" id="email" name="email" placeholder="Email">
+                    </div>
+                    <div class="input-group">
+                        <i class='bx bxs-lock-alt'></i>
+                        <input type="tel" class="form-control" id="mobile" name="mobile" placeholder="Mobile Number">
+                    </div>
+                    <div class="input-group">
+                        <i class='bx bxs-lock-alt'></i>
+                        <input type="text" class="form-control" id="department" name="department" placeholder="Department">
+                    </div>
+                    <div class="input-group">
+                        <label class="text-white">Are you a student of PSG TECH ?</label>
+                            <input id="cgcheck" class="checkbox" type="checkbox" >                        
+                    </div>
+                    <div class="input-group">
+                        <i class='bx bxs-lock-alt'></i>
+                        <input type="text"class="form-control"  id="cgname" name="cgname" placeholder="Full College Name">
+                    </div>
+                    <div class="input-group">
+                        <i class='bx bxs-lock-alt'></i>
+                        <label>Accomodation Needed ?</label>
+                        <input type="checkbox" class="form-control checkbox" id="accomodation" name="accomodation">
+                        
+                    </div>
+                    <div class="input-group">
+                        <i class='bx bxs-lock-alt'></i>
+                        <input type="password"class="form-control" id="password" name="password" placeholder="Password">
+                    </div>
+                        <div class="input-group">Upload your college id card(Preferably in PDF - Max 1mb)</div> 
+                       <div class="input-group">
+                         <input type="file" class="form-control upload" id="file" name="file"  placeholder="college id card"/>
+                    </div>
+    
+                    <button class="submitBtn" name="submit" >
+                            Sign Up
+                        </button>
+                     <!-- <input type="submit" name="submit" class="submitBtn" value="Sign-Up"><button> -->
+                     </form>
+                     <p>
+							<span>
+								Already have an account?
+							</span>
+							<b onclick="toggle()" class="pointer">
+								Sign in here
+							</b>
+						</p>
+                </div>
+            </div>
+        
+        </div>
+       
+
+        <!-- END SIGN UP -->
+        <!-- SIGN IN -->
       
-        <div class="card elevation-3 limit-width log-in-card above ">
-          <div class="card-body">
-          <form id="loginform">
-           <p class="text-muted enterlogin" > Please enter your login and password!</p>
-           <div id="add_err1"></div>
+        <div class="col align-items-center flex-col sign-in">
+            <div class="form-wrapper align-items-center">
+                <div class="form sign-in">
+                    <form id="sign-in" style="display:block;">
+                    <div id="add_err1"></div>
            <?php 
 
            if(isset($_GET["newpwd"])) {
@@ -210,105 +331,148 @@ if(!isset($_SESSION['email'])){
            
            
            ?>
-            <div class="input-group email">
-              <input id="uemail" type="text" placeholder="Email"/>
+                    <div class="input-group">
+                        <i class='bx-mail-send'></i>
+                        <input type="email" id="uemail" placeholder="Email">
+                    </div>
+                    <div class="input-group " id="passwrd">
+                        <i class='bx bxs-lock-alt'></i>
+                        <input type="password" id="upassword" placeholder="Password">
+                    </div>
+                   
+                  
+                    <!-- <button>
+                        <span id="signin" >Sign in</span><span id="sendlink" hidden>Send Link</span>
+                    </button>
+                   <span onclick="func()" class="pointer">Forgot password?</span>                  
+                   <span onclick="ff()" class="pointer"id="close" hidden>Close</span>  
+                   <span id="close" onclick="this.remove(); return false;">Close</span> -->
+                   
+                        <button class="submitBtn" id="login" >
+                            Sign In
+                        </button>
+                <p>
+                    <b>
+                      <a  class ="box-btn" id="forgotpass" onclick ="openForm()">Forgot password?</a>
+                    </b>
+                </p>
+         
+                <p>
+                        <span>
+                            Don't have an account?
+                        </span>
+                        <b onclick="toggle()" class="pointer">
+                            Sign up here
+                        </b>
+                </p>
+                </form>
+            
+           
+            
+         <!-- <div class="form-wrapper">
+		
+        </div> 
+     -->
+            
+       
+             <div class="section default" id="fgtpassform" style="display:none;">
+                <h3 class="text-muted enterlogin"><b>Please enter Registered mail ID to recieve reset link!</b></h3>
+                <div id="add_err4"></div>
+                <form>
+                <!-- <div class="form-wrapper align-items-center">
+                    <div class="form fgtpassform"> -->
+                        <div class="input-group">  
+                          <i class='bx bx-mail-send'></i>
+                <input id="remail" type="remail" name="email" placeholder="Email">
             </div>
-            <div class="input-group password">
-              <input id="upassword" type="password" placeholder="Password"/>
-            </div>
-            <a class="box-btn" id="forgotpass" onclick="openForm()">Forgot Password?</a>
+    
           
-          <div class="card-footer" >
-          <center>  <button class="login-btn submitBtn" id="login">Log in</button></center></div>
+              <button id="request" class="btn submitBtn pad-ten" >Send Link</button>
+
+            <!-- <button id="sendlink" class="btn submitBtn">Send Link</button> -->
+        
+         <p>
+             <b>
+            <a class="btn box-btn" onclick="closeform()">Close</a>
+         </b>
+        </p>
           </form>
-          
-      
-        <div class="section-default" id="fgtpassform">
-            <p class="text-muted enterlogin" >Please enter  Registered email ID to receive reset link.</p>
-
-            <div id="add_err4"></div>
-
-            <form>
-            <div class="input-group email">
-                <input id="remail" type="text" name="email" placeholder="Enter your email address..." />
-          </div>
-                <center><button id="request" class="btn submitBtn pad-ten" >Send Link</button></center>
-                <!--center><button class="cancel submitBtn" onclick="closeForm()">Close</button></center-->
-                <a class="btn box-btn" onclick="closeForm()">Close</a>
-            </form>
-          </div>
-          </div>
-      </div> 
-      
-
-      
-      <div class="card elevation-2 limit-width sign-up-card below turned">
-        <form id="supForm" enctype="multipart/form-data">
-        <div class="card-body">
-           <p class="text-muted" > Please enter your credentials</p>
-           <div id="add_err2" ></div>
-        <div class="scrollin">
-          <div class="input-group">
-            <input type="text" class="form-control" id="name" name="name" placeholder="Full Name"  />
-          </div>
-
-          <div class="input-group">
-            <input type="email" class="form-control" id="email" name="email" placeholder="Email"  />
-          </div>
-          
-          <div class="input-group">
-            <input type="text" class="form-control" id="mobile" name="mobile" placeholder="Mobile Number"  />
-          </div>
-          <div class="input-group">
-            <input type="text" class="form-control" id="department" name="department" placeholder="Department"  />
-          </div>
-          <div class="input-group">
-            <input type="text" class="form-control" id="cgname" name="cgname" placeholder="College Name"  />
-          </div>
-
-          <div class="input-group">
-            <input type="password" class="form-control" id="password" name="password" placeholder="Password"  />
-          </div>
-
-          <div class="itext" >Upload your college id card</div> 
-          <div class="button-wrap">
-            <input type="file" class="form-control upload" id="file" name="file"  placeholder="college id card"/>
-          </div>
-          </div>
-          <br>
-          <center><input type="submit" name="submit" class="btn btn-success submitBtn" value="Sign Up"/></center>
-        </form>
-
-      </div>
-      </div>
-      </div>
-      <div id="particles-js"></div>
+            </div>
+        </div>
+             </div>
+            </div>   
+        </div>
+           
+        
+            
+    <!-- </div>
+</div> -->
 
 
-    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-    <script>
-function openForm() {
-  document.getElementById("fgtpassform").style.display = "block";
-  document.getElementById("loginform").style.display = "none";
-}
 
-function closeForm() {
-  document.getElementById("fgtpassform").style.display = "none";
-  document.getElementById("loginform").style.display = "block";
 
-}
+
+   
+
+    <!--end sign in>-->
+   
+    <!-- END FORM SECTION -->
+    <!-- CONTENT SECTION -->
+    <div class="row content-row">
+        <!-- SIGN IN CONTENT -->
+        <div class="col align-items-center flex-col">
+            <div class="text sign-in">
+                <h2 id="welcome-h2">
+                <img class="logo image img-fluid" id="welcome-logo" src="assets/img/hero1.png"></br>
+                   <span> WELCOME</span>
+                </h2>
+
+            </div>
+            <div class="img sign-in">
+    
+            </div>
+        </div>
+        <!-- END SIGN IN CONTENT -->
+        <!-- SIGN UP CONTENT -->
+        <div class="col align-items-center flex-col">
+            <div class="img sign-up">
+            
+            </div>
+            <div class="text sign-up">
+            
+                <h2 id="join-h2">
+                <img class="logo image img-fluid" id="join-logo" src="assets/img/hero1.png"></br>
+                <span>REGISTER</span>
+                </h2>
+
+            </div>
+        </div>
+        <!-- END SIGN UP CONTENT -->
+    </div>
+    <!-- END CONTENT SECTION -->
+</div>
+<script src="assets/js/login.js"></script>
+<script>
+    function openForm(){
+        document.getElementById("fgtpassform").style.display="block";
+        document.getElementById("sign-in").style.display="none";
+    }
+    function closeform(){
+        document.getElementById("fgtpassform").style.display="none";
+        document.getElementById("sign-in").style.display="block";
+    }
 </script>
-
-
   </body>
 </html>
 
 <?php 
 
-} else{
+  }else{
   if (isset($_SESSION['email'])){
     header("location:profile.php ");
   }
 }
 
 ?>
+
+

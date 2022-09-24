@@ -8,6 +8,7 @@ unset($_SESSION['department']);
 unset($_SESSION['cgname']);
 unset($_SESSION['events']);
 unset($_SESSION['workshops']);
+unset($_SESSION['genfee']);
 
 //unset($_SESSION['lname']);
 

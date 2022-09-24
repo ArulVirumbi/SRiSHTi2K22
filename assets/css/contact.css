@@ -8,13 +8,13 @@ body {
 .contact-title {
   text-align: center;
   font-size: 32px;
-  color: #66fcf1;
+  color: #d1d7e0;
   padding-bottom: 50px;
 }
 
 
 a {
-    color: #66fcf1;
+    color: #d1d7e0;
     text-decoration: none;
   }
   
@@ -120,7 +120,7 @@ a {
     font-weight: 500;
     letter-spacing: 3px;
     text-transform: uppercase;
-    color: #66fcf1;
+    color: #d1d7e0;
     font-style: bold;
     
   }
@@ -144,7 +144,7 @@ a {
 
 /*   contact section  */
   .section-title p{
-    color: #66fcf1;
+    color: #d1d7e0;
     font-size: 22px;
   }
   .contact {
@@ -161,7 +161,7 @@ a {
   
   .contact .info-box i {
     font-size: 32px;
-    color: #66fcf1;
+    color: #d1d7e0;
     border-radius: 50%;
     padding: 8px;
   }
@@ -235,7 +235,7 @@ a {
   }
   
   .contact .php-email-form input::focus, .contact .php-email-form textarea::focus {
-    background-color: #66fcf1;
+    background-color: #d1d7e0;
   }
   
   .contact .php-email-form input {
@@ -247,7 +247,7 @@ a {
   }
   
   .contact .php-email-form button[type="submit"] {
-    background: #66fcf1;
+    background: #d1d7e0;
     border: 0;
     padding: 10px 24px;
     color: #0b0c10;
@@ -316,4 +316,8 @@ a {
         -ms-transform:skew(8deg) rotate(3deg);
          -o-transform:skew(8deg) rotate(3deg);
             transform:skew(8deg) rotate(3deg);
+}
+
+.bi-whatsapp {
+  font-size: 16px !important;
 }

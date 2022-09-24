@@ -12,7 +12,7 @@ session_start();
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>SRiSHTi 2K21</title>
+  <title>SRiSHTi 2k22</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -76,7 +76,7 @@ session_start();
 
               } else if (html == 'link') {
                 alert("Link Invalid. Please try again.");
-                    window.location.href = "../login.php";                 
+                    window.location.href = "login.php";                 
 
               } else {
                 alert("Error processing request. Please try again.");
@@ -103,7 +103,7 @@ session_start();
     <div class="container d-flex align-items-center justify-content-center">
 
       <div class="logo">
-        <h1>SRiSHTi 2k21</h1>
+        <h1>SRiSHTi 2k22</h1>
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="index.php"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
       </div>

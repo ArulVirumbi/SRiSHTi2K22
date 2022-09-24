@@ -7,614 +7,592 @@ session_start();
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>WORKSHOPS / PAPER Presentation</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
+    <title>WORKSHOPS / PAPER PRESENTATION</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
 
-  <!-- Favicons -->
-  <link href="assets/img/favicon.ico" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <!-- Favicons -->
+    <link href="assets/img/favicon.ico" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/a74d0f3882.js" crossorigin="anonymous"></script>
-
-  
-  <link href="assets/css/style3.css" rel="stylesheet">
-  <link href="assets/css/navbar.css" rel="stylesheet">
-  <link href="assets/css/footer.css" rel="stylesheet">
-  <link href="assets/css/common-styles.css" rel="stylesheet">
-
-  <link rel="stylesheet" href="https://unpkg.com/flickity@2.0/dist/flickity.min.css">
-  <script src="https://unpkg.com/flickity@2.0/dist/flickity.pkgd.min.js"></script>
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a74d0f3882.js" crossorigin="anonymous"></script>
 
 
-  <script type="text/javascript" >
+    <link href="assets/css/style3.css" rel="stylesheet">
+    <link href="assets/css/cards.css" rel="stylesheet">
+    <link href="assets/css/navbar.css" rel="stylesheet">
+    <link href="assets/css/footer.css" rel="stylesheet">
+    <link href="assets/css/common-styles.css" rel="stylesheet">
+    <link href="assets/css/background.css" rel="stylesheet">
 
-  $(document).ready(function () {
-      $("#btn_1").click(function(){
-          ppname = "SI-NNOVATION";
-          registerPaperpres(ppname);
-      });
-      $("#btn_2").click(function(){
-          ppname = "ROBO-TECHNOVATION";
-          registerPaperpres(ppname);
-      });
-      $("#btn_3").click(function(){
-          ppname = "MEDTECH";
-          registerPaperpres(ppname);
-      });
-      $("#btn_4").click(function(){
-          ppname = "ECO-LUOMUS";
-          registerPaperpres(ppname);
-      });
-      $("#btn_5").click(function(){
-          ppname = "X-PECTRUM";
-          registerPaperpres(ppname);
-      });
-      $("#btn_6").click(function(){
-        wsname = "DATA ANALYTICS";
-        registerWorkshop(wsname);
-      });
-      $("#btn_7").click(function(){
-        wsname = "VIRTUAL REALITY";
-        registerWorkshop(wsname);
-      });
-      $("#btn_8").click(function(){
-        wsname = "ROBOT OPERATING SYSTEM";
-        registerWorkshop(wsname);
-      });
-      
-    });
-    
-    
-    function register_alert(ppname){
-      alert(`You have Registered for ${ppname}`);
-  }
 
-  function registerPaperpres(ppname)
-    {
-      $.ajax({
-                    type: "POST",
-                    url: "ppregistered.php",
-                    data: "ppname=" + ppname ,
-                    success: function (html) {
-                        if (html == 'true') {
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2.0/dist/flickity.min.css">
+    <script src="https://unpkg.com/flickity@2.0/dist/flickity.pkgd.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("#btn_1").click(function() {
+                ppname = "AIROS";
+                registerPaperpres(ppname);
+            });
+            $("#btn_2").click(function() {
+                ppname = "TECHNOVATION";
+                registerPaperpres(ppname);
+            });
+            $("#btn_3").click(function() {
+                ppname = "INNOVALANZ";
+                registerPaperpres(ppname);
+            });
+            $("#btn_4").click(function() {
+                ppname = "TECH-O-STER";
+                registerPaperpres(ppname);
+            });
+            $("#btn_5").click(function() {
+                ppname = "ARIVARANGAM";
+                registerPaperpres(ppname);
+            });
+            $("#btn_6").click(function() {
+                wsname = "DRONE BUILDING";
+                registerWorkshop(wsname);
+            });
+            $("#btn_7").click(function() {
+                wsname = "MACHINE LEARNING USING PYTHON";
+                registerWorkshop(wsname);
+            });
+            $("#btn_8").click(function() {
+                wsname = "AUTOMOTIVE EMBEDDED SYSTEMS";
+                registerWorkshop(wsname);
+            });
+            $("#btn_9").click(function() {
+                wsname = "EMBEDDED SIGNAL PROCESSING";
+                registerWorkshop(wsname);
+            });
+            $("#btn_10").click(function() {
+                wsname = "INDUSTRIAL AUTOMATION-IIOT";
+                registerWorkshop(wsname);
+            });
+
+        });
+
+
+        function register_alert(ppname) {
+            alert(`You have Registered for ${ppname}`);
+        }
+
+        function wsfees(wsname) {
+            ftype = wsname;
+            $.ajax({
+                type: "POST",
+                url: "modules/pay_process.php",
+                data: "type=" + ftype,
+                success: function(html) {
+                    if (html == 'false') {
+                        $("#add_err1").html('<div class="alert alert-danger"> \
+                            <strong>Please Try Again Later.</strong> \ \
+                        </div>');
+
+                        window.location.href = "profile.php";
+
+                    } else {
+                        window.location.href = html;
+                    }
+                },
+                beforeSend: function() {
+                    $("#add_err1").html("Loading...");
+                }
+            });
+        }
+
+        function registerPaperpres(ppname) {
+            $.ajax({
+                type: "POST",
+                url: "ppregistered.php",
+                data: "ppname=" + ppname,
+                success: function(html) {
+                    if (html == 'true') {
 
                         register_alert(ppname);
-                        
-                        }  else if (html == 'rem') {
-                           
+
+                    } else if (html == 'rem') {
+
                         alert("Already Registered");
 
-                        } else {
-                            
-                            alert("Login before registering to a Event")
-                            window.location.href = "login.php";
-                            
+                    } else if (html == 'genfee') {
+                        var val = confirm("You Need to pay General fee! \n Do not close the page before the payment confirmation.");
+                        if (val == true) {
+                            wsfees("GEN");
                         }
-  }
+                    } else {
+                        alert("Login before registering to a Event")
+                        window.location.href = "login.php";
+                    }
+                }
 
-  });
-  }
+            });
+        }
 
-  function registerWorkshop(wsname)
-  {
-    $.ajax({
-                  type: "POST",
-                  url: "wregistered.php",
-                  data: "wsname=" + wsname ,
-                  success: function (html) {
-                      if (html == 'true') {
+        function registerWorkshop(wsname) {
+            $.ajax({
+                type: "POST",
+                url: "wregistered.php",
+                data: "wsname=" + wsname,
+                success: function(html) {
+                    if (html == 'true') {
+                        var val1 = confirm("Confirm to pay general fee. \n Do not close the page before the payment confirmation.");
+                        if (val1 == true) {
+                            let wstype = wsname.substring(0, 3).toUpperCase();
+                            wsfees(wstype);
+                        }
+                    } else if (html == 'rem') {
 
-                      register_alert(wsname);
-                      
-                      }  else if (html == 'rem') {
-                         
-                      alert("Already Registered");
+                        alert("Already Registered");
 
-                      } else {
-                          
-                          alert("Login before registering to a Event")
-                          window.location.href = "login.php";
-                          
-                      }
-}
+                    } else if (html == 'genfee') {
+                        var val2 = confirm("You Need to pay General fee! \n Do not close the page before the payment confirmation.");
+                        if (val2 == true) {
+                            wsfees("GEN");
+                        }
+                    } else {
+                        alert("Login before registering to a Event");
+                        window.location.href = "login.php";
+                    }
+                }
 
-});
-}
-  
-  </script>
+            });
+        }
+    </script>
 
-<!--script type="text/javascript" >
-
-$(document).ready(function () {
-    
-    
-  });
-  
-  
-  function register_alert(wsname){
-    alert(`You have Registered for ${wsname}`);
-}
-
-
-
-</script -->
-  
 </head>
 
 <body>
-  
-  <i class="bi bi-list mobile-nav-toggle d-xl-none" style="color: #66fcf1"></i>
+    <ul class="circles">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
 
-  <header id="header" class="d-flex flex-column justify-content-center">
+    <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
 
-    <nav id="navbar" class="navbar nav-menu">
-      <ul>
+    <header id="header" class="d-flex flex-column justify-content-center">
 
-        <?php require_once 'user.php'; ?>
-        
-        <li><a href="HOME" class="nav-link scrollto"><i class="fas fa-home"></i> <span>Home</span></a></li>
-        <li><a href="EVENTS" class="nav-link scrollto"><i class="fas fa-calendar-day"></i> <span>Events</span></a></li>
-        <li><a href="#" class="nav-link scrollto active"><i class="fas fa-chalkboard-teacher"></i> <span>&nbsp &nbsp &nbsp Workshop /<br>Paper Presentation</span></a></li>
-        <li><a href="ABOUT" class="nav-link scrollto"><i class="fas fa-info-circle"></i> <span>About</span></a></li>
-        <li><a href="TEAM" class="nav-link scrollto"><i class="fas fa-users"></i> <span>Team</span></a></li>
-        <li><a href="SCHEDULE" class="nav-link scrollto"><i class="fas fa-hourglass-half"></i><span>Schedule</span></a></li>
-        <li><a href="FAQ-CONTACT" class="nav-link scrollto"><i class="fas fa-question"></i> <span>FAQ / Contact</span></a></li>
-      </ul>
-    </nav><!-- .nav-menu -->
+        <nav id="navbar" class="navbar nav-menu">
+            <ul>
 
-  </header>
+                <?php require_once 'user.php'; ?>
 
-  <?php require_once 'header.php';?>
+                <li><a href="index.php" class="nav-link scrollto"><i class="fas fa-home"></i> <span>Home</span></a></li>
+                <li><a href="about.php" class="nav-link scrollto"><i class="fas fa-info-circle"></i> <span>About</span></a></li>
+                <li><a href="events.php" class="nav-link scrollto"><i class="fas fa-calendar-day"></i> <span>Events</span></a></li>
+                <li><a href="#" class="nav-link scrollto active"><i class="fas fa-chalkboard-teacher"></i> <span>&nbsp &nbsp &nbsp Workshop /<br>Paper Presentation</span></a></li>
+                <li><a href="team.php" class="nav-link scrollto"><i class="fas fa-users"></i> <span>Team</span></a></li>
+                <li><a href="schedule.php" class="nav-link scrollto"><i class="fas fa-hourglass-half"></i><span>Schedule</span></a></li>
+                <li><a href="contact.php" class="nav-link scrollto"><i class="fas fa-question"></i> <span>FAQ / Contact</span></a></li>
+            </ul>
+        </nav><!-- .nav-menu -->
 
-  <div   class="d-flex align-items-center header2 " style="display: None !important;">
-    <div class="container d-flex align-items-center justify-content-center">
+    </header>
 
-      <div class="logo">
-        <h1>WORKSHOPS</h1>
-        <!-- Uncomment below if you prefer to use an image logo -->
-        <!-- <a href="index.php"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
-      </div>
+
+    <?php require_once 'header.php'; ?>
+
+    <div id="header2" class="d-flex align-items-center header2 " style="display: None !important;">
+        <div class="container d-flex align-items-center justify-content-center">
+
+            <div class="logo">
+                <h1>WORKSHOPS</h1>
+                <!-- Uncomment below if you prefer to use an image logo -->
+                <!-- <a href="index.php"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+            </div>
+        </div>
     </div>
-  </div>
-  <div id="header2" class="category-bar">
-    <nav>
-        <div id="sliding-bar"></div>
-        <a href="#paperpres" class="head-refn">PAPER PRESENTATION</a>
-        <a href="#workshop" class="head-refn" style="margin-right: 100px">WORKSHOP</a>
-    </nav>
-  </div>
+    <!-- <div id="header2" class="category-bar"> -->
+    <div class="category-bar" style="top: 0px !important">
+        <nav>
+            <div id="sliding-bar"></div>
+            <a href="#paperpres">PAPER PRESENTATION</a>
+            <a href="#workshop">WORKSHOP</a>
+        </nav>
+    </div>
 
-  
 
-<div class="container-fluid">
 
-  <div class="card-area container">
-    
-    <div class="row">
-        <!-- Technical -->
-        <div class="col-lg-12" id="paperpres" style="padding-bottom: 50px;"><br></div>
-        <div class="col-lg-12"><h3 style="height: 70px;color: #66fcf1;text-align: center;font-weight: 500; font-size: 30px; margin-bottom:20px;">PAPER PRESENTATION</h3></div>
-        <div class="col-lg-4  col-md-6 col-sm-12">
-        <div class="card-section">
-            <div class="card">
-                <div class="flip-card">
-                    <div class="flip-card__container">
-                        <div class="card-front card-front-1">
-                            <div class="card-front__tp card-front__tp-1">
-                                <img src="assets/img/icons/PAPER/si-c.png" style="height: 60px; width: 60px;">
-                                <h2 class="card-front__heading">
-                                    <br>
-                                    Si-nnovation
-                                </h2>
+    <div class="card-area container">
+
+        <div class="row">
+            <!-- PAPER PRESENTATION -->
+            <div class="col-lg-12" id="paperpres" style="padding-bottom: 50px;"><br></div>
+            <div class="col-lg-12">
+                <h3 style="height: 70px;color: #d1d7e0;text-align: center;font-weight: 500; font-size: 30px; margin-bottom:20px;">PAPER PRESENTATION</h3>
+            </div>
+            <div class="col-lg-4  col-md-6 col-sm-12">
+                <div class="card-container">
+                    <div class="card">
+                        <div class="box">
+                            <div class="content">
+                                <div class="matter paper_1">
+                                    <div class="m_cnt">
+                                        <p>
+
+                                            Made specifically for the software geeks out there, AiROS is a presentation event where you can showcase your software-based technologies and innovation.
+                                        </p>
+                                    </div>
+                                    <div class="m_btn">
+                                        <center><button id="div-1" type="button" class="btn btn-success">View Details</button></center>
+                                    </div>
+                                    <!-- <a id="div-1" class="inside-page__btn inside-page__btn-2" style="color: #d1d7e0;">View details</a> -->
+                                </div>
                             </div>
+                            <div class="image">
+                                <div class="img-div">
+                                    <img class="event-logo" src="assets/img/icons/PAPER/airos.PNG">
+                                    <h2 class="text card-title  text-center" style="text-align: center;">AiROS</h2>
+                                    <h2 class="turn-on text-center " style="text-align: center;">CLICK HERE</h2>
+                                </div>
 
-                            <div class="card-front__bt">
-                                <p class="card-front__text-view card-front__text-view-1">
-                                    View me
-                                </p>
+
                             </div>
                         </div>
-                        <div class="card-back card-back-1">
-                            <div class="video__container-1">
-                                <img src="assets/img/icons/PAPER/si-c.png" style="height: 60px; width: 60px;margin-top: 2.5rem;">
-                                <h3 style="font-size:15px;">Si-nnovation</h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="inside-page-1">
-                    <div class="inside-page__container">
-                        <h3 class="inside-page__heading inside-page__heading-1">
-                            <!-- For urban lovers -->
-                        </h3>
-                        <p class="inside-page__text-1">
-                          SI-NNOVATION, specially for embedded engineers to squeeze out their ideas in the field of electronic chips and integration.
-                        </p>
-                        <a id="div-1" class="inside-page__btn inside-page__btn-1">View details</a>
                     </div>
                 </div>
             </div>
-        </div>
-        </div>
-        <div class="hide"><br><br></div>
-        
-        <div class="col-lg-4  col-md-6 col-sm-12">
-            
-            <section class="card-section">
-                <div class="card">
-                    <div class="flip-card">
-                        <div class="flip-card__container">
-                            <div class="card-front card-front-2">
-                                <div class="card-front__tp card-front__tp-2">
-                                    <img src="assets/img/icons/PAPER/robo-b.png" style="height: 60px; width: 60px;">
-                                               <h2 class="card-front__heading"><br>
-                                                   Robo-Technovation
-                                               </h2>
-                                </div>
+            <div class="col-lg-4  col-md-6 col-sm-12">
+                <div class="card-container">
+                    <div class="card">
+                        <div class="box">
+                            <div class="content">
+                                <div class="matter paper_1">
+                                    <div class="m_cnt">
+                                        <p>
 
-                                <div class="card-front__bt">
-                                    <p class="card-front__text-view card-front__text-view-2">
-                                        View me
-                                    </p>
-                                </div>
-                            </div>
+                                            TECHNOVATION brings out the technical skills of young engineers by providing a platform to present their prodigious ideas based on hardware technologies.
 
-                            <div class="card-back card-back-2">
-                                <div class="video__container-2">
-                                    <img src="assets/img/icons/PAPER/robo-b.png" style="height: 60px; width: 60px;margin-top: 2.5rem;">
-                                    <h3>Robo-Technovation</h3>
+                                        </p>
+
+                                    </div>
+                                    
+
+                                    
+                                    <div class="m_btn">
+
+                                        <button id="div-2" type="button" class="btn btn-success">View Details</button>
+                                    </div>
+                                    <!-- <a id="div-1" class="inside-page__btn inside-page__btn-2" style="color: #66fcf1;">View details</a> -->
                                 </div>
                             </div>
-                        </div>
-                    </div>
+                            <div class="image">
+                                <div class="img-div">
+                                    <img class="event-logo" src="assets/img/icons/PAPER/technovalence.PNG">
+                                    <h2 class="text card-title  text-center" style="text-align: center;">TECHNOVATION</h2>
+                                    <h2 class="turn-on " style="text-align: center;">CLICK HERE</h2>
+                                </div>
 
-                    <div class="inside-page-2">
-                        <div class="inside-page__container">
-                            <h3 class="inside-page__heading inside-page__heading-2">
-                                <!-- For snow lovers -->
-                            </h3>
-                            <p class="inside-page__text-2">
-                              ROBOT-TECHNOVATION, a robotics and automation based presentation where youngsters come up with Promethean proposals.
-
-                            </p>
-                            <a id="div-2" class="inside-page__btn inside-page__btn-2">View details</a>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </div>
-        <div class="hide-1"><br><br></div>
-
-        <div class="col-lg-4  col-md-6 col-sm-12">
-        <div class="card-section">
-            <div class="card">
-                <div class="flip-card">
-                    <div class="flip-card__container">
-                        <div class="card-front card-front-1">
-                            <div class="card-front__tp card-front__tp-1">
-                                <img src="assets/img/icons/PAPER/medtech-c.png" style="height: 60px; width: 60px;">
-                                <h2 class="card-front__heading"><br>
-                                    MEDTECH
-                                </h2>
-                            </div>
-
-                            <div class="card-front__bt">
-                                <p class="card-front__text-view card-front__text-view-1">
-                                    View me
-                                </p>
                             </div>
                         </div>
-                        <div class="card-back card-back-1">
-                            <div class="video__container-1">
-                                <img src="assets/img/icons/PAPER/medtech-c.png" style="height: 60px; width: 60px;margin-top: 2.5rem;">
-                                <h3>MEDTECH</h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="inside-page-1">
-                    <div class="inside-page__container">
-                        <h3 class="inside-page__heading inside-page__heading-1">
-                            <!-- For urban lovers -->
-                        </h3>
-                        <p class="inside-page__text-1">
-                         MEDTECH makes the trailblazers to come up with ingenious solutions for currently existing healthcare problems.
-
-                        </p>
-                        <a id="div-3" class="inside-page__btn inside-page__btn-1">View details</a>
                     </div>
                 </div>
             </div>
-        </div>
-        </div>
+            <div class="col-lg-4  col-md-6 col-sm-12">
+                <div class="card-container">
+                    <div class="card">
+                        <div class="box">
+                            <div class="content">
+                                <div class="matter paper_1">
+                                    <div class="m_cnt">
+                                        <p>
+                                            Welcome to InnovalanZ - Come amaze us with your unique ideas that aim to make daily life easier and more comfortable.
+                                        </p>
+                                    </div>
+                                    <div class="m_btn">
 
-        <div class="col-lg-12 hide-2"><br><br></div>
-        <div class="col-lg-2 col-md-6 col-sm-12 hide-2"></div>
+                                        <button id="div-3" type="button" class="btn btn-success">View Details</button>
 
-        <div class="col-lg-4  col-md-6 col-sm-12">
-            
-            <section class="card-section">
-                <div class="card">
-                    <div class="flip-card">
-                        <div class="flip-card__container">
-                            <div class="card-front card-front-2">
-                                <div class="card-front__tp card-front__tp-2">
-                                    <img src="assets/img/icons/PAPER/eco-b.png" style="height: 60px; width: 60px;">
-                                               <h2 class="card-front__heading"><br>
-                                                  Eco- luomus
-                                               </h2>
-                                </div>
-
-                                <div class="card-front__bt">
-                                    <p class="card-front__text-view card-front__text-view-2">
-                                        View me
-                                    </p>
+                                    </div>
                                 </div>
                             </div>
-
-                            <div class="card-back card-back-2">
-                                <div class="video__container-2">
-                                    <img src="assets/img/icons/PAPER/eco-b.png" style="height: 60px; width: 60px;margin-top: 2.5rem;">
-                                    <h3>Eco- luomus</h3>
+                            <div class="image">
+                                <div class="img-div">
+                                    <img class="event-logo" src="assets/img/icons/PAPER/innovalanze.PNG">
+                                    <h2 class="text card-title  text-center" style="text-align: center;">INNOVALANZ</h2>
+                                    <h2 class="turn-on text-center " style="text-align: center;">CLICK HERE</h2>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-
-                    <div class="inside-page-2">
-                        <div class="inside-page__container">
-                            <h3 class="inside-page__heading inside-page__heading-2">
-                            </h3>
-                            <p class="inside-page__text-2">
-                               Disappointed that the avengers can’t gather anymore? What if you can summon them in this virtual prison break?
-
-
-                            </p>
-                            <a id="div-4" class="inside-page__btn inside-page__btn-2" style="color: #66fcf1;">View details</a>
                         </div>
                     </div>
                 </div>
-            </section>
-        </div>
-        <div class="hide-1"><br><br></div>
-        <div class="col-lg-2 col-md-3 col-sm-3 hide-1"></div>
-        <div class="col-lg-4  col-md-6 col-sm-12">
-            <section class="card-section">
-                <div class="card">
-                    <div class="flip-card">
-                        <div class="flip-card__container">
-                            <div class="card-front card-front-1">
-                                <div class="card-front__tp card-front__tp-1">
-                                    <img src="assets/img/icons/PAPER/x-pectrum-c.png" style="height: 60px; width: 60px;">
-                                    <h2 class="card-front__heading"><br>
-                                    X-PECTRUM
+            </div>
+            <div class="col-lg-2  col-md-6 col-sm-12 hide-2"></div>
+            <div class="col-lg-4  col-md-6 col-sm-12">
+                <div class="card-container">
+                    <div class="card">
+                        <div class="box">
+                            <div class="content">
+                                <div class="matter paper_1">
+                                    <div class="m_cnt">
+
+                                        <p>
+                                            It’s all about doing different things and doing things differently. Tech-O-Ster is a platform to present your ideas in ways that words couldn't convey!
+                                        </p>
+                                    </div>
+                                    <div class="m_btn">
+                                        <button id="div-4" type="button" class="btn btn-success">View Details</button>
+                                    </div>
+                                    <!-- <a id="div-1" class="inside-page__btn inside-page__btn-2" style="color: #66fcf1;">View details</a> -->
+                                </div>
+                            </div>
+                            <div class="image">
+                                <div class="img-div">
+                                    <img class="event-logo" src="assets/img/icons/PAPER/tech o ster.PNG">
+                                    <h2 class="text card-title  text-center" style="text-align: center;">TECH-O-STER</h2>
+                                    <h2 class="turn-on " style="text-align: center;">CLICK HERE</h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4  col-md-6 col-sm-12">
+                <div class="card-container">
+                    <div class="card">
+                        <div class="box">
+                            <div class="content">
+                                <div class="matter paper_1">
+                                    <div class="m_cnt">
+                                        <p>
+                                            “Somewhere, something incredible is always waiting to be known”. We await your fruitful ideas for the future of electronic chips and integration.
+                                        </p>
+                                    </div>
+                                    <div class="m_btn">
+
+                                        <button id="div-5" type="button" class="btn btn-success">View Details</button>
+                                    </div>
+                                    <!-- <a id="div-1" class="inside-page__btn inside-page__btn-2" style="color: #66fcf1;">View details</a> -->
+                                </div>
+                            </div>
+                            <div class="image">
+                                <div class="img-div">
+                                    <img class="event-logo" src="assets/img/icons/PAPER/arivarangam.PNG">
+                                    <h2 class="text card-title  text-center" style="text-align: center;">ARIVARANGAM</h2>
+                                    <h2 class="turn-on " style="text-align: center;">CLICK HERE</h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!--Workshop-->
+            <div class="col-lg-12" id="workshop" style="padding-bottom: 50px;"><br></div>
+            <div class="col-lg-12">
+                <h3 style="height: 70px;color: #d1d7e0;text-align: center;font-weight: 500; font-size: 30px; margin-bottom:20px;">WORKSHOP</h3>
+            </div>
+            <div class="col-lg-4  col-md-6 col-sm-12">
+                <div class="card-container">
+                    <div class="card">
+                        <div class="box">
+                            <div class="content">
+                                <div class="matter work_1">
+                                    <div class="m_cnt">
+                                        <p>
+                                            Looking for a fun yet informative workshop that helps improve your practical knowledge? Look no more, Join us and learn in detail about the construction and working of drones.
+                                        </p>
+                                    </div>
+                                    <div class="m_btn">
+
+                                        <button id="div-6" type="button" class="btn btn-success">View Details</button>
+                                    </div>
+                                    <!-- <a id="div-1" class="inside-page__btn inside-page__btn-2" style="color: #66fcf1;">View details</a> -->
+                                </div>
+                            </div>
+                            <div class="image">
+                                <div class="img-div">
+                                    <img class="event-logo" src="assets/img/icons/WORK/drone building.PNG">
+                                    <h2 class="text card-title  text-center " style="text-align: center;">DRONE BUILDING</h2>
+                                    <h2 class="turn-on text-center " style="text-align: center;">CLICK HERE</h2>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4  col-md-6 col-sm-12">
+                <div class="card-container">
+                    <div class="card">
+                        <div class="box">
+                            <div class="content">
+                                <div class="matter work_1">
+                                    <div class="m_cnt">
+                                        <p>
+                                            Come, learn and explore the field of machine learning starting from the fundamentals to implementation in python.
+                                        </p>
+
+                                    </div>
+                                    <div class="m_btn">
+
+                                        <button id="div-7" type="button" class="btn btn-success">View Details</button>
+                                    </div>
+                                    <!-- <a id="div-1" class="inside-page__btn inside-page__btn-2" style="color: #66fcf1;">View details</a> -->
+                                </div>
+                            </div>
+                            <div class="image">
+                                <div class="img-div">
+                                    <img class="event-logo" src="assets/img/icons/WORK/machine learning.PNG">
+                                    <h2 class="text card-title  text-center top-20" style="text-align: center;">MACHINE LEARNING USING PYTHON
                                     </h2>
+                                    <h2 class="turn-on " style="text-align: center;">CLICK HERE</h2>
                                 </div>
 
-                                <div class="card-front__bt">
-                                    <p class="card-front__text-view card-front__text-view-1">
-                                        View me
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="card-back card-back-1">
-                                <div class="video__container-1">
-                                    <img src="assets/img/icons/PAPER/x-pectrum-c.png" style="height: 60px; width: 60px;margin-top: 2.5rem;">
-                                    <h3 style="font-size:20px;">X-PECTRUM</h3>
-                                </div>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="inside-page-1">
-                        <div class="inside-page__container">
-                            <h3 class="inside-page__heading inside-page__heading-1">
-                                <!-- For urban lovers -->
-                            </h3>
-                            <p class="inside-page__text-1">
-                                Invisible communication is termed X-PECTRUM which ignites the young minds to create a unique communication technology.
-                            </p>
-                            <a id="div-5" class="inside-page__btn inside-page__btn-1">View details</a>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </div>
-        <div class="hide"><br><br></div>
-        <div class="col-lg-2 col-md-6 col-sm-12"></div>
-
-        <!-- Non Technical -->
-        <div class="col-lg-12" id="workshop" style="padding-bottom: 80px;"><br></div>
-        <div class="col-lg-12"><h3 style="height: 70px;color: #66fcf1;text-align: center;font-weight: 500; font-size: 30px; margin-bottom:20px;">WORKSHOP</h3></div>
-        <div class="col-lg-4 col-md-6 col-sm-12">
-        <section class="card-section">
-            <div class="card">
-                <div class="flip-card">
-                    <div class="flip-card__container">
-                        <div class="card-front card-front-1">
-                            <div class="card-front__tp card-front__tp-1">
-                                <img src="assets\img\icons\NON TECH\brainiac-c.png" style="height: 60px; width: 60px;"><br>
-                                <h2 class="card-front__heading">
-                                    THE BRAINIACS
-                                </h2>
-                            </div>
-
-                            <div class="card-front__bt">
-                                <p class="card-front__text-view card-front__text-view-1">
-                                    View me
-                                </p>
-                            </div>
-                        </div>
-                        <div class="card-back card-back-1">
-                            <div class="video__container-1">
-                                <img src="assets\img\icons\NON TECH\brainiac-c.png" style="height: 60px; width: 60px;margin-top: 2.5rem;">
-                                <h3>THE BRAINIACS</h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="inside-page-1">
-                    <div class="inside-page__container">
-                        <h3 class="inside-page__heading inside-page__heading-1">
-                           <!--  For urban lovers -->
-                        </h3>
-                        <p class="inside-page__text-1">
-                           Sprinting the time with the co-participants, the famous personalities, products should be identified spicing up with decoding the encoded message.
-                        </p>
-                        <a id="div-6" class="inside-page__btn inside-page__btn-1">View details</a>
                     </div>
                 </div>
             </div>
-        </section>
-        </div>
-        <div class="hide"><br><br></div>
+            <div class="col-lg-4  col-md-6 col-sm-12">
+                <div class="card-container">
+                    <div class="card">
+                        <div class="box">
+                            <div class="content">
+                                <div class="matter work_1">
+                                    <div class="m_cnt">
+                                        <p>
+                                            If you’re interested in the automobile industry, then you cannot miss out on this wonderful opportunity to learn from field experts and explore the technology.
+                                        </p>
+                                    </div>
+                                    <div class="m_btn">
 
-        <div class="col-lg-4 col-md-6 col-sm-12">
-        
-        <section class="card-section">
-            <div class="card">
-                <div class="flip-card">
-                    <div class="flip-card__container">
-                        <div class="card-front card-front-2">
-                            <div class="card-front__tp card-front__tp-2">
-                                <img src="assets/img/icons/NON TECH/braun over brain-b.png" style="height: 60px; width: 60px;"><br>
-                                           <h2 class="card-front__heading">
-                                               BRAUN OVER BRAIN
-                                           </h2>
+                                        <button id="div-8" type="button" class="btn btn-success">View Details</button>
+                                    </div>
+
+                                </div>
                             </div>
-
-                            <div class="card-front__bt">
-                                <p class="card-front__text-view card-front__text-view-2">
-                                    View me
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="card-back card-back-2">
-                            <div class="video__container-2">
-                                <img src="assets/img/icons/NON TECH/braun over brain-b.png" style="height: 60px; width: 60px;margin-top: 2.5rem;">
-                                <h3>BRAUN OVER BRAIN</h3>
+                            <div class="image">
+                                <div class="img-div">
+                                    <img class="event-logo" src="assets/img/icons/WORK/automotive embedded system.PNG">
+                                    <h2 class="text card-title  text-center top-20" style="text-align: center;">AUTOMOTIVE EMBEDDED SYSTEMS</h2>
+                                    <h2 class="turn-on text-center " style="text-align: center;">CLICK HERE</h2>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-
-                <div class="inside-page-2">
-                    <div class="inside-page__container">
-                        <h3 class="inside-page__heading inside-page__heading-2">
-                            <!-- For snow lovers -->
-                        </h3>
-                        <p class="inside-page__text-2">
-                           A brain challenger is an event which will be enthusiasting  the participants brain and to check their aptitude strength and communication skills.
-                        </p>
-                        <a id="div-7" class="inside-page__btn inside-page__btn-2">View details</a>
                     </div>
                 </div>
             </div>
-        </section>
-        </div>
-        <div class="hide-1"><br><br></div>
+            <div class="col-lg-2  col-md-6 col-sm-12 hide-2"></div>
+            <div class="col-lg-4  col-md-6 col-sm-12">
+                <div class="card-container">
+                    <div class="card">
+                        <div class="box">
+                            <div class="content">
+                                <div class="matter work_1">
+                                    <div class="m_cnt">
+                                        <p>
+                                            Get hands-on experience in prototyping some applications of embedded signal processing.
+                                        </p>
+                                    </div>
+                                    <div class="m_btn">
 
-        <div class="col-lg-4 col-md-6 col-sm-12">
-        <section class="card-section">
-            <div class="card">
-                <div class="flip-card">
-                    <div class="flip-card__container">
-                        <div class="card-front card-front-1">
-                            <div class="card-front__tp card-front__tp-1">
-                                <img src="assets\img\icons\NON TECH\puzzle-hunter-c.png" style="height: 60px; width: 60px;"><br>
-                                <h2 class="card-front__heading">
-                                    PUZZLE HUNTERS
-                                </h2>
+                                        <button id="div-9" type="button" class="btn btn-success">View Details</button>
+                                    </div>
+                                    <!-- <a id="div-1" class="inside-page__btn inside-page__btn-2" style="color: #66fcf1;">View details</a> -->
+                                </div>
                             </div>
-
-                            <div class="card-front__bt">
-                                <p class="card-front__text-view card-front__text-view-1">
-                                    View me
-                                </p>
+                            <div class="image">
+                                <div class="img-div">
+                                    <img class="event-logo" src="assets/img/icons/WORK/embedded signal processing.PNG">
+                                    <h2 class="text card-title  text-center top-20" style="text-align: center;">EMBEDDED SIGNAL PROCESSING
+                                    </h2>
+                                    <h2 class="turn-on " style="text-align: center;">CLICK HERE</h2>
+                                </div>
                             </div>
                         </div>
-                        <div class="card-back card-back-1">
-                            <div class="video__container-1">
-                                <img src="assets\img\icons\NON TECH\puzzle-hunter-c.png" style="height: 60px; width: 60px;margin-top: 2.5rem;"><br>
-                                <h3>PUZZLE HUNTERS</h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="inside-page-1">
-                    <div class="inside-page__container">
-                        <h3 class="inside-page__heading inside-page__heading-1">
-                           <!--  For urban lovers -->
-                        </h3>
-                        <p class="inside-page__text-1">
-                           Rush of time whirling the imagination to connect the puzzles to get the passcode for 8 consecutives, and finally the fast hunter is awarded.
-                        </p>
-                        <a id="div-8" class="inside-page__btn inside-page__btn-1">View details</a>
                     </div>
                 </div>
             </div>
-        </section>
-        </div>
-        
+            <div class="col-lg-4  col-md-6 col-sm-12">
+                <div class="card-container">
+                    <div class="card">
+                        <div class="box">
+                            <div class="content">
+                                <div class="matter work_1">
+                                    <div class="m_cnt">
 
+                                        <p>
+                                            Industrial Automation. Get trained in the use of control systems and various tools for handling different types of machinery and processes used in industries.
+                                        </p>
+                                    </div>
+                                    <div class="m_btn">
+
+                                        <button id="div-10" type="button" class="btn btn-success">View Details</button>
+                                    </div>
+                                    <!-- <a id="div-1" class="inside-page__btn inside-page__btn-2" style="color: #66fcf1;">View details</a> -->
+                                </div>
+                            </div>
+                            <div class="image">
+                                <div class="img-div">
+                                    <img class="event-logo" src="assets/img/icons/WORK/schneider.PNG" alt="">
+                                    <h2 class="text card-title  text-center top-20" style="text-align: center;">INDUSTRIAL AUTOMATION - IIoT</h2>
+                                    <h2 class="turn-on " style="text-align: center;">CLICK HERE</h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-</div>
-</div>
-
-<?php require_once 'footer.php';?>
 
 
-<!-- Modal windows -->
-<div id="id-modal-1" class="modal">
-    <div class="modal-content">
-        <span class="modal_close modal_close_1">&times;</span>
-            <h4>Si-nnovation</h4>
+    <?php require_once 'footer.php'; ?>
+
+    <div id="id-modal-1" class="modal">
+        <div class="modal-content">
+            <span class="modal_close modal_close_1">&times;</span>
+            <h4>AiROS</h4>
             <div class="description grid-lg-12 grid-md-12 grid-sm-12 grid-xs-12">
                 <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
                     <div class="panel panel-default">
                         <div class="panel-heading" role="tab" id="headingten">
                             <h4 class="panel-title">
                                 <a class="collapsed last" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseone" aria-expanded="false" aria-controls="collapseThree">
-                                DESCRIPTION<span> </span></a>
+                                    DESCRIPTION<span> </span></a>
                             </h4>
                         </div>
                         <div id="collapseone" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingfour">
                             <div class="panel-body">
-                                <p><h5>Si-nnovation</h5>
-<i class="fa fa" style="font-size:10px"></i>Si-nnovation is a Paper Presentation event which provides a platform for the
-embedded engineers to present their ideas in the field of Future in Electronic
-Chips and Integration. The topics may range from VLSI, 3D-Integrated Circuits,
-Low-Power VLSI, Embedded Systems, Nano-Electronic Systems, Quantum
-computing, and other similar topics in the domain. The topics need not be
-pertained to the ones mentioned above.<br>
+                                <p>
+                                <h5>AiROS</h5>
+                                <i class="fa fa" style="font-size:10px"></i>This software paper presentation event is the perfect platform for people who are interested in presenting their skills in the trending software domains. The topics provided are Digital Processing Techniques, Virtual Reality, Cloud Computing, Web Application Development, Telemedicine, and Blockchain Technology. We anticipate your innovative ideas to contribute to these technologies. So what are you waiting for, Techies? Get in on the action! It's time to get in shape!<br><br>
+                                <h5>Fees:</h5>The teams whose abstract got selected must pay a fee of <b>Rs.200</b> excluding the general registration fee to present the paper.
 
 
                                 <br><br>
-                               
+
 
                                 </p>
                             </div>
@@ -626,19 +604,27 @@ pertained to the ones mentioned above.<br>
                         <div class="panel-heading" role="tab" id="headingTwo">
                             <h4 class="panel-title">
                                 <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapsetwo" aria-expanded="false" aria-controls="collapseTwo">
-                                GENERAL RULES<span> </span></a>
+                                    GENERAL RULES<span> </span></a>
                             </h4>
                         </div>
                         <div id="collapsetwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
                             <div class="panel-body">
-                                    <p>1. Username should be a combination of last four digits of Kriya ID_participants name. Only the participants who follow this format will be allowed to enter into event. E.g: 0001_Abc<br> 2.The link for joining the event will be made
-                available on dashboard of the kriya website. It will also be sent to the registered mail id. Follow the same link to enter into the event.<br> 3. Login only using the mail id given at the time of registration and use the same for responses during the event. Students of PSG are required to use their official mail IDs.<br> 4. Late entries for events, workshops and guest lectures will not be permitted. Make sure to adhere to the given timings.<br> 5. ID card verification will be carried out prior to the event
-                start and the participant is required to wear their ID card throughout the event.<br> 6. Ensure good internet connectivity. Download speed should be 4 Mbps and upload speed should be 2 Mbps.
-                <br> 7. Camera and mic should be kept on at all times/ as per the requirements of the event. 
-<br> 8. Participants are required to sit in a well lit surrounding without any noise disturbances and participants using mobile phones should place the phone in a proper visible area. Failing to do so will be considered malpractice and result in the disqualification of the participant. <br> 9.Any discrepancy during the event should be immediately reported to the event convenor to take necessary actions. Any late response will not be taken into consideration.<br>                 
-   10. The judges’ decision is final for all the events and will not be subjected to further discussions. Indulging in any malpractices will lead to immediate disqualification.<br>
-               
-                <br><br></p>
+                                <p>
+                                <ol>
+                                    1.Every participant must have registered individually before reporting to the event. If a team has 2 or more members each member must have registered individually.<br>
+                                    2. All participants are required to follow appropriate dress code (Boys- Shirt/Pant, Girls-Kurthi/Chudidhar).<br>
+                                    3. All registered participants must collect their respective SRiSHTi ID Cards and campus map from the registration desk on the day of the events.<br>
+                                    4. ID card verification will be carried out before the event starts and the participant is required to have their ID card throughout the event.<br>
+                                    5. Late entries for events and workshops will not be permitted, the participants are also advised to report to the campus 30 mins prior to have a hassle-free experience.<br>
+                                    6. Important Guidelines and Information regarding the Symposium will be conveyed at the Inauguration Event (October 29th 8:00 am) of SRiSHTi 2k22, so participants must attend the same without fail.<br>
+                                    7. Any discrepancy during the event should be immediately reported to the event convenor and necessary actions would be taken. Any late response will not be taken into consideration.<br>
+                                    8. The judges’ decision is final for all the events and will not be subjected to further discussion. Indulging in any malpractices will lead to immediate disqualification.<br>
+                                    9. All the participants should pay the general registration fee to attend the events. Apart from this, events such as Paper Presentation, Flagship Events, Workshop will have additional fee.<br>
+                                    10. Any forms of Inappropriate Behaviour will be highly condemned and necessary actions will be taken.<br>
+                                    11. All events will conclude by 3:00 pm on October 30th and the prize winners will be announced immediately at the valedictory event (October 30th 4:00 pm) of SRiSHTi 2k22.
+                                    <br>
+                                </ol>
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -648,32 +634,30 @@ pertained to the ones mentioned above.<br>
                         <div class="panel-heading" role="tab" id="headingThree">
                             <h4 class="panel-title">
                                 <a class="collapsed last" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                EVENT RULES<span> </span></a>
+                                    EVENT RULES<span> </span></a>
                             </h4>
                         </div>
                         <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
                             <div class="panel-body">
-                                <p><div class="bullet">
-                                   1.Each team can have a maximum of three members<br>
-                                 2.All the participants are supposed to participate with their Srishti ID. Spot
-entries will not be allowed.<br>
-                 3.  Participants are supposed to send their abstracts in pdf format on or
-before *** to the mail id ***.<br>
-                 4.The abstract should be in IEEE format and should not exceed a page.<br> 
-                 5.The abstracts will be scrutinized and the selected teams will be informed
-via mail.<br>
-                 6. No abstracts sent after the deadline will be considered.
-                <br> 
-                7.The participants will be given 10 minutes for presenting their ideas in
-Google Meet followed by 5 minutes of question-and-answer session.<br> 
-                8. Internet resources are allowed. However, direct plagiarism of ideas is
-strictly prohibited.<br>
-                9. Submission of projects will be an added credit.<br>            
-                        10. The judges’ decision is final and no correspondence will be entered into.<br>
-                        
-                <br><br>
-</div>
-</p>
+                                <p>
+                                <div class="bullet">
+                                    1. Each team can have a maximum of 3 members.<br>
+                                    2. All the participants are supposed to participate with their Srishti ID. Spot entries will not be allowed.<br>
+                                    3. Participants are supposed to mail their abstract in PDF format on or before 22 OCTOBER to <a href="mailto:airos2k22srishti@gmail.com">"airos2k22srishti@gmail.com".</a><br>
+                                    4. The abstract should be in IEEE format and should not exceed a page.<br>
+                                    5. Internet resources are allowed. However, direct plagiarism of ideas is strictly prohibited.<br>
+                                    6. Abstracts sent after the deadline given will not be considered.
+                                    <br>
+                                    7. The abstracts will be scrutinized and the selected teams will be informed via mail.<br>
+                                    9. The participants should be present in the informed venue before or on time.<br>
+                                    10.The participants will be given 15 minutes for presenting their ideas and solution followed by 5 minutes of the question-and-answer session.<br>
+                                    11. Submission of projects (implementation of the ideas) will be an added credit.<br>
+                                    12. The judges’ decision is final and no correspondence will be entered into.
+
+
+                                    <br><br>
+                                </div>
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -690,10 +674,11 @@ strictly prohibited.<br>
                         </div>
                         <div id="collapsefour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingone">
                             <div class="panel-body">
-                                <p><h5>DATE</h5>
-                                <div>26 september 2021</div><br>
+                                <p>
+                                <h5>DATE</h5>
+                                <div>29 and 30 OCTOBER 2022</div><br>
                                 <h5>TIME</h5>
-                                <div>10.00AM - 1.00PM</div><br></p>
+                                <div>You will be informed seperately about your specific timing</div><br></p>
                             </div>
                         </div>
                     </div>
@@ -702,18 +687,22 @@ strictly prohibited.<br>
                     <div class="panel panel-default">
                         <div class="panel-heading" role="tab" id="headingfive">
                             <h4 class="panel-title">
-                            <a class="collapsed last" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapsefive" aria-expanded="false" aria-controls="collapsefive">
-                                CONVENER DETAILS
-                                <span> </span>
-                            </a>
+                                <a class="collapsed last" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapsefive" aria-expanded="false" aria-controls="collapsefive">
+                                    CONTACTS
+                                    <span> </span>
+                                </a>
                             </h4>
                         </div>
                         <div id="collapsefive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingfive">
                             <div class="panel-body">
-                                <p><h5> CONVENERS' NAME</h5>
                                 <ul>
-                                    <li><a  style="color: white;" href=" tel:+9194999 60424">MEGALINGAM R - 94879 77443</a></li>
-                                    <li><a  style="color: white;" href=" tel:+9184313 48261">ADHITHYA S - 95975 99290</a></li>
+
+                                    <li><a style="color: white;" href=" tel:+9174484 52533">KARTHI KEYAN N - 74484 52533
+                                        </a></li>
+                                    <li><a style="color: white;" href=" tel:+9198949 76800">SURESHKUMAR R - 98949 76800
+                                        </a></li>
+                                    <li><a style="color: white;" href=" tel:+9196292 29640">DEEPAK PANDIAN - 96292 29640
+                                        </a></li>
                                 </ul><br>
                                 </p>
                             </div>
@@ -721,37 +710,40 @@ strictly prohibited.<br>
                     </div>
                 </div>
             </div>
-      <br>
-        <!--<button class="coming_soon">Coming soon</button>-->
-        <center><button  type="button" class="submitBtn" id="btn_1"><b>Register</b></button></center>
+            <h4 style="font-size: 20px; color: white;">There's a treasure waiting for the winners.</h4><br>
+            <!--<button class="coming_soon">Coming soon</button>-->
+            <center><button type="button" class="submitBtn" id="btn_1"><b>Register</b></button></center>
+        </div>
     </div>
-</div>
 
-<div id="id-modal-2" class="modal">
-    <div class="modal-content">
-        <span class="modal_close modal_close_2">&times;</span>
-            <h4>Robo-Technovation</h4>
+
+
+
+
+    <div id="id-modal-2" class="modal">
+        <div class="modal-content">
+            <span class="modal_close modal_close_2">&times;</span>
+            <h4>TECHNOVATION</h4>
             <div class="description grid-lg-12 grid-md-12 grid-sm-12 grid-xs-12">
                 <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
                     <div class="panel panel-default">
                         <div class="panel-heading" role="tab" id="headingThree">
                             <h4 class="panel-title">
                                 <a class="collapsed last" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapsesix" aria-expanded="false" aria-controls="collapseThree">
-                                DESCRIPTION<span> </span></a>
+                                    DESCRIPTION<span> </span></a>
                             </h4>
                         </div>
                         <div id="collapsesix" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingfour">
                             <div class="panel-body">
-                                 <p><h5>Robo-Technovation</h5>
-<i class="fa fa" style="font-size:10px"></i>Robo-Technovation is a Paper Presentation event which provides a platform
-for Young minds to unleash the ideas in the field of Robotics and Automation.
-Presentation can be done in any areas related to Robotics and automation.
-The success of your presentation will be judged not only by knowledge you
-send but what the listener receives.<br>
+                                <p>
+                                <h5>TECHNOVATION</h5>
+                                <i class="fa fa" style="font-size:10px"></i>Looking for a suitable platform to present your innovative ideas related to hardware? Do you wish to develop your research abilities and technical skills? Want to know more about the current developments in your particular field of interest? Look no further, Technovation is just the event for you! The goal of this event is to assemble a collection of interconnected circuit elements that perform a particular objective function. The topics may range from the domains like Signal processing, Control
+                                Systems, Sensors and actuators, Communication systems, Integrated Circuits, Electric Drives and Embedded Systems. Register and join us on this quest for knowledge!<br><br>
+                                <h5>Fees:</h5>The teams whose abstract got selected must pay a fee of <b>Rs.200</b> excluding the general registration fee to present the paper.
 
 
                                 <br><br>
-                               
+
 
                                 </p>
                             </div>
@@ -763,19 +755,24 @@ send but what the listener receives.<br>
                         <div class="panel-heading" role="tab" id="headingTwo">
                             <h4 class="panel-title">
                                 <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseseven" aria-expanded="false" aria-controls="collapseTwo">
-                                GENERAL RULES<span> </span></a>
+                                    GENERAL RULES<span> </span></a>
                             </h4>
                         </div>
                         <div id="collapseseven" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
                             <div class="panel-body">
-                                   <p>1. Username should be a combination of last four digits of Kriya ID_participants name. Only the participants who follow this format will be allowed to enter into event. E.g: 0001_Abc<br> 2.The link for joining the event will be made
-                available on dashboard of the kriya website. It will also be sent to the registered mail id. Follow the same link to enter into the event.<br> 3. Login only using the mail id given at the time of registration and use the same for responses during the event. Students of PSG are required to use their official mail IDs.<br> 4. Late entries for events, workshops and guest lectures will not be permitted. Make sure to adhere to the given timings.<br> 5. ID card verification will be carried out prior to the event
-                start and the participant is required to wear their ID card throughout the event.<br> 6. Ensure good internet connectivity. Download speed should be 4 Mbps and upload speed should be 2 Mbps.
-                <br> 7. Camera and mic should be kept on at all times/ as per the requirements of the event. 
-<br> 8. Participants are required to sit in a well lit surrounding without any noise disturbances and participants using mobile phones should place the phone in a proper visible area. Failing to do so will be considered malpractice and result in the disqualification of the participant. <br> 9.Any discrepancy during the event should be immediately reported to the event convenor to take necessary actions. Any late response will not be taken into consideration.<br>                 
-   10. The judges’ decision is final for all the events and will not be subjected to further discussions. Indulging in any malpractices will lead to immediate disqualification.<br> 
-               
-                <br><br></p>
+                                <p>1.Every participant must have registered individually before reporting to the event. If a team has 2 or more members each member must have registered individually.<br>
+                                    2. All participants are required to follow appropriate dress code (Boys- Shirt/Pant, Girls-Kurthi/Chudidhar).<br>
+                                    3. All registered participants must collect their respective SRiSHTi ID Cards and campus map from the registration desk on the day of the events.<br>
+                                    4. ID card verification will be carried out before the event starts and the participant is required to have their ID card throughout the event.<br>
+                                    5. Late entries for events and workshops will not be permitted, the participants are also advised to report to the campus 30 mins prior to have a hassle-free experience.<br>
+                                    6. Important Guidelines and Information regarding the Symposium will be conveyed at the Inauguration Event (October 29th 8:00 am) of SRiSHTi 2k22, so participants must attend the same without fail.<br>
+                                    7. Any discrepancy during the event should be immediately reported to the event convenor and necessary actions would be taken. Any late response will not be taken into consideration.<br>
+                                    8. The judges’ decision is final for all the events and will not be subjected to further discussion. Indulging in any malpractices will lead to immediate disqualification.<br>
+                                    9. All the participants should pay the general registration fee to attend the events. Apart from this, events such as Paper Presentation, Flagship Events, Workshop will have additional fee.<br>
+                                    10. Any forms of Inappropriate Behaviour will be highly condemned and necessary actions will be taken.<br>
+                                    11. All events will conclude by 3:00 pm on October 30th and the prize winners will be announced immediately at the valedictory event (October 30th 4:00 pm) of SRiSHTi 2k22.
+                                    <br><br>
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -785,32 +782,29 @@ send but what the listener receives.<br>
                         <div class="panel-heading" role="tab" id="headingThree">
                             <h4 class="panel-title">
                                 <a class="collapsed last" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseeight" aria-expanded="false" aria-controls="collapseThree">
-                                EVENT RULES<span> </span></a>
+                                    EVENT RULES<span> </span></a>
                             </h4>
                         </div>
                         <div id="collapseeight" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
                             <div class="panel-body">
-                                 <p><div class="bullet">
-                                   1.Each team can have a maximum of three members<br>
-                                 2.All the participants are supposed to participate with their Srishti ID. Spot
-entries will not be allowed.<br>
-                 3.  Participants are supposed to send their abstracts in pdf format on or
-before *** to the mail id ***.<br>
-                 4.The abstract should be in IEEE format and should not exceed a page.<br> 
-                 5.The abstracts will be scrutinized and the selected teams will be informed
-via mail.<br>
-                 6. No abstracts sent after the deadline will be considered.
-                <br> 
-                7.The participants will be given 10 minutes for presenting their ideas in
-Google Meet followed by 5 minutes of question-and-answer session.<br> 
-                8. Internet resources are allowed. However, direct plagiarism of ideas is
-strictly prohibited.<br>
-                9. Submission of projects will be an added credit.<br>            
-                        10. The judges’ decision is final and no correspondence will be entered into.<br>
-                        
-                <br><br>
-</div>
-</p>
+                                <p>
+                                <div class="bullet">
+                                    1. Each team can have a maximum of 3 members.<br>
+                                    2. All the participants are supposed to participate with their Srishti ID. Spot entries will not be allowed.<br>
+                                    3. Participants are supposed to mail their abstract in PDF format on or before October 22 to <a href="mailto:technovationsrishti2k22@gmail.com">"technovationsrishti2k22@gmail.com".</a><br>
+                                    4. The abstract should be in IEEE format and should not exceed a page.<br>
+                                    5. Internet resources are allowed. However, direct plagiarism of ideas is strictly prohibited.<br>
+                                    6. Abstracts sent after the deadline given will not be considered.<br>
+                                    7. The abstracts will be scrutinized and the selected teams will be informed via mail.<br>
+                                    8. All the Selected team should send their presentation document on or before October 22.<br>
+                                    9. The participants should be present in the informed venue before or on time.<br>
+                                    10. The participants will be given 15 minutes for presenting their ideas and solution followed by 5 minutes of the question-and-answer session.<br>
+                                    11. Submission of projects (implementation of the ideas) will be an added credit.<br>
+                                    12. The judges’ decision is final and no correspondence will be entered into.
+
+                                    <br><br>
+                                </div>
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -827,10 +821,11 @@ strictly prohibited.<br>
                         </div>
                         <div id="collapsenine" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingone">
                             <div class="panel-body">
-                                <p><h5>DATE</h5>
-                                <div>26 september 2021</div><br>
+                                <p>
+                                <h5>DATE</h5>
+                                <div>29 OCTOBER 2022</div><br>
                                 <h5>TIME</h5>
-                                <div>10.00AM - 1.00PM</div><br></p>
+                                <div>You will be informed seperately about your specific timing</div><br></p>
                             </div>
                         </div>
                     </div>
@@ -839,56 +834,62 @@ strictly prohibited.<br>
                     <div class="panel panel-default">
                         <div class="panel-heading" role="tab" id="headingfive">
                             <h4 class="panel-title">
-                            <a class="collapsed last" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseten" aria-expanded="false" aria-controls="collapseten">
-                                CONVENER DETAILS
-                                <span> </span>
-                            </a>
+                                <a class="collapsed last" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseten" aria-expanded="false" aria-controls="collapseten">
+                                    CONTACTS
+                                    <span> </span>
+                                </a>
                             </h4>
                         </div>
                         <div id="collapseten" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingfive">
                             <div class="panel-body">
-                                <p><h5> CONVENERS' NAME</h5>
                                 <ul>
-                                    <li><a  style="color: white;" href=" tel:+9199432 01635">ASWADH KHUMAR G S - 94871 55687</a></li>
-                                    <li><a  style="color: white;" href=" tel:+9175988 83011">NARESH KUMAR K K R - 97514 51368 </a></li>
+                                    <li><a style="color: white;" href=" tel:+9190800 45415 ">AJAY P - 90800 45415 </a></li>
+                                    <li><a style="color: white;" href=" tel:+9193455 44874 ">PRIYANKA G S - 93455 44874 </a></li>
+                                    <li><a style="color: white;" href=" tel:+9163699 53122">SANJANA RAGHAVAN - 63699 53122
+                                        </a></li>
                                 </ul><br>
-                                
-                               </p>
+
+                                </p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        <br>
-        <!--<button class="coming_soon">Coming soon</button>-->
-        <center><button  type="button" class="submitBtn" id="btn_2"><b>Register</b></button></center>
+            <h4 style="font-size: 20px; color: white;">There's a treasure waiting for the winners.</h4><br>
+            <!--<button class="coming_soon">Coming soon</button>-->
+            <center><button type="button" class="submitBtn" id="btn_2"><b>Register</b></button></center>
+        </div>
     </div>
-</div>
-<div id="id-modal-3" class="modal">
-    <div class="modal-content">
-        <span class="modal_close modal_close_3">&times;</span>
-            <h4>MEDTECH</h4>
+
+
+
+
+    <div id="id-modal-3" class="modal">
+        <div class="modal-content">
+            <span class="modal_close modal_close_3">&times;</span>
+            <h4>
+                INNOVALANZ</h4>
             <div class="description grid-lg-12 grid-md-12 grid-sm-12 grid-xs-12">
                 <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
                     <div class="panel panel-default">
                         <div class="panel-heading" role="tab" id="headingThree">
                             <h4 class="panel-title">
                                 <a class="collapsed last" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseeleven" aria-expanded="false" aria-controls="collapseThree">
-                                DESCRIPTION<span> </span></a>
+                                    DESCRIPTION<span> </span></a>
                             </h4>
                         </div>
                         <div id="collapseeleven" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingfour">
                             <div class="panel-body">
-                                <p><h5>MEDTECH</h5>
-<i class="fa fa" style="font-size:10px"></i>MEDTECH -can be defined as the application of science and technology to develop solutions to
-medical problems. The COVID-19 pandemic has amplified the need to accelerate healthcare
-technology solutions. In this event, we ask you to present your ideas that provide a solution to the
-existing problems. Here your options are endless! Be it AI in healthcare or a device that measures
-various parameters.<br>
+                                <p>
+                                <h5>
+                                    INNOVALANZ</h5>
+                                <i class="fa fa" style="font-size:10px"></i>Welcome to InnovalanZ, a paper presentation event that brings forth an occasion for you, the pathfinders, to come up with astonishing innovative ideas. The ideas are expected to make everyday life easier and more comfortable, thus helping us move towards a better future. The choice of the problem is in your hands! It may be anything - from a health assistant, traffic controller, or agricultural equipment and goes on to an uncountable number of things that you can find an idea for. Get out of the box, think and present us with your priceless ideas!
+                                <br><br>
+                                <h5>Fees:</h5>The teams whose abstract got selected must pay a fee of <b>Rs.200</b> excluding the general registration fee to present the paper.
 
 
                                 <br><br>
-                               
+
 
                                 </p>
                             </div>
@@ -900,19 +901,24 @@ various parameters.<br>
                         <div class="panel-heading" role="tab" id="headingTwo">
                             <h4 class="panel-title">
                                 <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwelve" aria-expanded="false" aria-controls="collapseTwo">
-                                GENERAL RULES<span> </span></a>
+                                    GENERAL RULES<span> </span></a>
                             </h4>
                         </div>
                         <div id="collapseTwelve" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
                             <div class="panel-body">
-                                 <p>1. Username should be a combination of last four digits of Kriya ID_participants name. Only the participants who follow this format will be allowed to enter into event. E.g: 0001_Abc<br> 2.The link for joining the event will be made
-                available on dashboard of the kriya website. It will also be sent to the registered mail id. Follow the same link to enter into the event.<br> 3. Login only using the mail id given at the time of registration and use the same for responses during the event. Students of PSG are required to use their official mail IDs.<br> 4. Late entries for events, workshops and guest lectures will not be permitted. Make sure to adhere to the given timings.<br> 5. ID card verification will be carried out prior to the event
-                start and the participant is required to wear their ID card throughout the event.<br> 6. Ensure good internet connectivity. Download speed should be 4 Mbps and upload speed should be 2 Mbps.
-                <br> 7. Camera and mic should be kept on at all times/ as per the requirements of the event. 
-<br> 8. Participants are required to sit in a well lit surrounding without any noise disturbances and participants using mobile phones should place the phone in a proper visible area. Failing to do so will be considered malpractice and result in the disqualification of the participant. <br> 9.Any discrepancy during the event should be immediately reported to the event convenor to take necessary actions. Any late response will not be taken into consideration.<br>                 
-   10. The judges’ decision is final for all the events and will not be subjected to further discussions. Indulging in any malpractices will lead to immediate disqualification.<br> 
-               
-                <br><br></p>
+                                <p>1.Every participant must have registered individually before reporting to the event. If a team has 2 or more members each member must have registered individually.<br>
+                                    2. All participants are required to follow appropriate dress code (Boys- Shirt/Pant, Girls-Kurthi/Chudidhar).<br>
+                                    3. All registered participants must collect their respective SRiSHTi ID Cards and campus map from the registration desk on the day of the events.<br>
+                                    4. ID card verification will be carried out before the event starts and the participant is required to have their ID card throughout the event.<br>
+                                    5. Late entries for events and workshops will not be permitted, the participants are also advised to report to the campus 30 mins prior to have a hassle-free experience.<br>
+                                    6. Important Guidelines and Information regarding the Symposium will be conveyed at the Inauguration Event (October 29th 8:00 am) of SRiSHTi 2k22, so participants must attend the same without fail.<br>
+                                    7. Any discrepancy during the event should be immediately reported to the event convenor and necessary actions would be taken. Any late response will not be taken into consideration.<br>
+                                    8. The judges’ decision is final for all the events and will not be subjected to further discussion. Indulging in any malpractices will lead to immediate disqualification.<br>
+                                    9. All the participants should pay the general registration fee to attend the events. Apart from this, events such as Paper Presentation, Flagship Events, Workshop will have additional fee.<br>
+                                    10. Any forms of Inappropriate Behaviour will be highly condemned and necessary actions will be taken.<br>
+                                    11. All events will conclude by 3:00 pm on October 30th and the prize winners will be announced immediately at the valedictory event (October 30th 4:00 pm) of SRiSHTi 2k22.
+                                    <br><br>
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -922,32 +928,31 @@ various parameters.<br>
                         <div class="panel-heading" role="tab" id="headingThree">
                             <h4 class="panel-title">
                                 <a class="collapsed last" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThirteen" aria-expanded="false" aria-controls="collapseThree">
-                                EVENT RULES<span> </span></a>
+                                    EVENT RULES<span> </span></a>
                             </h4>
                         </div>
                         <div id="collapseThirteen" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
                             <div class="panel-body">
-                               <p><div class="bullet">
-                                   1.Each team can have a maximum of three members<br>
-                                 2.All the participants are supposed to participate with their Srishti ID. Spot
-entries will not be allowed.<br>
-                 3.  Participants are supposed to send their abstracts in pdf format on or
-before *** to the mail id ***.<br>
-                 4.The abstract should be in IEEE format and should not exceed a page.<br> 
-                 5.The abstracts will be scrutinized and the selected teams will be informed
-via mail.<br>
-                 6. No abstracts sent after the deadline will be considered.
-                <br> 
-                7.The participants will be given 10 minutes for presenting their ideas in
-Google Meet followed by 5 minutes of question-and-answer session.<br> 
-                8. Internet resources are allowed. However, direct plagiarism of ideas is
-strictly prohibited.<br>
-                9. Submission of projects will be an added credit.<br>            
-                        10. The judges’ decision is final and no correspondence will be entered into.<br>
-                        
-                <br><br>
-</div>
-</p>
+                                <p>
+                                <div class="bullet">
+                                    1. Each team can have a maximum of 3 members and minimum of 1.<br>
+                                    2. All the participants are supposed to participate with their Srishti ID. Spot entries will not be allowed.<br>
+                                    3. Participants are supposed to mail their abstract in PDF format on or before October 22 to <a href="mailto:innovalanz2k22@gmail.com">"innovalanz2k22@gmail.com".</a><br>
+                                    4. The abstract (problem statement and the idea) should be in IEEE format and should not exceed a page.<br>
+                                    5.The abstracts will be scrutinized and the selected teams will be informed
+                                    via mail.<br>
+                                    6. Abstracts sent after the deadline given will not be considered. All the selected teams should send their presentation document on or before October 22.
+                                    <br>
+                                    7. The participants should be present in the informed venue on time.<br>
+                                    8. The participants will be given 15 minutes for presenting their ideas and solution followed by 5 minutes of question-and-answer session.<br>
+                                    9. Internet resources are allowed. However, direct plagiarism of ideas is strictly prohibited.<br>
+                                    10. Submission of projects (implementation of the ideas) will be an added credit.<br>
+
+                                    11. The judges’ decision is final and no correspondence will be entered into.
+
+                                    <br><br>
+                                </div>
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -964,10 +969,11 @@ strictly prohibited.<br>
                         </div>
                         <div id="collapsefourteen" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingone">
                             <div class="panel-body">
-                                <p><h5>DATE</h5>
-                                <div>26 september 2021</div><br>
+                                <p>
+                                <h5>DATE</h5>
+                                <div>29 OCTOBER 2022</div><br>
                                 <h5>TIME</h5>
-                                <div>10.00AM - 1.00PM</div><br></p>
+                                <div>You will be informed seperately about your specific timing</div><br></p>
                             </div>
                         </div>
                     </div>
@@ -976,59 +982,59 @@ strictly prohibited.<br>
                     <div class="panel panel-default">
                         <div class="panel-heading" role="tab" id="headingfive">
                             <h4 class="panel-title">
-                            <a class="collapsed last" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapsefifteen" aria-expanded="false" aria-controls="collapsefive">
-                                CONVENER DETAILS
-                                <span> </span>
-                            </a>
+                                <a class="collapsed last" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapsefifteen" aria-expanded="false" aria-controls="collapsefive">
+                                    CONTACTS
+                                    <span> </span>
+                                </a>
                             </h4>
                         </div>
                         <div id="collapsefifteen" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingfive">
                             <div class="panel-body">
-                                <p><h5>CONVENERS' NAME</h5>
                                 <ul>
-                                    <li><a  style="color: white;" href=" tel:+9193610 81817">Annie Iniya J - 89037 72674 </a></li>
-                                    <li><a  style="color: white;" href=" tel:+9196775 98095">Celshiya Udaiyar - 73588 69299</a></li>
-                                      <li><a  style="color: white;" href=" tel:+9196775 98095">Brindha. M -63792 60837</a></li>
+                                    <li><a style="color: white;" href=" tel:+9197515 86191 ">ANUBHARATHI V S - 97515 86191
+                                        </a></li>
+                                    <li><a style="color: white;" href=" tel:+9186101 34467">MUGESH KUMAR N - 86101 34467 </a></li>
+                                    <li><a style="color: white;" href=" tel:+9193614 46010">MOHAMED ASLAM - 93614 46010
+                                        </a></li>
                                 </ul><br>
-                               </p>
+                                </p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-     <br>
-        <!--<button class="coming_soon">Coming soon</button>-->
-        <center><button  type="button" class="submitBtn" id="btn_3"><b>Register</b></button></center>
+            <h4 style="font-size: 20px; color: white;">There's a treasure waiting for the winners.</h4><br>
+            <!--<button class="coming_soon">Coming soon</button>-->
+            <center><button type="button" class="submitBtn" id="btn_3"><b>Register</b></button></center>
+        </div>
     </div>
-</div>
-<div id="id-modal-4" class="modal">
-    <div class="modal-content">
-        <span class="modal_close modal_close_4">&times;</span>
-            <h4>Eco-lumous</h4>
+
+
+
+
+    <div id="id-modal-4" class="modal">
+        <div class="modal-content">
+            <span class="modal_close modal_close_4">&times;</span>
+            <h4>TECH-O-STER</h4>
             <div class="description grid-lg-12 grid-md-12 grid-sm-12 grid-xs-12">
                 <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
                     <div class="panel panel-default">
                         <div class="panel-heading" role="tab" id="headingThree">
                             <h4 class="panel-title">
                                 <a class="collapsed last" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapsesixteen" aria-expanded="false" aria-controls="collapseThree">
-                                DESCRIPTION<span> </span></a>
+                                    DESCRIPTION<span> </span></a>
                             </h4>
                         </div>
                         <div id="collapsesixteen" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingfour">
                             <div class="panel-body">
-                               <p><h5>Eco-lumous</h5>
-<i class="fa fa" style="font-size:10px"></i>Eco-luomus is a paper presentation event which bestows a platform for all
-the trailblazers to pop up with fruitful ideas. Your innovative ideas will add yet
-another block in contriving better environment. We need you to find a clever
-solution for environmental problems around us such as pollution and their
-effect on health, hydric stress and water scarcity, waste management,
-climate change mitigation and adaptation and uncountable number of
-things that pose a problem to our environment. Think out of the box, lay the
-groundwork and shoot some insightful abstractions upon us!!!.<br>
+                                <p>
+                                <h5>TECH-O-STER</h5>
+                                <i class="fa fa" style="font-size:10px"></i>Have you wanted to present your ideas but were stuck by words? It it easier to show it using visual aids? Then fear not, for Tech-O-Ster is not your usual paper presentation but a Poster presentation, where participants can freely present their innovative ideas in an A3 poster by combining text and graphics. So, charts, graphs, mindmaps, and anything else can be used to show your research in emerging technologies in fields such as Artificial Organs, Smart Automation, Cloud Computing, Drug Delivery Systems, etc. For all the brilliant minds out there, we look forward to seeing your passion!<br><br>
+                                <h5>Fees:</h5>The teams whose abstract got selected must pay a fee of <b>Rs.200</b> excluding the general registration fee to present the paper.
 
 
                                 <br><br>
-                               
+
 
                                 </p>
                             </div>
@@ -1040,19 +1046,24 @@ groundwork and shoot some insightful abstractions upon us!!!.<br>
                         <div class="panel-heading" role="tab" id="headingTwo">
                             <h4 class="panel-title">
                                 <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseseventeen" aria-expanded="false" aria-controls="collapseTwo">
-                                GENERAL RULES<span> </span></a>
+                                    GENERAL RULES<span> </span></a>
                             </h4>
                         </div>
                         <div id="collapseseventeen" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
                             <div class="panel-body">
-                                <p>1. Username should be a combination of last four digits of Kriya ID_participants name. Only the participants who follow this format will be allowed to enter into event. E.g: 0001_Abc<br> 2.The link for joining the event will be made
-                available on dashboard of the kriya website. It will also be sent to the registered mail id. Follow the same link to enter into the event.<br> 3. Login only using the mail id given at the time of registration and use the same for responses during the event. Students of PSG are required to use their official mail IDs.<br> 4. Late entries for events, workshops and guest lectures will not be permitted. Make sure to adhere to the given timings.<br> 5. ID card verification will be carried out prior to the event
-                start and the participant is required to wear their ID card throughout the event.<br> 6. Ensure good internet connectivity. Download speed should be 4 Mbps and upload speed should be 2 Mbps.
-                <br> 7. Camera and mic should be kept on at all times/ as per the requirements of the event. 
-<br> 8. Participants are required to sit in a well lit surrounding without any noise disturbances and participants using mobile phones should place the phone in a proper visible area. Failing to do so will be considered malpractice and result in the disqualification of the participant. <br> 9.Any discrepancy during the event should be immediately reported to the event convenor to take necessary actions. Any late response will not be taken into consideration.<br>                 
-   10. The judges’ decision is final for all the events and will not be subjected to further discussions. Indulging in any malpractices will lead to immediate disqualification.<br> 
-               
-                <br><br></p>
+                                <p>1.Every participant must have registered individually before reporting to the event. If a team has 2 or more members each member must have registered individually.<br>
+                                    2. All participants are required to follow appropriate dress code (Boys- Shirt/Pant, Girls-Kurthi/Chudidhar).<br>
+                                    3. All registered participants must collect their respective SRiSHTi ID Cards and campus map from the registration desk on the day of the events.<br>
+                                    4. ID card verification will be carried out before the event starts and the participant is required to have their ID card throughout the event.<br>
+                                    5. Late entries for events and workshops will not be permitted, the participants are also advised to report to the campus 30 mins prior to have a hassle-free experience.<br>
+                                    6. Important Guidelines and Information regarding the Symposium will be conveyed at the Inauguration Event (October 29th 8:00 am) of SRiSHTi 2k22, so participants must attend the same without fail.<br>
+                                    7. Any discrepancy during the event should be immediately reported to the event convenor and necessary actions would be taken. Any late response will not be taken into consideration.<br>
+                                    8. The judges’ decision is final for all the events and will not be subjected to further discussion. Indulging in any malpractices will lead to immediate disqualification.<br>
+                                    9. All the participants should pay the general registration fee to attend the events. Apart from this, events such as Paper Presentation, Flagship Events, Workshop will have additional fee.<br>
+                                    10. Any forms of Inappropriate Behaviour will be highly condemned and necessary actions will be taken.<br>
+                                    11. All events will conclude by 3:00 pm on October 30th and the prize winners will be announced immediately at the valedictory event (October 30th 4:00 pm) of SRiSHTi 2k22.
+                                    <br><br>
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -1062,32 +1073,27 @@ groundwork and shoot some insightful abstractions upon us!!!.<br>
                         <div class="panel-heading" role="tab" id="headingThree">
                             <h4 class="panel-title">
                                 <a class="collapsed last" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseeighteen" aria-expanded="false" aria-controls="collapseThree">
-                                EVENT RULES<span> </span></a>
+                                    EVENT RULES<span> </span></a>
                             </h4>
                         </div>
                         <div id="collapseeighteen" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
                             <div class="panel-body">
-                                 <p><div class="bullet">
-                                   1.Each team can have a maximum of three members<br>
-                                 2.All the participants are supposed to participate with their Srishti ID. Spot
-entries will not be allowed.<br>
-                 3.  Participants are supposed to send their abstracts in pdf format on or
-before *** to the mail id ***.<br>
-                 4.The abstract should be in IEEE format and should not exceed a page.<br> 
-                 5.The abstracts will be scrutinized and the selected teams will be informed
-via mail.<br>
-                 6. No abstracts sent after the deadline will be considered.
-                <br> 
-                7.The participants will be given 10 minutes for presenting their ideas in
-Google Meet followed by 5 minutes of question-and-answer session.<br> 
-                8. Internet resources are allowed. However, direct plagiarism of ideas is
-strictly prohibited.<br>
-                9. Submission of projects will be an added credit.<br>            
-                        10. The judges’ decision is final and no correspondence will be entered into.<br>
-                        
-                <br><br>
-</div>
-</p>
+                                <p>
+                                <div class="bullet">
+                                    1.Each team can have a maximum of two members<br>
+                                    2.All the participants are supposed to participate with their Srishti ID. Spot
+                                    entries will not be allowed.<br>
+                                    3. Participants are supposed to mail their poster in any of the formats mentioned (JPEG/JPG/PNG/PDF) on or before October 22 to <a href="mailto:techoster2k22@gmail.com">"techoster2k22@gmail.com".</a><br>
+                                    4. Internet resources are allowed. However, direct plagiarism of ideas is strictly prohibited.<br>
+                                    5. Posters sent after the deadline given will not be considered.<br>
+                                    6. The poster will be scrutinized and the selected teams will be informed via mail.
+                                    <br>
+                                    7. The participants should be present in the informed venue before or on time<br>
+                                    8. The participants will be given 10 minutes for presenting their ideas and solution followed by 5 minutes of question-and-answer session.<br>
+                                    9. The judges’ decision is final and no correspondence will be entered into.
+                                    <br><br>
+                                </div>
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -1104,10 +1110,11 @@ strictly prohibited.<br>
                         </div>
                         <div id="collapsenineteen" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingone">
                             <div class="panel-body">
-                                <p><h5>DATE</h5>
-                                <div>26 September 2021</div><br>
+                                <p>
+                                <h5>DATE</h5>
+                                <div>29 OCTOBER 2022</div><br>
                                 <h5>TIME</h5>
-                                <div>10.00AM - 1.00PM</div><br></p>
+                                <div>You will be informed seperately about your specific timing</div><br></p>
                             </div>
                         </div>
                     </div>
@@ -1116,55 +1123,59 @@ strictly prohibited.<br>
                     <div class="panel panel-default">
                         <div class="panel-heading" role="tab" id="headingfive">
                             <h4 class="panel-title">
-                            <a class="collapsed last" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapsetwenty" aria-expanded="false" aria-controls="collapsefive">
-                                CONVENER DETAILS
-                                <span> </span>
-                            </a>
+                                <a class="collapsed last" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapsetwenty" aria-expanded="false" aria-controls="collapsefive">
+                                    CONTACTS
+                                    <span> </span>
+                                </a>
                             </h4>
                         </div>
                         <div id="collapsetwenty" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingfive">
                             <div class="panel-body">
-                                <p><h5> CONVENERS' NAME</h5>
                                 <ul>
-                                    <li><a  style="color: white;" href=" tel:+9193612 42014">PRIYADHARSHINI.V - 90801 89413</a></li>
-                                    <li><a  style="color: white;" href=" tel:+9178680 73456">AJAY SHEKAR.D- 73587 33985</a></li>
+                                    <li><a style="color: white;" href=" tel:+9194866 40540 ">MANOBALAN- 94866 40540 </a></li>
+                                    <li><a style="color: white;" href=" tel:+9196500 65255">DEEKSHA RAJESH - 96500 65255 </a></li>
+                                    <li><a style="color: white;" href=" tel:+9196988 70005">YUVANDASS R - 96988 70005 </a></li>
                                 </ul><br>
-                               </p>
+                                </p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-      <br>
-        <!--<button class="coming_soon">Coming soon</button>-->
-        <center><button  type="button" class="submitBtn" id="btn_4"><b>Register</b></button></center>
+            <h4 style="font-size: 20px; color: white;">There's a treasure waiting for the winners.</h4><br>
+            <!--<button class="coming_soon">Coming soon</button>-->
+            <center><button type="button" class="submitBtn" id="btn_4"><b>Register</b></button></center>
+        </div>
     </div>
-</div>
-<div id="id-modal-5" class="modal">
-    <div class="modal-content">
-        <span class="modal_close modal_close_5">&times;</span>
-            <h4>X-PECTRUM</h4>
+
+
+
+
+    <div id="id-modal-5" class="modal">
+        <div class="modal-content">
+            <span class="modal_close modal_close_5">&times;</span>
+            <h4>ARIVARANGAM (அறிவரங்கம்)</h4>
             <div class="description grid-lg-12 grid-md-12 grid-sm-12 grid-xs-12">
                 <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
                     <div class="panel panel-default">
                         <div class="panel-heading" role="tab" id="headingThree">
                             <h4 class="panel-title">
                                 <a class="collapsed last" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse21" aria-expanded="false" aria-controls="collapseThree">
-                                DESCRIPTION<span> </span></a>
+                                    DESCRIPTION<span> </span></a>
                             </h4>
                         </div>
                         <div id="collapse21" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingfour">
                             <div class="panel-body">
-                              <p><h5>X-PECTRUM</h5>
-<i class="fa fa" style="font-size:10px"></i>‘X-pectrum’ is a paper presentation event that provides you an opportunity to ignite the
-curiosity of analyzing the evolution from letter to Twitter and squeezing the minds to
-advance better. Ranging from mm to millions of miles, the communication takes place
-that cannot be seen or heard, but occurs in a way we can innovate. Pour your thoughts
-and together let's create a technology which gets better day by day.<br>
+                                <p>
+                                <h5>ARIVARANGAM (அறிவரங்கம்)</h5>
+                                <i class="fa fa" style="font-size:10px"></i>"அறிவு அழிவு வராமல் காக்கும் கருவியாகும்"
+                                ARIVARANGAM (அறிவரங்கம்) is a Tamil Paper Presentation event that bestows a platform for embedded engineers to present their fruitful ideas in the field of Future in Electronic Chips and Integration. The topics may range from Artificial intelligence, Wireless technology, Biomedical instrumentation, Cloud computing, Embedded Systems, Nano-Electronic Systems, Sensor-based systems, and other similar topics in the domain. So, go find some ingenious ideas, lay the groundwork, and shoot some insightful abstracts upon us!
+                                "<br><br>
+                                <h5>Fees:</h5>The teams whose abstract got selected must pay a fee of <b>Rs.200</b> excluding the general registration fee to present the paper.
 
 
                                 <br><br>
-                               
+
 
                                 </p>
                             </div>
@@ -1176,19 +1187,24 @@ and together let's create a technology which gets better day by day.<br>
                         <div class="panel-heading" role="tab" id="headingTwo">
                             <h4 class="panel-title">
                                 <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse22" aria-expanded="false" aria-controls="collapseTwo">
-                                GENERAL RULES<span> </span></a>
+                                    GENERAL RULES<span> </span></a>
                             </h4>
                         </div>
                         <div id="collapse22" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
                             <div class="panel-body">
-                                 <p>1. Username should be a combination of last four digits of Kriya ID_participants name. Only the participants who follow this format will be allowed to enter into event. E.g: 0001_Abc<br> 2.The link for joining the event will be made
-                available on dashboard of the kriya website. It will also be sent to the registered mail id. Follow the same link to enter into the event.<br> 3. Login only using the mail id given at the time of registration and use the same for responses during the event. Students of PSG are required to use their official mail IDs.<br> 4. Late entries for events, workshops and guest lectures will not be permitted. Make sure to adhere to the given timings.<br> 5. ID card verification will be carried out prior to the event
-                start and the participant is required to wear their ID card throughout the event.<br> 6. Ensure good internet connectivity. Download speed should be 4 Mbps and upload speed should be 2 Mbps.
-                <br> 7. Camera and mic should be kept on at all times/ as per the requirements of the event. 
-<br> 8. Participants are required to sit in a well lit surrounding without any noise disturbances and participants using mobile phones should place the phone in a proper visible area. Failing to do so will be considered malpractice and result in the disqualification of the participant. <br> 9.Any discrepancy during the event should be immediately reported to the event convenor to take necessary actions. Any late response will not be taken into consideration.<br>                 
-   10. The judges’ decision is final for all the events and will not be subjected to further discussions. Indulging in any malpractices will lead to immediate disqualification.<br> 
-               
-                <br><br></p>
+                                <p>1.Every participant must have registered individually before reporting to the event. If a team has 2 or more members each member must have registered individually.<br>
+                                    2. All participants are required to follow appropriate dress code (Boys- Shirt/Pant, Girls-Kurthi/Chudidhar).<br>
+                                    3. All registered participants must collect their respective SRiSHTi ID Cards and campus map from the registration desk on the day of the events.<br>
+                                    4. ID card verification will be carried out before the event starts and the participant is required to have their ID card throughout the event.<br>
+                                    5. Late entries for events and workshops will not be permitted, the participants are also advised to report to the campus 30 mins prior to have a hassle-free experience.<br>
+                                    6. Important Guidelines and Information regarding the Symposium will be conveyed at the Inauguration Event (October 29th 8:00 am) of SRiSHTi 2k22, so participants must attend the same without fail.<br>
+                                    7. Any discrepancy during the event should be immediately reported to the event convenor and necessary actions would be taken. Any late response will not be taken into consideration.<br>
+                                    8. The judges’ decision is final for all the events and will not be subjected to further discussion. Indulging in any malpractices will lead to immediate disqualification.<br>
+                                    9. All the participants should pay the general registration fee to attend the events. Apart from this, events such as Paper Presentation, Flagship Events, Workshop will have additional fee.<br>
+                                    10. Any forms of Inappropriate Behaviour will be highly condemned and necessary actions will be taken.<br>
+                                    11. All events will conclude by 3:00 pm on October 30th and the prize winners will be announced immediately at the valedictory event (October 30th 4:00 pm) of SRiSHTi 2k22.
+                                    <br><br>
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -1198,33 +1214,32 @@ and together let's create a technology which gets better day by day.<br>
                         <div class="panel-heading" role="tab" id="headingThree">
                             <h4 class="panel-title">
                                 <a class="collapsed last" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse23" aria-expanded="false" aria-controls="collapseThree">
-                                EVENT RULES<span> </span></a>
+                                    EVENT RULES<span> </span></a>
                             </h4>
                         </div>
                         <div id="collapse23" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
                             <div class="panel-body">
-                               <p><div class="bullet">
-                                   1.Each team can have a maximum of three members<br>
-                                 2.All the participants are supposed to participate with their Srishti ID. Spot
-entries will not be allowed.<br>
-                 3.  Participants are supposed to send their abstracts in pdf format on or
-before *** to the mail id ***.<br>
-                 4.The abstract should be in IEEE format and should not exceed a page.<br> 
-                 5.The abstracts will be scrutinized and the selected teams will be informed
-via mail.<br>
-                 6. No abstracts sent after the deadline will be considered.
-                <br> 
-                7.The participants will be given 10 minutes for presenting their ideas in
-Google Meet followed by 5 minutes of question-and-answer session.<br> 
-                8. Internet resources are allowed. However, direct plagiarism of ideas is
-strictly prohibited.<br>
-                9. Submission of projects will be an added credit.<br>            
-                        10. The judges’ decision is final and no correspondence will be entered into.<br>
-                        
-                <br><br>
-</div>
-</p>
-                       
+                                <p>
+                                <div class="bullet">
+                                    1. Each team can have a maximum of three members.<br>
+                                    2.All the participants are supposed to participate with their Srishti ID. Spot
+                                    entries will not be allowed.<br>
+                                    3. Participants are supposed to send their abstracts in pdf format on or
+                                    before 22 October to the mail id <a href="mailto:arivarangam2k22srishti@gmail.com">"arivarangam2k22srishti@gmail.com"</a>.<br>
+                                    4. Internet resources are allowed. However, direct plagiarism of ideas is strictly prohibited.<br>
+                                    5. The entire content should be in Tamil and abstract should not exceed 250 words .<br>
+                                    6. The abstracts will be scrutinized and the selected teams will be informed via mail.
+                                    <br>
+                                    7. No abstracts sent after the deadline will be considered.<br>
+                                    8. The participants will be given 20 minutes for presenting their ideas followed by 5 minutes of question-and-answer session.<br>
+                                    9. The participants will be allotted with specific timings and they must attend it without any delay.<br>
+                                    10. Submission of projects will be an added credit.</br>
+                                    11. The presentation and explanation should be done only in Tamil language</br>
+                                    12. The judges’ decision is final and no correspondence will be entered into.
+                                    <br><br>
+                                </div>
+                                </p>
+
                             </div>
                         </div>
                     </div>
@@ -1241,10 +1256,11 @@ strictly prohibited.<br>
                         </div>
                         <div id="collapse24" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingone">
                             <div class="panel-body">
-                                <p><h5>DATE</h5>
-                                <div>25 September 2021</div><br>
+                                <p>
+                                <h5>DATE</h5>
+                                <div>29 OCTOBER 2022</div><br>
                                 <h5>TIME</h5>
-                                <div>10.00AM - 1.00PM</div><br></p>
+                                <div>You will be informed seperately about your specific timing</div><br></p>
                             </div>
                         </div>
                     </div>
@@ -1253,57 +1269,59 @@ strictly prohibited.<br>
                     <div class="panel panel-default">
                         <div class="panel-heading" role="tab" id="headingfive">
                             <h4 class="panel-title">
-                            <a class="collapsed last" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse25" aria-expanded="false" aria-controls="collapse25">
-                                  CONVENER DETAILS
-                                <span> </span>
-                            </a>
+                                <a class="collapsed last" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse25" aria-expanded="false" aria-controls="collapse25">
+                                    CONTACTS
+                                    <span> </span>
+                                </a>
                             </h4>
                         </div>
                         <div id="collapse25" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingfive">
                             <div class="panel-body">
-                                <p><h5> CONVENERS' NAME</h5>
                                 <ul>
-                                    <li><a  style="color: white;" href=" tel:+9170102 52221">SANGAVI M - 96592 56689 </a></li>
-                                    <li><a  style="color: white;" href=" tel:+9193601 86511">THEVIGA VARSINI K - 93853 19725</a></li>
+                                    <li><a style="color: white;" href=" tel:+9197506 43025">KANI BRAMA GIRI S - 97506 43025 </a></li>
+                                    <li><a style="color: white;" href=" tel:+91 97902 34539">PRAKALYA SK - 97902 34539 </a></li>
+                                    <li><a style="color: white;" href=" tel:+9172992 89040 ">KRISHNAN S - 72992 89040 </a></li>
+
                                 </ul><br>
-                              
+
                                 </p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        <h4 style="font-size: 20px; color: white;">There's a treasure waiting for the winners.</h4><br>
-        <!--<button class="coming_soon">Coming soon</button>-->
-        <center><button  type="button" class="submitBtn" id="btn_5"><b>Register</b></button></center>
+            <h4 style="font-size: 20px; color: white;">There's a treasure waiting for the winners.</h4><br>
+            <!--<button class="coming_soon">Coming soon</button>-->
+            <center><button type="button" class="submitBtn" id="btn_5"><b>Register</b></button></center>
+        </div>
     </div>
-</div>
 
-<div id="id-modal-6" class="modal">
-    <div class="modal-content">
-        <span class="modal_close modal_close_6">&times;</span>
-            <h4> CODER'S CRUSADE</h4>
+
+    <!--WORKSHOP-->
+
+    <div id="id-modal-6" class="modal">
+        <div class="modal-content">
+            <span class="modal_close modal_close_6">&times;</span>
+            <h4>DRONE BUILDING</h4>
             <div class="description grid-lg-12 grid-md-12 grid-sm-12 grid-xs-12">
                 <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
                     <div class="panel panel-default">
                         <div class="panel-heading" role="tab" id="headingThree">
                             <h4 class="panel-title">
-                                <a class="collapsed last" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse26" aria-expanded="false" aria-controls="collapseThree">
-                                DESCRIPTION<span> </span></a>
+                                <a class="collapsed last" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapsesixteen" aria-expanded="false" aria-controls="collapseThree">
+                                    DESCRIPTION<span> </span></a>
                             </h4>
                         </div>
-                        <div id="collapse26" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingfour">
+                        <div id="collapsesixteen" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingfour">
                             <div class="panel-body">
                                 <p>
-                                    "Debugging is twice as hard as writing the code in the first place.
-Therefore, if you write the code as cleverly as possible, you are, by definition, not
-smart enough to debug it."<br>
-
-Are you enamoured with your programming skills? Come show off your fanaticism
-and prove your enthusiasm for programming at Srishti Coder's Crusade, the
-greatest and most anticipated event.<br>
+                                <h5>DRONE BUILDING</h5>
+                                <i class="fa fa" style="font-size:10px"></i>The workshop focuses on the live construction of the drone with its theory in parallel. A racing drone is built, which is relatively less complex compared to the other industrial standard drones,. This is specifically chosen for beginners who have a budding interest in drone theory. The workshop will consist of assembling a drone and study of its internal parts, and the theory behind it, with live demonstrations. The participants can learn various aspects of drone building like Basics of Drone theory, Building of a Drone, Mechanics of a drone, Physics behind the working of a drone, and Electronics of Drones.
+                                <br><br>
+                                <h5>Fees:</h5>Each participant must pay a workshop fee of <b>Rs.800</b> exclusive of the general fee to register for the workshop.
 
 
+                                <br><br>
 
 
                                 </p>
@@ -1315,20 +1333,25 @@ greatest and most anticipated event.<br>
                     <div class="panel panel-default">
                         <div class="panel-heading" role="tab" id="headingTwo">
                             <h4 class="panel-title">
-                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse27" aria-expanded="false" aria-controls="collapseTwo">
-                                GENERAL RULES<span> </span></a>
+                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseseventeen" aria-expanded="false" aria-controls="collapseTwo">
+                                    GENERAL RULES<span> </span></a>
                             </h4>
                         </div>
-                        <div id="collapse27" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                        <div id="collapseseventeen" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
                             <div class="panel-body">
-                                <p>1. Username should be a combination of last four digits of Kriya ID_participants name. Only the participants who follow this format will be allowed to enter into event. E.g: 0001_Abc<br> 2.The link for joining the event will be made
-                available on dashboard of the kriya website. It will also be sent to the registered mail id. Follow the same link to enter into the event.<br> 3. Login should be done using the mail id given at the time of registration. Login using
-                a different mail id will be rejected.<br> 4. Late entries for events, workshops and guest lectures will not be permitted. Make sure to adhere to the given timings.<br> 5. ID card verification will be carried out prior to the event
-                start and the participant is required to wear their ID card throughout the event.<br> 6. Ensure good internet connectivity. Download speed should be 4 Mbps and upload speed should be 2 Mbps.
-                <br> 7. Network issues on a recurring basis will not be accepted.<br> 8. Camera and mic should be kept on till the end of the event.<br> 9. Participant is required to sit in a well lit surrounding without any noise disturbances.<br>                    10. Participants using mobile phones should place the phone in a proper visible area.<br> 11. A maximum of three warnings will be given. In case of exceeding this will be considered as malpractice and results in the disqualification
-                of the participant.<br> 12. Any discrepancy during the event should be immediately reported to the event convenor to take necessary actions. Any late response will not be taken into consideration.<br> 13.Judges decision is final for
-                all the events and may not be subject to any discussions.
-                <br><br></p>
+                                <p>1.Every participant must have registered individually before reporting to the event. If a team has 2 or more members each member must have registered individually.<br>
+                                    2. All participants are required to follow appropriate dress code (Boys- Shirt/Pant, Girls-Kurthi/Chudidhar).<br>
+                                    3. All registered participants must collect their respective SRiSHTi ID Cards and campus map from the registration desk on the day of the events.<br>
+                                    4. ID card verification will be carried out before the event starts and the participant is required to have their ID card throughout the event.<br>
+                                    5. Late entries for events and workshops will not be permitted, the participants are also advised to report to the campus 30 mins prior to have a hassle-free experience.<br>
+                                    6. Important Guidelines and Information regarding the Symposium will be conveyed at the Inauguration Event (October 29th 8:00 am) of SRiSHTi 2k22, so participants must attend the same without fail.<br>
+                                    7. Any discrepancy during the event should be immediately reported to the event convenor and necessary actions would be taken. Any late response will not be taken into consideration.<br>
+                                    8. The judges’ decision is final for all the events and will not be subjected to further discussion. Indulging in any malpractices will lead to immediate disqualification.<br>
+                                    9. All the participants should pay the general registration fee to attend the events. Apart from this, events such as Paper Presentation, Flagship Events, Workshop will have additional fee.<br>
+                                    10. Any forms of Inappropriate Behaviour will be highly condemned and necessary actions will be taken.<br>
+                                    11. All events will conclude by 3:00 pm on October 30th and the prize winners will be announced immediately at the valedictory event (October 30th 4:00 pm) of SRiSHTi 2k22.
+                                    <br><br>
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -1337,52 +1360,17 @@ greatest and most anticipated event.<br>
                     <div class="panel panel-default">
                         <div class="panel-heading" role="tab" id="headingThree">
                             <h4 class="panel-title">
-                                <a class="collapsed last" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse28" aria-expanded="false" aria-controls="collapseThree">
-                                EVENT RULES<span> </span></a>
+                                <a class="collapsed last" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseeighteen" aria-expanded="false" aria-controls="collapseThree">
+                                    PRE-REQUISITE<span> </span></a>
                             </h4>
                         </div>
-                        <div id="collapse28" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                        <div id="collapseeighteen" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
                             <div class="panel-body">
-                                <p><div class="bullet">
-                               <h5> Round one: ZIPPED BUGS</h5>
-Initially, a GitHub link containing encrypted nested zip files and a form link
-will be shared. After the detailed instructions in the MS Teams meeting, the
-secret word for the first zip file will be revealed.<br><br>
-
-Each zip file consists of<br>
-<i class="fa fa-circle" style="font-size:10px"></i> Code with an error,<br>
-<i class="fa fa-circle" style="font-size:10px"></i> The next zip file,<br>
-<i class="fa fa-circle" style="font-size:10px"></i> The hint text report about the password of the next zip file.<br><br>
-
-On rectifying the errors in the code, participants will see the yield of the
-code will be the secret key for the next zip file and so on. The output of
-each code should be filled in the form and Top 6 members will be
-shortlisted and considered for the second round.<br><br>
-
-<h5>Round Two: RANK-YOUR-CODE</h5>
-The shortlisted participants of round one are supposed to create an account
-in Hacker Rank and a contest will be created and shared. The challenge comprises
-5 inquiries of various trouble levels and the participants are divided into two
-groups and monitored separately. Based on the leaderboard score, winners will be
-declared.<br><br>
-
+                                <p>
+                                <div class="bullet">
+                                    Only your enthusiastic participation and undivided attention. Let's start from scratch!
 
                                 </div>
-                                <h5>ROUND ONE:  </h5>                                        
-
- <h3 style="color: #66fcf1;">PLATFORM USED</h3>
-Meeting Platform: Microsoft Teams<br>
-Platform For Conducting Events: Local system or computer & Jot-form/G-form <br>
-
-<h3 style="color: #66fcf1">DURATION</h3>
-1 Hour<br><br>
-<h5>ROUND TWO:  </h5>                                        
-
- <h3 style="color: #66fcf1;">PLATFORM USED</h3>
-Meeting Platform: Microsoft Teams / Google Meet<br>
-Platform For Conducting Events: Hacker Rank<br>
-<h3 style="color: #66fcf1">DURATION</h3>
-1 Hour<br><br>
                                 </p>
                             </div>
                         </div>
@@ -1392,18 +1380,19 @@ Platform For Conducting Events: Hacker Rank<br>
                     <div class="panel panel-default">
                         <div class="panel-heading" role="tab" id="headingone">
                             <h4 class="panel-title">
-                                <a class="collapsed last" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse29" aria-expanded="false" aria-controls="collapseone">
+                                <a class="collapsed last" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapsenineteen" aria-expanded="false" aria-controls="collapseone">
                                     DATE AND TIME
                                     <span> </span>
                                 </a>
                             </h4>
                         </div>
-                        <div id="collapse29" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingone">
+                        <div id="collapsenineteen" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingone">
                             <div class="panel-body">
-                                <p><h5>DATE</h5>
-                                <div>25 September 2021</div><br>
+                                <p>
+                                <h5>DATE</h5>
+                                <div>29 and 30 October 2022</div><br>
                                 <h5>TIME</h5>
-                                <div>10.00AM - 1.00PM</div><br></p>
+                                <div>11.00AM - 4:00PM</div><br></p>
                             </div>
                         </div>
                     </div>
@@ -1412,71 +1401,61 @@ Platform For Conducting Events: Hacker Rank<br>
                     <div class="panel panel-default">
                         <div class="panel-heading" role="tab" id="headingfive">
                             <h4 class="panel-title">
-                            <a class="collapsed last" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse30" aria-expanded="false" aria-controls="collapse30">
-                                CONVENER AND VOLUNTEER NAMES
-                                <span> </span>
-                            </a>
+                                <a class="collapsed last" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapsetwenty" aria-expanded="false" aria-controls="collapsefive">
+                                    CONTACTS
+                                    <span> </span>
+                                </a>
                             </h4>
                         </div>
-                        <div id="collapse30" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingfive">
+                        <div id="collapsetwenty" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingfive">
                             <div class="panel-body">
-                                <p><h5> CONVENER NAME</h5>
                                 <ul>
-                                    <li><a  style="color: white;" href=" tel:+9199408 59635">Tharun G - 99408 59635 </a></li>
-                                    <li><a  style="color: white;" href=" tel:+9186755 77199">Dinesh B - 86755 77199</a></li>
+                                    <li><a style="color: white;" href=" tel:+9187784 37301">PRIYADARSHINI.P.S - 87784 37301 </a></li>
+                                    <li><a style="color: white;" href=" tel:+9196004 29401">RAKSHA - 96004 29401 </a></li>
+                                    <li><a style="color: white;" href=" tel:+9199947 44553">ARIKARAN R - 99947 44553 </a></li>
                                 </ul><br>
-                                <h5>VOLUNTEER NAME</h5>
-                                <ul>
-                                    <li><a  style="color:white;" href=" tel:+916383438324">Chandran V V - 63834 38324 </a></li>
-                                    <li><a  style="color:white;" href=" tel:+918220036212">Roshith Babu - 82200 36212 </a></li>
-                                </ul></p>
+                                <h5>RESOURCE PERSONS</h5>
+                                <h4 style="color: #d1d7e0; font-size:18px; text-align:left!important;">Team from Skyx AeroSpace</h4>
+
+                                </p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        <h4 style="font-size: 20px; color: white;">There's a treasure waiting for the winners.</h4><br>
-        <!--<button class="coming_soon">Coming soon</button>-->
-        <center><button  type="button" class="submitBtn" id="btn_6"><b>Register</b></button></center>
+            <!--<button class="coming_soon">Coming soon</button>-->
+            <center><button type="button" class="submitBtn" id="btn_6"><b>Register</b></button></center>
+        </div>
     </div>
-</div>
 
-<div id="id-modal-7" class="modal">
-    <div class="modal-content">
-        <span class="modal_close modal_close_7">&times;</span>
-            <h4>GAME OF TWINS</h4>
+
+
+
+    <div id="id-modal-7" class="modal">
+        <div class="modal-content">
+            <span class="modal_close modal_close_7">&times;</span>
+            <h4>MACHINE LEARNING USING PYTHON</h4>
             <div class="description grid-lg-12 grid-md-12 grid-sm-12 grid-xs-12">
                 <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
                     <div class="panel panel-default">
                         <div class="panel-heading" role="tab" id="headingThree">
                             <h4 class="panel-title">
-                                <a class="collapsed last" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse31" aria-expanded="false" aria-controls="collapseThree">
-                                DESCRIPTION<span> </span></a>
+                                <a class="collapsed last" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse21" aria-expanded="false" aria-controls="collapseThree">
+                                    DESCRIPTION<span> </span></a>
                             </h4>
                         </div>
-                        <div id="collapse31" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingfour">
+                        <div id="collapse21" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingfour">
                             <div class="panel-body">
                                 <p>
-                                     Twin clash is a fun-filled online technical event that brings out your technical skills. Is it only technical content?? Nah! It also would be a great time to try out your luck. There are three rounds and all of them are designed to make learning more fun and interesting. This event is a tantalizing mix of knowledge and application of spontaneous skills as well. The objective of the event is to encourage students to explore their analog and digital electronics knowledge in a fun manner. So save the date and get ready to sweep off the stage and bag your prizes!<br><br>
-<h5>ROUND 1: SOLO-BESTOWER</h5>
-<i class="fa fa-circle" style="font-size:10px"></i> Contribution and diversity of the team members ascertain a powerful team.<br> 
-<i class="fa fa-circle" style="font-size:10px"></i> The twins should attend the round individually. <br>
-<i class="fa fa-circle" style="font-size:10px"></i> One twin must choose analog domain and the other, digital.<br>  
-<i class="fa fa-circle" style="font-size:10px"></i> They have to attend a quiz based on the domain that they have opted for.<br>  
-<i class="fa fa-circle" style="font-size:10px"></i> The quiz consists of 2 sections, with each section containing 15 questions. <br>
-<i class="fa fa-circle" style="font-size:10px"></i> Depending on their performance, the consolidated score of both the participants will be analysed to shortlist them to the next round.  <br>
-<i class="fa fa-circle" style="font-size:10px"></i> The top 7 twins will be entering the next round. <br><br>
-<h5>ROUND 2: LUCKY TACKLE</h5>
-<i class="fa fa-circle" style="font-size:10px"></i> Luck happens when opportunity meets preparation.<br> 
-<i class="fa fa-circle" style="font-size:10px"></i> This round consists of two phases - Advantage phase and Main phase.<br> 
-<i class="fa fa-circle" style="font-size:10px"></i> In the Advantage phase, each team will receive an offer to test their luck, and upon winning they’ll receive the perks accordingly. <br>
-<i class="fa fa-circle" style="font-size:10px"></i> In the main phase, the twins have to select a box numbered from 1 to  30. Each number corresponds to a question and the  weightage/points of the questions varies from one another.  <br>
-<i class="fa fa-circle" style="font-size:10px"></i> Based on the number selected, the twins have to provide their answer and for every right answer the points associated with the question will be awarded. <br>
-<i class="fa fa-circle" style="font-size:10px"></i> Top 4 twins will be shortlisted for the final round.<br><br>
-<h5>ROUND 3: MEME TEMPORE</h5>
-<i class="fa fa-circle" style="font-size:10px"></i> Initially this round consists of a meme-buzzer session which helps the team get an immune power. <br>
-<i class="fa fa-circle" style="font-size:10px"></i> Next is an extempore round where one twin from each team will be competing.  <br>
-<i class="fa fa-circle" style="font-size:10px"></i> The selected speaker has to choose a box and explain the component displayed inside it for a duration of 2 mins (after 1 minute of preparation).<br>
+                                <h5>MACHINE LEARNING USING PYTHON</h5>
+                                <i class="fa fa" style="font-size:10px"></i>The workshop will focus on the fundamentals of Machine Learning, the knowledge of Python which is needed to implement Machine Learning Algorithms, and the implementation of Machine Learning Algorithms in Python which will give the participants a hands-on-experience and help them gain the required confidence and the knowledge to take up an AI Project in future. This workshop is perfect for beginners in Machine Learning, especially I and II Year students.
+
+                                <br><br>
+                                <h5>Fees:</h5>Each participant must pay a workshop fee of <b>Rs.600</b> exclusive of the general fee to register for the workshop.
+
+
+                                <br><br>
+
 
                                 </p>
                             </div>
@@ -1487,20 +1466,25 @@ Platform For Conducting Events: Hacker Rank<br>
                     <div class="panel panel-default">
                         <div class="panel-heading" role="tab" id="headingTwo">
                             <h4 class="panel-title">
-                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse32" aria-expanded="false" aria-controls="collapseTwo">
-                                GENERAL RULES<span> </span></a>
+                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse22" aria-expanded="false" aria-controls="collapseTwo">
+                                    GENERAL RULES<span> </span></a>
                             </h4>
                         </div>
-                        <div id="collapse32" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                        <div id="collapse22" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
                             <div class="panel-body">
-                                <p>1. Username should be a combination of last four digits of Kriya ID_participants name. Only the participants who follow this format will be allowed to enter into event. E.g: 0001_Abc<br> 2.The link for joining the event will be made
-                available on dashboard of the kriya website. It will also be sent to the registered mail id. Follow the same link to enter into the event.<br> 3. Login should be done using the mail id given at the time of registration. Login using
-                a different mail id will be rejected.<br> 4. Late entries for events, workshops and guest lectures will not be permitted. Make sure to adhere to the given timings.<br> 5. ID card verification will be carried out prior to the event
-                start and the participant is required to wear their ID card throughout the event.<br> 6. Ensure good internet connectivity. Download speed should be 4 Mbps and upload speed should be 2 Mbps.
-                <br> 7. Network issues on a recurring basis will not be accepted.<br> 8. Camera and mic should be kept on till the end of the event.<br> 9. Participant is required to sit in a well lit surrounding without any noise disturbances.<br>                    10. Participants using mobile phones should place the phone in a proper visible area.<br> 11. A maximum of three warnings will be given. In case of exceeding this will be considered as malpractice and results in the disqualification
-                of the participant.<br> 12. Any discrepancy during the event should be immediately reported to the event convenor to take necessary actions. Any late response will not be taken into consideration.<br> 13.Judges decision is final for
-                all the events and may not be subject to any discussions.
-                <br><br></p>
+                                <p>1.Every participant must have registered individually before reporting to the event. If a team has 2 or more members each member must have registered individually.<br>
+                                    2. All participants are required to follow appropriate dress code (Boys- Shirt/Pant, Girls-Kurthi/Chudidhar).<br>
+                                    3. All registered participants must collect their respective SRiSHTi ID Cards and campus map from the registration desk on the day of the events.<br>
+                                    4. ID card verification will be carried out before the event starts and the participant is required to have their ID card throughout the event.<br>
+                                    5. Late entries for events and workshops will not be permitted, the participants are also advised to report to the campus 30 mins prior to have a hassle-free experience.<br>
+                                    6. Important Guidelines and Information regarding the Symposium will be conveyed at the Inauguration Event (October 29th 8:00 am) of SRiSHTi 2k22, so participants must attend the same without fail.<br>
+                                    7. Any discrepancy during the event should be immediately reported to the event convenor and necessary actions would be taken. Any late response will not be taken into consideration.<br>
+                                    8. The judges’ decision is final for all the events and will not be subjected to further discussion. Indulging in any malpractices will lead to immediate disqualification.<br>
+                                    9. All the participants should pay the general registration fee to attend the events. Apart from this, events such as Paper Presentation, Flagship Events, Workshop will have additional fee.<br>
+                                    10. Any forms of Inappropriate Behaviour will be highly condemned and necessary actions will be taken.<br>
+                                    11. All events will conclude by 3:00 pm on October 30th and the prize winners will be announced immediately at the valedictory event (October 30th 4:00 pm) of SRiSHTi 2k22.
+                                    <br><br>
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -1509,59 +1493,20 @@ Platform For Conducting Events: Hacker Rank<br>
                     <div class="panel panel-default">
                         <div class="panel-heading" role="tab" id="headingThree">
                             <h4 class="panel-title">
-                                <a class="collapsed last" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse33" aria-expanded="false" aria-controls="collapseThree">
-                                EVENT RULES<span> </span></a>
+                                <a class="collapsed last" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse23" aria-expanded="false" aria-controls="collapseThree">
+                                    PRE-REQUISITES<span> </span></a>
                             </h4>
                         </div>
-                        <div id="collapse33" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                        <div id="collapse23" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
                             <div class="panel-body">
-                                <p><div class="bullet">
-                                <i class="fa fa-circle" style="font-size:10px"></i> The participants should not leave the G - meet till the end of the event.<br> 
-
-<i class="fa fa-circle" style="font-size:10px"></i> Good internet connectivity should be ensured. Network issues on any recurring basis will not be encouraged. <br>
-
-<i class="fa fa-circle" style="font-size:10px"></i> Camera and mic should be switched on whenever they are asked to do so.<br> 
-
-<i class="fa fa-circle" style="font-size:10px"></i> Participants if indulging in any sort of malpractice will be disqualified.<br><br> 
-<h5>ROUND ONE:</h5> 
- <i class="fa fa-circle" style="font-size:10px"></i> One of the twin must be present per domain (i.e., one for Analog and one for Digital). <br>
- <i class="fa fa-circle" style="font-size:10px"></i> The quiz will be auto-submitted after the scheduled time.<br><br>
-<h5>ROUND TWO:</h5> 
-<i class="fa fa-circle" style="font-size:10px"></i> Both the twins must be present.<br> 
-
-<i class="fa fa-circle" style="font-size:10px"></i> They must answer only when their turn arrives.<br><br> 
-<h5>ROUND THREE:</h5> 
-<i class="fa fa-circle" style="font-size:10px"></i> The speech should not exceed 2 minutes. <br>
-<i class="fa fa-circle" style="font-size:10px"></i> Judges’ decision will be final and may not be subjected to any further discussions.<br><br>
+                                <p>
+                                <div class="bullet">
+                                    Hardware requirements: A laptop with internet connectivity, mobile phone with hotspot<br>
+                                    Software Requirements: Anaconda Distribution Python 3.x
 
                                 </div>
-
-                                <h5>ROUND ONE:  </h5>                                        
-
- <h3 style="color: #66fcf1;">PLATFORM USED</h3>
-Meeting Platform: Google Meet<br>
-Platform For Conducting Events: Kahoot<br>
-
-<h3 style="color: #66fcf1">DURATION</h3>
-1 hour<br><br>
-<h5>ROUND TWO:  </h5>                                        
-
- <h3 style="color: #66fcf1;">PLATFORM USED</h3>
-Meeting Platform: Google Meet<br>
-
-<h3 style="color: #66fcf1">DURATION</h3>
-45 Minutes<br><br>
-
-<h5>ROUND THREE:  </h5>                                        
-
- <h3 style="color: #66fcf1;">PLATFORM USED</h3>
-Meeting Platform:  Google Meet<br>
-
-<h3 style="color: #66fcf1">DURATION</h3>
-30 Minutes<br><br>
-<h5>INDIVIDUAL /TEAM</h5>
-TEAM<br>
                                 </p>
+
                             </div>
                         </div>
                     </div>
@@ -1570,18 +1515,19 @@ TEAM<br>
                     <div class="panel panel-default">
                         <div class="panel-heading" role="tab" id="headingone">
                             <h4 class="panel-title">
-                                <a class="collapsed last" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse34" aria-expanded="false" aria-controls="collapseone">
+                                <a class="collapsed last" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse24" aria-expanded="false" aria-controls="collapseone">
                                     DATE AND TIME
                                     <span> </span>
                                 </a>
                             </h4>
                         </div>
-                        <div id="collapse34" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingone">
+                        <div id="collapse24" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingone">
                             <div class="panel-body">
-                                <p><h5>DATE</h5>
-                                <div>26 september 2021</div><br>
+                                <p>
+                                <h5>DATE</h5>
+                                <div>29 and 30 October 2022</div><br>
                                 <h5>TIME</h5>
-                                <div>10.00AM - 1.00PM</div><br></p>
+                                <div>11.00AM - 4.00PM</div><br></p>
                             </div>
                         </div>
                     </div>
@@ -1590,67 +1536,63 @@ TEAM<br>
                     <div class="panel panel-default">
                         <div class="panel-heading" role="tab" id="headingfive">
                             <h4 class="panel-title">
-                            <a class="collapsed last" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse35" aria-expanded="false" aria-controls="collapsefive">
-                                CONVENER AND VOLUNTEER NAMES
-                                <span> </span>
-                            </a>
+                                <a class="collapsed last" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse25" aria-expanded="false" aria-controls="collapse25">
+                                    CONTACTS
+                                    <span> </span>
+                                </a>
                             </h4>
                         </div>
-                        <div id="collapse35" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingfive">
+                        <div id="collapse25" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingfive">
                             <div class="panel-body">
-                                <p><h5> CONVENER NAME</h5>
                                 <ul>
-                                    <li><a  style="color: white;" href=" tel:+9193610 81817">DINESHKANNA BR - 93610 81817 </a></li>
-                                    <li><a  style="color: white;" href=" tel:+9196775 98095">DEEPIKA P - 96775 98095</a></li>
+                                    <li><a style="color: white;" href=" tel:+9187540 16156">RASHMITHA R - 8754016156</a></li>
+                                    <li><a style="color: white;" href=" tel:+9179041 76458">JOTHISH KUMAR S V - 79041 76458</a></li>
+                                    <li><a style="color: white;" href=" tel:+9177087 65116">ARUN KUMAR D - 77087 65116</a></li>
                                 </ul><br>
-                                <h5>VOLUNTEER NAME</h5>
-                                <ul>
-                                    <li><a  style="color:white;" href=" tel:+9188704 08104">NANDISH CHANRASEKAR - 88704 08104</a></li>
-                                    <li><a  style="color:white;" href=" tel:+9173492 94656">DHIVASHINI A - 73492 94656</a></li>
-                                </ul></p>
+                                <h5>RESOURCE PERSON</h5>
+                                <h4 style="color: #d1d7e0; font-size:18px; text-align:left!important;">MR. SUJITH KUMAR M A</h4>
+                                
+
+
+
+                                </p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        <h4 style="font-size: 20px; color: white;">There's a treasure waiting for the winners.</h4><br>
-        <!--<button class="coming_soon">Coming soon</button>-->
-        <center><button  type="button" class="submitBtn" id="btn_7"><b>Register</b></button></center>
-    </div>
-</div>
 
-<div id="id-modal-8" class="modal">
-    <div class="modal-content">
-        <span class="modal_close modal_close_8">&times;</span>
-            <h4>THE BRAINIACS</h4>
+            <!--<button class="coming_soon">Coming soon</button>-->
+            <center><button type="button" class="submitBtn" id="btn_7"><b>Register</b></button></center>
+        </div>
+    </div>
+
+
+    <div id="id-modal-8" class="modal">
+        <div class="modal-content">
+            <span class="modal_close modal_close_8">&times;</span>
+            <h4>AUTOMOTIVE EMBEDDED SYSTEMS</h4>
             <div class="description grid-lg-12 grid-md-12 grid-sm-12 grid-xs-12">
                 <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
                     <div class="panel panel-default">
                         <div class="panel-heading" role="tab" id="headingThree">
                             <h4 class="panel-title">
-                                <a class="collapsed last" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse36" aria-expanded="false" aria-controls="collapseThree">
-                                DESCRIPTION<span> </span></a>
+                                <a class="collapsed last" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse21" aria-expanded="false" aria-controls="collapseThree">
+                                    DESCRIPTION<span> </span></a>
                             </h4>
                         </div>
-                        <div id="collapse36" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingfour">
+                        <div id="collapse21" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingfour">
                             <div class="panel-body">
                                 <p>
-                                     Bored locked up at home? Want to put your IQ to a great use? You can do just that in our non-technical event TheBrainiacs! But beware, there is competition. You compete against other players to solve clues, break cipher codes and much more. Have some fun at the same time learn & discover your hidden potential, right from home!<br><br>
-<h5>ROUND ONE</h5>
-<i class="fa fa-circle" style="font-size:10px"></i> For Round 1, a set of pictures will be given and the participants will have to
-identify the product/technology/brand making use of the pictures by connecting
-it as clues.<br> 
-<i class="fa fa-circle" style="font-size:10px"></i> There will be a set of 20 questions. <br>
-<i class="fa fa-circle" style="font-size:10px"></i> Each Question will be displayed for 45 seconds.<br>  
-<i class="fa fa-circle" style="font-size:10px"></i> All the Teams will be given a chance to answer.<br>  
-<i class="fa fa-circle" style="font-size:10px"></i> This round will be a qualifier round and only the teams which qualify will move on to round 2.<br><br>
-<h5>ROUND TWO</h5>
-<i class="fa fa-circle" style="font-size:10px"></i> Contestants will have to identify famous personalities, companies, products or technologies based on the 3 clues that will be displayed on-screen.<br> 
-<i class="fa fa-circle" style="font-size:10px"></i> There will be a set of 20 questions.<br> 
-<i class="fa fa-circle" style="font-size:10px"></i> Among these questions, we will also be including a few encoded message, decoding tasks to spice up this round even more.<br>
-<i class="fa fa-circle" style="font-size:10px"></i> This will be a buzzer type round using the hand raise option on Google Meet.  <br>
-<i class="fa fa-circle" style="font-size:10px"></i> Only the first correct answer will be awarded points. <br>
-<i class="fa fa-circle" style="font-size:10px"></i> We will display the answer for the respective question after each set of 3 clues or when a participant gives the correct answer (whichever is earlier) so that this round will be more informative and thought provoking.<br><br>
+                                <h5>AUTOMOTIVE EMBEDDED SYSTEMS</h5>
+                                <i class="fa fa" style="font-size:10px"></i>The automotive industry is the sixth largest economy in the world today, producing around 70 million cars every year and making an important contribution to government revenues all around the world. The main objective of this workshop is to provide an understanding of the technology essential to the design and implementation of an embedded system using suitable hardware and software tools for automotive applications. The auto industry needs electrical, Electronics, and computer engineers in ever-increasing numbers to deal with various electronics in the modern car.
+
+                                <br><br>
+                                <h5>Fees:</h5>Each participant must pay a workshop fee of <b>Rs.400</b> exclusive of the general fee to register for the workshop.
+
+
+                                <br><br>
+
 
                                 </p>
                             </div>
@@ -1661,20 +1603,25 @@ it as clues.<br>
                     <div class="panel panel-default">
                         <div class="panel-heading" role="tab" id="headingTwo">
                             <h4 class="panel-title">
-                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse37" aria-expanded="false" aria-controls="collapseTwo">
-                                GENERAL RULES<span> </span></a>
+                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse22" aria-expanded="false" aria-controls="collapseTwo">
+                                    GENERAL RULES<span> </span></a>
                             </h4>
                         </div>
-                        <div id="collapse37" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                        <div id="collapse22" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
                             <div class="panel-body">
-                                <p>1. Username should be a combination of last four digits of Kriya ID_participants name. Only the participants who follow this format will be allowed to enter into event. E.g: 0001_Abc<br> 2.The link for joining the event will be made
-                available on dashboard of the kriya website. It will also be sent to the registered mail id. Follow the same link to enter into the event.<br> 3. Login should be done using the mail id given at the time of registration. Login using
-                a different mail id will be rejected.<br> 4. Late entries for events, workshops and guest lectures will not be permitted. Make sure to adhere to the given timings.<br> 5. ID card verification will be carried out prior to the event
-                start and the participant is required to wear their ID card throughout the event.<br> 6. Ensure good internet connectivity. Download speed should be 4 Mbps and upload speed should be 2 Mbps.
-                <br> 7. Network issues on a recurring basis will not be accepted.<br> 8. Camera and mic should be kept on till the end of the event.<br> 9. Participant is required to sit in a well lit surrounding without any noise disturbances.<br>                    10. Participants using mobile phones should place the phone in a proper visible area.<br> 11. A maximum of three warnings will be given. In case of exceeding this will be considered as malpractice and results in the disqualification
-                of the participant.<br> 12. Any discrepancy during the event should be immediately reported to the event convenor to take necessary actions. Any late response will not be taken into consideration.<br> 13.Judges decision is final for
-                all the events and may not be subject to any discussions.
-                <br><br></p>
+                                <p>1.Every participant must have registered individually before reporting to the event. If a team has 2 or more members each member must have registered individually.<br>
+                                    2. All participants are required to follow appropriate dress code (Boys- Shirt/Pant, Girls-Kurthi/Chudidhar).<br>
+                                    3. All registered participants must collect their respective SRiSHTi ID Cards and campus map from the registration desk on the day of the events.<br>
+                                    4. ID card verification will be carried out before the event starts and the participant is required to have their ID card throughout the event.<br>
+                                    5. Late entries for events and workshops will not be permitted, the participants are also advised to report to the campus 30 mins prior to have a hassle-free experience.<br>
+                                    6. Important Guidelines and Information regarding the Symposium will be conveyed at the Inauguration Event (October 29th 8:00 am) of SRiSHTi 2k22, so participants must attend the same without fail.<br>
+                                    7. Any discrepancy during the event should be immediately reported to the event convenor and necessary actions would be taken. Any late response will not be taken into consideration.<br>
+                                    8. The judges’ decision is final for all the events and will not be subjected to further discussion. Indulging in any malpractices will lead to immediate disqualification.<br>
+                                    9. All the participants should pay the general registration fee to attend the events. Apart from this, events such as Paper Presentation, Flagship Events, Workshop will have additional fee.<br>
+                                    10. Any forms of Inappropriate Behaviour will be highly condemned and necessary actions will be taken.<br>
+                                    11. All events will conclude by 3:00 pm on October 30th and the prize winners will be announced immediately at the valedictory event (October 30th 4:00 pm) of SRiSHTi 2k22.
+                                    <br><br>
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -1683,44 +1630,18 @@ it as clues.<br>
                     <div class="panel panel-default">
                         <div class="panel-heading" role="tab" id="headingThree">
                             <h4 class="panel-title">
-                                <a class="collapsed last" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse38" aria-expanded="false" aria-controls="collapseThree">
-                                EVENT RULES<span> </span></a>
+                                <a class="collapsed last" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse23" aria-expanded="false" aria-controls="collapseThree">
+                                    PRE-REQUISITES<span> </span></a>
                             </h4>
                         </div>
-                        <div id="collapse38" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                        <div id="collapse23" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
                             <div class="panel-body">
-                                <p><div class="bullet">
-                                <i class="fa fa-circle" style="font-size:10px"></i> Participants must submit their responses within the stipulated time period.<br> 
-
-<i class="fa fa-circle" style="font-size:10px"></i> Participant can unmute and ask if they have any doubts/queries. <br>
-
-<i class="fa fa-circle" style="font-size:10px"></i> It is suggested that participants sit in a quiet place with appropriate lighting and with minimal disturbances.<br> 
-
-<i class="fa fa-circle" style="font-size:10px"></i> It is suggested that you make suitable arrangements for optimal internet
-connectivity.<br>
-<i class="fa fa-circle" style="font-size:10px"></i> Be alert and ready for each question.<br> 
-<i class="fa fa-circle" style="font-size:10px"></i> The Judge’s decision is final.<br> 
-<br><br> 
+                                <p>
+                                <div class="bullet">
+                                    Passion towards the topic is all it takes, as we believe in building from the basics!
                                 </div>
-
-                                <h5>ROUND ONE:  </h5>                                        
-
- <h3 style="color: #66fcf1;">PLATFORM USED</h3>
-Meeting Platform: Google Meet<br>
-Platform For Conducting Events: Quizziz<br><br>
-
-<h3 style="color: #66fcf1">DURATION</h3>
-30 Mins hour<br><br>
-<h5>ROUND TWO:  </h5>                                        
-
- <h3 style="color: #66fcf1;">PLATFORM USED</h3>
-Meeting Platform: Google Meet<br><br>
-
-<h3 style="color: #66fcf1">DURATION</h3>
-30 Minutes<br><br>
-<h5>INDIVIDUAL /TEAM</h5>
-<h3>TEAM</h3><br>
                                 </p>
+
                             </div>
                         </div>
                     </div>
@@ -1729,18 +1650,19 @@ Meeting Platform: Google Meet<br><br>
                     <div class="panel panel-default">
                         <div class="panel-heading" role="tab" id="headingone">
                             <h4 class="panel-title">
-                                <a class="collapsed last" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse39" aria-expanded="false" aria-controls="collapseone">
+                                <a class="collapsed last" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse24" aria-expanded="false" aria-controls="collapseone">
                                     DATE AND TIME
                                     <span> </span>
                                 </a>
                             </h4>
                         </div>
-                        <div id="collapse39" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingone">
+                        <div id="collapse24" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingone">
                             <div class="panel-body">
-                                <p><h5>DATE</h5>
-                                <div>26 september 2021</div><br>
+                                <p>
+                                <h5>DATE</h5>
+                                <div>30 October 2022</div><br>
                                 <h5>TIME</h5>
-                                <div>10.00AM - 1.00PM</div><br></p>
+                                <div>10.00AM - 3.00PM</div><br></p>
                             </div>
                         </div>
                     </div>
@@ -1749,64 +1671,357 @@ Meeting Platform: Google Meet<br><br>
                     <div class="panel panel-default">
                         <div class="panel-heading" role="tab" id="headingfive">
                             <h4 class="panel-title">
-                            <a class="collapsed last" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse40" aria-expanded="false" aria-controls="collapsefive">
-                                CONVENER AND VOLUNTEER NAMES
-                                <span> </span>
-                            </a>
+                                <a class="collapsed last" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse25" aria-expanded="false" aria-controls="collapse25">
+                                    CONTACTS
+                                    <span> </span>
+                                </a>
                             </h4>
                         </div>
-                        <div id="collapse40" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingfive">
+                        <div id="collapse25" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingfive">
                             <div class="panel-body">
-                                <p><h5> CONVENER NAME</h5>
                                 <ul>
-                                    <li><a  style="color: white;" href=" tel:+9193610 81817">Jai Krishna Chandar K - 88259 50439 </a></li>
-                                    <li><a  style="color: white;" href=" tel:+9196775 98095">Sidarth J S - 99655 12032</a></li>
+                                    <li><a style="color: white;" href=" tel:+9196773 98499">SANGEETHA M - 96773 98499 </a></li>
+                                    <li><a style="color: white;" href=" tel:+9196770 88436">ARUN MURUGAN G - 96770 88436 </a></li>
+                                    <li><a style="color: white;" href=" tel:+9193849 61999"> SANGAVI K - 93849 61999 </a></li>
+
                                 </ul><br>
-                                <h5>EVENT RESOURCE MANAGER</h5>
-                                <ul>
-                                    <li><a  style="color:white;" href=" tel:+9188704 08104">Prema Sudha R - 91502 83368</a></li>
-                                </ul></p>
+                                <h5>RESOURCE PERSONS</h5>
+                                <h4 style="color: #d1d7e0; font-size:18px; text-align:left!important;">Team from Technovation CADD centre</h4>
+
+
+                                </p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        <h4 style="font-size: 20px; color: white;">There's a treasure waiting for the winners.</h4><br>
-        <!--<button class="coming_soon">Coming soon</button>-->
-        <center><button  type="button" class="submitBtn" id="btn_8"><b>Register</b></button></center>
+
+            <!--<button class="coming_soon">Coming soon</button>-->
+            <center><button type="button" class="submitBtn" id="btn_8"><b>Register</b></button></center>
+        </div>
     </div>
-</div>
 
 
 
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
- 
-  <script type = "text/javascript">
-    var marker = document.querySelector('#sliding-bar');
-    var item = document.querySelectorAll('nav a');
 
-    function indicator(e){
-        marker.style.left = e.offsetLeft+"px";
-        marker.style.width = e.offsetWidth+"px";
-    }
+    <div id="id-modal-9" class="modal">
+        <div class="modal-content">
+            <span class="modal_close modal_close_9">&times;</span>
+            <h4>EMBEDDED SIGNAL PROCESSING</h4>
+            <div class="description grid-lg-12 grid-md-12 grid-sm-12 grid-xs-12">
+                <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingThree">
+                            <h4 class="panel-title">
+                                <a class="collapsed last" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse41" aria-expanded="false" aria-controls="collapseThree">
+                                    DESCRIPTION<span> </span></a>
+                            </h4>
+                        </div>
+                        <div id="collapse41" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingfour">
+                            <div class="panel-body">
+                                <p>
+                                    Participants will be educated in the field of Embedded Signal Processing and its applications; they will be given hands-on-experience in choosing the right processor core: ARM Cortex-A (for Multimedia Applications) / ARM Cortex-R core for Real-Time Applications) / ARM Cortex-M core for Control Applications). Product Prototyping hands-on like E-Bike and IoT applications helps the participants to experience the Embedded Product Design Life Cycle, which accelerates them to create similar but better products soon after the workshop.<br>
+                                    <br>
+                                <h5>Fees:</h5>Each participant must pay a workshop fee of <b>Rs.600</b> exclusive of the general fee to register for the workshop.<br>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingTwo">
+                            <h4 class="panel-title">
+                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse42" aria-expanded="false" aria-controls="collapseTwo">
+                                    GENERAL RULES<span> </span></a>
+                            </h4>
+                        </div>
+                        <div id="collapse42" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                            <div class="panel-body">
+                                <p>1.Every participant must have registered individually before reporting to the event. If a team has 2 or more members each member must have registered individually.<br>
+                                    2. All participants are required to follow appropriate dress code (Boys- Shirt/Pant, Girls-Kurthi/Chudidhar).<br>
+                                    3. All registered participants must collect their respective SRiSHTi ID Cards and campus map from the registration desk on the day of the events.<br>
+                                    4. ID card verification will be carried out before the event starts and the participant is required to have their ID card throughout the event.<br>
+                                    5. Late entries for events and workshops will not be permitted, the participants are also advised to report to the campus 30 mins prior to have a hassle-free experience.<br>
+                                    6. Important Guidelines and Information regarding the Symposium will be conveyed at the Inauguration Event (October 29th 8:00 am) of SRiSHTi 2k22, so participants must attend the same without fail.<br>
+                                    7. Any discrepancy during the event should be immediately reported to the event convenor and necessary actions would be taken. Any late response will not be taken into consideration.<br>
+                                    8. The judges’ decision is final for all the events and will not be subjected to further discussion. Indulging in any malpractices will lead to immediate disqualification.<br>
+                                    9. All the participants should pay the general registration fee to attend the events. Apart from this, events such as Paper Presentation, Flagship Events, Workshop will have additional fee.<br>
+                                    10. Any forms of Inappropriate Behaviour will be highly condemned and necessary actions will be taken.<br>
+                                    11. All events will conclude by 3:00 pm on October 30th and the prize winners will be announced immediately at the valedictory event (October 30th 4:00 pm) of SRiSHTi 2k22.
+                                    <br><br>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingThree">
+                            <h4 class="panel-title">
+                                <a class="collapsed last" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse43" aria-expanded="false" aria-controls="collapseThree">
+                                    PRE - REQUISITE<span> </span></a>
+                            </h4>
+                        </div>
+                        <div id="collapse43" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                            <div class="panel-body">
+                                <p>
+                                <div class="bullet"> Interest, enthusiasm and engagement with a hint of energy.
 
-    item.forEach(link => {
-        link.addEventListener('click', (e)=>{
-            indicator(e.target);
-        })
-    })
-</script>
+                                </div>
+                                </p>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingone">
+                            <h4 class="panel-title">
+                                <a class="collapsed last" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse44" aria-expanded="false" aria-controls="collapseone">
+                                    DATE AND TIME
+                                    <span> </span>
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapse44" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingone">
+                            <div class="panel-body">
+                                <p>
+                                <h5>DATE</h5>
+                                <div>29 and 30 October 2022</div><br>
+                                <h5>TIME</h5>
+                                <div>11.00AM - 4.00PM</div><br></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingfive">
+                            <h4 class="panel-title">
+                                <a class="collapsed last" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse45" aria-expanded="false" aria-controls="collapsefive">
+                                    CONTACTS
+                                    <span> </span>
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapse45" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingfive">
+                            <div class="panel-body">
+
+                                <ul>
+                                    <li><a style="color: white;" href=" tel:+9199526 02041">MADHUMITHA S - 99526 02041 </a></li>
+                                    <li><a style="color: white;" href=" tel:+9199522 58574">THARUN RAJ - 99522 58574</a></li>
+                                    <li><a style="color: white;" href=" tel:+9190030 33373">LOKESH KRISHNAKUMAR - 90030 33373</a></li>
 
 
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/typed.js/typed.min.js"></script>
+                                </ul><br>
+                                <h5>RESOURCE PERSON</h5>
+                                <h4 style="color: #d1d7e0; font-size:18px; text-align:left!important;">Dr.Sivaraj D-Assistant Professor,PSG College of Technology</h4>
 
-  <!-- Template Main JS File -->
-  <script src="assets/js/workshop.js"></script>
-  <script src="assets/js/main.js"></script>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--<button class="coming_soon">Coming soon</button>-->
+            <center><button type="button" class="submitBtn" id="btn_9"><b>Register</b></button></center>
+        </div>
+    </div>
+    </div>
+
+
+    <div id="id-modal-10" class="modal">
+        <div class="modal-content">
+            <span class="modal_close modal_close_10">&times;</span>
+            <h4>SCHNEIDER ELECTRIC INDUSTRIAL AUTOMATION -IIOT
+            </h4>
+            <div class="description grid-lg-12 grid-md-12 grid-sm-12 grid-xs-12">
+                <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingThree">
+                            <h4 class="panel-title">
+                                <a class="collapsed last" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse46" aria-expanded="false" aria-controls="collapseThree">
+                                    DESCRIPTION<span> </span></a>
+                            </h4>
+                        </div>
+                        <div id="collapse46" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingfour">
+                            <div class="panel-body">
+                                <p>
+                                    "As the world is digitalizing at a drastic rate, industries across several sectors are opting for industrial automation. Industrial automation products refer to the use of control systems, such as information technologies, robots, and tools for handling different types of machinery and processes used in several industries. Schneider Electric Industrial Automation - IIoT workshop consists of 4 sessions which introduces participants to Industrial Automation,Schneider IIOTSolutions & Hands-On: EcoS
+                                    truxure Data Expert & Plant Advisor
+                                    Schneider IIOT Solutions & Hands-On: EcoStruxure Augmented Operator Advisor & Node-Red Reduce Time to Market and Improve Quality using Automation
+                                    "<br>
+                                    <br>
+                                <h5>Fees:</h5>Each participant must pay a workshop fee of <b>Rs.600</b> exclusive of the general fee to register for the workshop.<br>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingTwo">
+                            <h4 class="panel-title">
+                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse42" aria-expanded="false" aria-controls="collapseTwo">
+                                    GENERAL RULES<span> </span></a>
+                            </h4>
+                        </div>
+                        <div id="collapse42" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                            <div class="panel-body">
+                                <p>1.Every participant must have registered individually before reporting to the event. If a team has 2 or more members each member must have registered individually.<br>
+                                    2. All participants are required to follow appropriate dress code (Boys- Shirt/Pant, Girls-Kurthi/Chudidhar).<br>
+                                    3. All registered participants must collect their respective SRiSHTi ID Cards and campus map from the registration desk on the day of the events.<br>
+                                    4. ID card verification will be carried out before the event starts and the participant is required to have their ID card throughout the event.<br>
+                                    5. Late entries for events and workshops will not be permitted, the participants are also advised to report to the campus 30 mins prior to have a hassle-free experience.<br>
+                                    6. Important Guidelines and Information regarding the Symposium will be conveyed at the Inauguration Event (October 29th 8:00 am) of SRiSHTi 2k22, so participants must attend the same without fail.<br>
+                                    7. Any discrepancy during the event should be immediately reported to the event convenor and necessary actions would be taken. Any late response will not be taken into consideration.<br>
+                                    8. The judges’ decision is final for all the events and will not be subjected to further discussion. Indulging in any malpractices will lead to immediate disqualification.<br>
+                                    9. All the participants should pay the general registration fee to attend the events. Apart from this, events such as Paper Presentation, Flagship Events, Workshop will have additional fee.<br>
+                                    10. Any forms of Inappropriate Behaviour will be highly condemned and necessary actions will be taken.<br>
+                                    11. All events will conclude by 3:00 pm on October 30th and the prize winners will be announced immediately at the valedictory event (October 30th 4:00 pm) of SRiSHTi 2k22.
+                                    <br><br>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingThree">
+                            <h4 class="panel-title">
+                                <a class="collapsed last" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse47" aria-expanded="false" aria-controls="collapseThree">
+                                    PRE - REQUISITE<span> </span></a>
+                            </h4>
+                        </div>
+                        <div id="collapse47" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                            <div class="panel-body">
+                                <p>
+                                <div class="bullet">An open mind determined to learn and grow!</p>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingone">
+                            <h4 class="panel-title">
+                                <a class="collapsed last" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse48" aria-expanded="false" aria-controls="collapseone">
+                                    DATE AND TIME
+                                    <span> </span>
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapse48" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingone">
+                            <div class="panel-body">
+                                <p>
+                                <h5>DATE</h5>
+                                <div>29 October 2022</div><br>
+                                <h5>TIME</h5>
+                                <div>10.00AM - 4.00PM</div><br></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingfive">
+                            <h4 class="panel-title">
+                                <a class="collapsed last" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse49" aria-expanded="false" aria-controls="collapsefive">
+                                    CONTACTS
+                                    <span> </span>
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapse49" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingfive">
+                            <div class="panel-body">
+
+                                <ul>
+                                    <li><a style="color: white;" href=" tel:+9176039 34166">DHIYANESHWARAN M - 76039 34166 </a></li>
+                                    <li><a style="color: white;" href=" tel:+9173393 22852">SUNDHAR - 73393 22852</a></li>
+                                    <li><a style="color: white;" href=" tel:+9194877 48935"> DHARANI K - 9487748935</a></li>
+                                </ul><br>
+                                <h5>RESOURCE PERSONS</h5>
+                                <h4 style="color: #d1d7e0; font-size:18px; text-align:left!important;">Team from Schneider Electric India</h4>
+
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--<button class="coming_soon">Coming soon</button>-->
+            <center><button type="button" class="submitBtn" id="btn_10"><b>Register</b></button></center>
+        </div>
+
+            <!--<button class="coming_soon">Coming soon</button>-->
+            <center><button type="button" class="submitBtn" id="btn_10"><b>Register</b></button></center>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <script type="text/javascript">
+            var marker = document.querySelector('#sliding-bar');
+            var item = document.querySelectorAll('nav a');
+
+            function indicator(e) {
+                marker.style.left = e.offsetLeft + "px";
+                marker.style.width = e.offsetWidth + "px";
+            }
+
+            item.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    indicator(e.target);
+                })
+            })
+        </script>
+
+
+        <!-- Vendor JS Files -->
+        <script src="assets/vendor/aos/aos.js"></script>
+        <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+        <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+        <script src="assets/vendor/typed.js/typed.min.js"></script>
+
+        <!-- Template Main JS File -->
+        <script src="assets/js/workshop.js"></script>
+        <script src="assets/js/main.js"></script>
 
 </body>
+
 </html>

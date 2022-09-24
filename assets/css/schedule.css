@@ -3,7 +3,8 @@ body {
     width: 100%;
     height: 100%;
     padding: 0;
-    background-color:#1f2833 !important;
+    /* background-color:#1f2833 !important; */
+    background: #2d283e;
     font-family: "Josefin Sans", sans-serif;
     -webkit-font-smoothing: antialiased;
 }
@@ -16,12 +17,12 @@ body {
     font-size: 14px;
     font-weight: 600;
     letter-spacing: 1px;
-    color: #66fcf1;
+    color: #9c62f5;
     background:black;
-    border: 2px groove #66fcf1;
+    border: 2px groove #9c62f5;
     border-radius: 10px;
-    /* border-color: #66fcf1; */
-    box-shadow: inset 0 0 0 50p #66fcf1;
+    /* border-color: #d1d7e0; */
+    box-shadow: inset 0 0 0 50p #d1d7e0;
     transition: ease-out 0.3s;
     -webkit-transition: ease-out 0.3s;
     -moz-transition: ease-out 0.3s;
@@ -29,10 +30,10 @@ body {
 }
 
 .btn:hover {
-    color:#0b0c10;
-    background: #66fcf1;
-    box-shadow: inset 0 0 0 0 #66fcf1;
-    border-color:#66fcf1;
+    color:#d1d7e0;
+    background: #9c62f5;
+    box-shadow: inset 0 0 0 0 #9c62f5;
+    border-color:#9c62f5;
 }
 
 .submitBtn{
@@ -46,14 +47,14 @@ body {
     text-align: center;
   border-color: #45A29E;
   color: rgb(0, 0, 0);
-  background-color: #66FCF1;
+  background-color: #d1d7e0;
  /*background-image: linear-gradient(315deg, #facc6b 0%, #fabc3c 74%);*/
   transition: all 150ms ease-in-out;
 
 }
 .submitBtn:hover {
   background: 	#303030;
-  box-shadow: 0 0 10px 0 #45A29E inset, 0 0 10px 4px #66FCF1;
+  box-shadow: 0 0 10px 0 #45A29E inset, 0 0 10px 4px #d1d7e0;
   color: rgb(255, 255, 255);
 }
 
@@ -91,7 +92,7 @@ body {
     margin-bottom: 15px;
     padding-bottom: 15px;
     position: relative;
-    color: #66fcf1;
+    color: #d1d7e0;
   }
   
   .section-title h2::after {
@@ -117,7 +118,7 @@ body {
     position: absolute;
     height: 4px;
     width: 100% ;
-    background: #66fcf1;
+    background: #9c02f5;
     bottom: 0px;
     transition: 0.5s;
     border-radius: 4px;
@@ -161,7 +162,7 @@ body {
 
 .category-bar nav a {
     text-decoration: none;
-    color: white;
+    color: #d1d7e0;
     font-family: "Play", sans-serif;
     height: 100%;
     padding: 10px;
@@ -175,17 +176,17 @@ body {
 }
 
 .category-bar nav a:hover {
-    color: #66fcf1;
+    color: #9c02f5;
     transition: 0.5s;
 }
 
 .experience {
     position: relative;
-    padding: 45px 0 15px 0;
+    padding: 0 0 15px 0;
 }
 
 .experience h1{
-    color: #66fcf1;
+    color: #d1d7e0;
 }
 
 .experience .timeline {
@@ -197,7 +198,7 @@ body {
     content: '';
     position: absolute;
     width: 2px;
-    background: #66fcf1;
+    background: #9c02f5;
     top: 0;
     bottom: 0;
     left: 50%;
@@ -229,7 +230,7 @@ body {
     top: 48px;
     right: -8px;
     background: #1f2833;
-    border: 2px solid #66fcf1;
+    border: 2px solid #9c02f5;
     border-radius: 16px;
     z-index: 1;
 }
@@ -261,7 +262,7 @@ body {
     top: 44px;
     font-size: 25px;
     font-weight: 600;
-    color: #66fcf1;
+    color: #d1d7e0;
     text-transform: uppercase;
     letter-spacing: 1px;
     z-index: 1;
@@ -281,13 +282,13 @@ body {
     padding: 20px;
     background: black;
     position: relative;
-    border-right: 5px solid #66fcf1;
+    border-right: 5px solid #9c02f5;
     box-shadow: 0 0 60px rgba(0, 0, 0, .08);
 }
 
 .experience .timeline .timeline-item.right .timeline-text {
     border-right: none;
-    border-left: 5px solid #66fcf1;
+    border-left: 5px solid #9c02f5;
 }
 
 .experience .timeline .timeline-text h2 {
@@ -307,7 +308,7 @@ body {
     margin: 0;
     font-size: 15px;
     font-style: italic;
-    color:#66fcf1;
+    color:#d1d7e0;
 }
 @media (max-width: 992px) {
     .experience .timeline .timeline-item {
@@ -369,7 +370,7 @@ body {
     .experience .timeline .timeline-item.left .timeline-text,
     .experience .timeline .timeline-item.right .timeline-text {
         border-right: none;
-        border-left: 5px solid #66fcf1;
+        border-left: 5px solid #d1d7e0;
     }
     .experience h1{
         font-size: 35px;
@@ -396,3 +397,17 @@ body {
 .item-3 {
     grid-area: btn;
 }
+
+/* Marquee */
+marquee {
+    width:100%;
+    direction:left;
+    color: #9c02f5;
+    font-size: 22px;
+    font-family: "Play", sans-serif;
+    /* border: blueviolet;
+    border-style: dashed;
+    border-width: 2px; */
+    padding-top: 18px;
+    font-weight: bold;
+  }

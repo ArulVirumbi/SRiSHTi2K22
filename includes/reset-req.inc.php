@@ -4,8 +4,9 @@ $selector = bin2hex(random_bytes(8));
 $token = random_bytes(32);
 $userEmail = $_POST["email"];
 
-//$url = "www.arulvirumbi.epizy.com/forgottenpwd/create-new-password.php?selector=" . $selector . "&validator=" . bin2hex($token);
-$url = "http://localhost/srishti/create-new-password.php?selector=" . $selector . "&validator=" . bin2hex($token);
+// $url = "http://events.psgtech.ac.in/srishti/create-new-password.php?selector=" . $selector . "&validator=" . bin2hex($token);
+$url = "http://localhost/srishti_final/create-new-password.php?selector=" . $selector . "&validator=" . bin2hex($token);
+
 $expires = date("U") + 900;
 
 require 'dbh.inc.php';
@@ -49,8 +50,8 @@ if(!mysqli_num_rows($select)) {
     $msg .= '<a href="' . $url . '">' . $url . '</a></p>';
 
 
-    $headers = "From: srishti <srishti2k21@gmail.com>\r\n";
-    $headers .= "Reply-To: arul.virumbi@gmail.com\r\n";
+    $headers = "From: srishti <srishti2k22@gmail.com>\r\n";
+    $headers .= "Reply-To: teamsrishti2k22@gmail.com\r\n";
     $headers .= "Content-type: text/html\r\n";
 
     //mail($to, $subject, $message, $headers);
@@ -68,8 +69,8 @@ if(!mysqli_num_rows($select)) {
     $mail->isSMTP();                                      // Set mailer to use SMTP
     $mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
     $mail->SMTPAuth = true;                               // Enable SMTP authentication
-    $mail->Username = 'testst427@gmail.com';                 // SMTP username
-    $mail->Password = 'klfibkoxuvvlttrl';                           // SMTP password
+    $mail->Username = 'ieee.studentschapter.12951@gmail.com';                 // SMTP username
+    $mail->Password = 'ghuphebfvixfevjm';                           // SMTP password
     $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
     $mail->Port = 587;                                    // TCP port to connect to
 

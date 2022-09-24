@@ -3,8 +3,7 @@ html { font-size: 70%; }
 
 body {
   box-sizing: border-box;
-  background: #1f2833;
-  font-family: 'Open Sans', sans-serif;
+  background: #2d283e;
   position: relative;
   color: #272829;
 }
@@ -19,7 +18,9 @@ body {
   position: absolute;
   height: 4px;
   width: 100% ;
-  background: #66fcf1;
+  /* background: #d1d7e0; */
+  background: #9c02f5;
+  /* background: #66fcf1; */
   bottom: 0px;
   transition: 0.5s;
   border-radius: 4px;
@@ -40,387 +41,9 @@ body {
 /* Headings */
 .head-refn {
   font-weight: 500 !important;
-  font-size: 26px !important;
-}
-/* Main heading for card's front cover */
-.card-front__heading {
-  font-size: 1.5rem;
-  margin-top: .25rem;
+  font-size: 26px ;
 }
 
-/* Main heading for inside page */
-.inside-page__heading { 
-  padding-bottom: 0.5rem; 
-  width: 100%;
-}
-
-/* Mixed */
-
-/* For both inside page's main heading and 'view me' text on card front cover */
-.inside-page__heading,
-.card-front__text-view {
-  font-size: 1.3rem;
-  font-weight: 800;
-  margin-top: .2rem;
-}
-
-.inside-page__heading-1,
-.card-front__text-view-1 { color: #0b0c10; }
-
-.inside-page__heading-2,
-.card-front__text-view-2 { color: #66fcf1; }
-
-
-
-/* For pricing text on card front cover */
-.card-front__text-price {
-  font-size: 1.2rem;
-  margin-top: -.2rem;
-}
-
-/* Back cover */
-
-/* For inside page's body text */
-.inside-page__text-1 {
-  color: #333;
-}
-.inside-page__text-2 {
-  color: #fff;
-}
-
-/* Icons ===========================================*/
-
-.card-front__icon {
-  fill: #fafbfa;
-  font-size: 3vw;
-  height: 3.25rem;
-  margin-top: -.5rem;
-  width: 3.25rem;
-}
-
-/* Buttons =================================================*/
-
-.inside-page__btn {
-  background-color: transparent;
-  border: 3px solid;
-  border-radius: .5rem;
-  font-size: 1.2rem;
-  font-weight: 600;
-  margin: auto;
-  overflow: hidden;
-  padding: .65rem .75rem;
-  position: relative;
-  text-decoration: none;
-  transition: all .3s ease;
-  width: 90%;
-  z-index: 10;
-}
-
-.inside-page__btn::before { 
-  content: "";
-  height: 100%;
-  left: 0;
-  position: absolute;
-  top: 0;
-  transform: scaleY(0);
-  transition: all .3s ease;
-  width: 100%;
-  z-index: -1;
-}
-
-.inside-page__btn-1 { 
-  border-color: #0b0c10;
-  color: #0b0c10 !important;
-}
-
-.inside-page__btn-1::before { 
-  background-color: #0b0c10;
-}
-
-.inside-page__btn-2 { 
-  border-color: #66fcf1;
-  color: #66fcf1 !important;
-}
-
-.inside-page__btn-2::before { 
-  background-color: #66fcf1;
-}
-
-/* .inside-page__btn--beach { 
-  border-color: #fa7f67;
-  color: #fa7f67;
-}
-
-.inside-page__btn--beach::before { 
-  background-color: #fa7f67;
-}
-
-.inside-page__btn--camping { 
-  border-color: #00b97d;
-  color: #00b97d;
-}
-
-.inside-page__btn--camping::before { 
-  background-color: #00b97d;
-} */
-
-.inside-page__btn-1:hover { 
-  color: #66fcf1 !important;
-}
-
-.inside-page__btn-2:hover {
-  color: #0b0c10 !important;
-}
-
-.inside-page__btn:hover::before { 
-  transform: scaleY(1);
-}
-
-/* Layout Structure=========================================*/
-
-.main {
-  background: linear-gradient(
-    to bottom right,
-    #eee8dd,
-    #e3d9c6
-  );
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: 100vh;
-  width: 100%;
-}
-
-/* Container to hold all cards in one place */
-.card-area {
-  align-items: center;
-  display: flex;
-  flex-wrap: nowrap;
-  height: 100%;
-  justify-content: space-evenly;
-  padding: 1rem;
-  margin-bottom:80px;
-}
-
-/* Card ============================================*/
-
-/* Area to hold an individual card */
-.card-section {
-  align-items: center;
-  display: flex;
-  height: 100%;
-  justify-content: center;
-  width: 100%;
-}
-
-/* A container to hold the flip card and the inside page */
-.card {
-  background-color: rgba(0,0,0, .05);
-  box-shadow: -.1rem 1.7rem 6.6rem -3.2rem rgba(0,0,0,0.5);
-  height: 17.5rem;
-  position: relative;
-  transition: all 1s ease;
-  width: 17.5rem;
-}
-
-/* Flip card - covering both the front and inside front page */
-
-/* An outer container to hold the flip card. This excludes the inside page */
-.flip-card {
-  height: 17.5rem;
-  perspective: 100rem;
-  position: absolute;
-  right: 0;
-  transition: all 1s ease;
-  visibility: hidden;
-  width: 17.5rem;
-  z-index: 100;
-}
-
-/* The outer container's visibility is set to hidden. This is to make everything within the container NOT set to hidden  */
-/* This is done so content in the inside page can be selected */
-.flip-card > * {
-  visibility: visible;
-}
-
-/* An inner container to hold the flip card. This excludes the inside page */
-.flip-card__container {
-  height: 100%;
-  position: absolute;
-  right: 0;
-  transform-origin: left;
-  transform-style: preserve-3d;
-  transition: all 1s ease;
-  width: 100%;
-}
-
-.card-front,
-.card-back {
-  backface-visibility: hidden;
-  height: 100%;
-  left: 0;
-  position: absolute;
-  top: 0;
-  width: 100%;
-}
-
-/* Styling for the front side of the flip card */
-
-/* container for the front side */
-.card-front-1 {
-  background-color: #66fcf1;
-  height: 17.5rem;
-  width: 17.5rem;
-}
-.card-front-2 {
-  background-color: #0b0c10;
-  height: 17.5rem;
-  width: 17.5rem;
-}
-
-/* Front side's top section */
-.card-front__tp {
-  align-items: center;
-  clip-path: polygon(0 0, 100% 0, 100% 90%, 57% 90%, 50% 100%, 43% 90%, 0 90%);
-  display: flex;
-  flex-direction: column;
-  height: 14rem;
-  justify-content: center;
-  padding: .75rem;
-}
-
-.card-front__tp-1 {
-  background: #0b0c10;
-  color: #66fcf1;
-}
-
-.card-front__tp-2 {
-  background: #66fcf1;
-  color: #0b0c10;
-}
-
-/* .card-front__tp--beach {
-  background: linear-gradient(
-    to bottom,
-    #fb9b88,
-    #f86647
-  );
-}
-
-.card-front__tp--camping {
-  background: linear-gradient(
-    to bottom,
-    #00db93,
-    #00b97d
-  );
-} */
-
-/* Front card's bottom section */
-.card-front__bt {
-  align-items: center;
-  display: flex;
-  justify-content: center;
-}
-
-/* Styling for the back side of the flip card */
-
-.card-back-1 {
-  background-color: #66fcf1;
-  transform: rotateY(180deg);
-}
-.card-back-2 {
-  background-color: #0b0c10;
-  transform: rotateY(180deg);
-}
-
-
-/* Specifically targeting the <video> element */
-.video__container-1 {
-  clip-path: polygon(0% 0%, 100% 0%, 90% 50%, 100% 100%, 0% 100%);
-  height: auto;
-  min-height: 100%;
-  object-fit: cover;
-  width: 100%;
-  text-align: center;
-  align-items: center;
-  background: #0b0c10;
-}
-.video__container-1 h3 {
-  font-size: 16px;
-  font-weight: 500;
-  color: #66fcf1;
-  margin-top: 1.25rem;
-  overflow: auto;
-}
-.video__container-2 {
-  clip-path: polygon(0% 0%, 100% 0%, 90% 50%, 100% 100%, 0% 100%);
-  height: auto;
-  min-height: 100%;
-  object-fit: cover;
-  width: 100%;
-  text-align: center;
-  align-items: center;
-  background: #66fcf1;
-}
-.video__container-2 h3 {
-  font-size: 16px;
-  font-weight: 500;
-  color: #0b0c10;
-  margin-top: 1.25rem;
-  overflow: auto;
-}
-/* Inside page */
-
-.inside-page-1 {
-  background-color: #66fcf1;
-  /* box-shadow: inset 20rem 0px 5rem -2.5rem rgba(0,0,0,0.25); */
-  height: 100%;
-  padding: 1rem;
-  position: absolute;
-  right: 0;
-  transition: all 1s ease;
-  width: 17.5rem;
-  z-index: 1;
-}
-.inside-page-2 {
-  background-color: #0b0c10;
-  box-shadow: inset 20rem 0px 5rem -2.5rem rgba(0,0,0,0.25);
-  height: 100%;
-  padding: 1rem;
-  position: absolute;
-  right: 0;
-  transition: all 1s ease;
-  width: 17.5rem;
-  z-index: 1;
-}
-
-.inside-page__container {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  text-align: center; 
-  width: 100%;
-}
-
-/* Functionality ====================================*/
-
-/* This is to keep the card centered (within its container) when opened */
-.card:hover {
-  box-shadow:
-  -.1rem 1.7rem 6.6rem -3.2rem rgba(0,0,0,0.75);
-  width: 35rem;
-}
-
-/* When the card is hovered, the flip card container will rotate */
-.card:hover .flip-card__container {
-  transform: rotateY(-180deg);
-}
-
-/* When the card is hovered, the shadow on the inside page will shrink to the left */
-.card:hover .inside-page {
-  box-shadow: inset 1rem 0px 5rem -2.5rem rgba(0,0,0,0.1);
-}
 
 /* Footer ====================================*/
 
@@ -516,12 +139,12 @@ body {
 }
 
 .category-bar nav a:hover {
-  color: #66fcf1;
+  color: #9c02f5;
   transition: 0.5s;
 }
 
 .category h2 {
-  color: #66fcf1;
+  color: #d1d7e0;
   text-align: center;
   font-family: "Play", sans-serif;
   font-size: 30px;
@@ -551,7 +174,7 @@ padding: 64px 8px 4px 24px;
 
 @media (max-width: 465px) {
   .category-bar nav a {
-    font-size: 15px;
+    font-size: 12px;
     margin: 0 10px;
     overflow: hidden;
   }  
@@ -559,7 +182,7 @@ padding: 64px 8px 4px 24px;
 
 @media (max-width: 330px) {
 .category-bar nav a {
-  font-size: 13px;
+  font-size: 10px;
   margin: 0 5px;
   overflow: hidden;
 }  
@@ -584,10 +207,10 @@ padding: 64px 8px 4px 24px;
     height: 12.8rem;
   }
   .video__container-1 h3 {
-    font-size: 20px;
+    font-size: 15px;
   }
   .video__container-2 h3 {
-    font-size: 20px;
+    font-size: 15px;
   }
 }
 
@@ -622,7 +245,7 @@ padding: 64px 8px 4px 24px;
 }
 
 .modal_close {
-  color: #45a29e;
+  color: #9c02f5;
   float: right;
   font-size: 30px;
   font-weight: bold;
@@ -631,13 +254,14 @@ padding: 64px 8px 4px 24px;
 
 .modal_close:hover,
 .modal_close:focus {
-  color: #66fcf1;
+  color: #d1d7e0;
   text-decoration: none;
   cursor: pointer;
 }
 
 .modal h4,
 .modal h5 {
+  text-align: center;
   font-size: 20px;
   font-family: "Play", sans-serif;
   margin-bottom: 10px;
@@ -647,18 +271,34 @@ padding: 64px 8px 4px 24px;
   font-size: 30px;
   text-transform: uppercase;
   text-align: center !important;
-  color: #66fcf1;
+  color: #ba44fe;
 }
 
 .modal h5 {
+
   margin: 0;
   font-size: 23px;
-  color: #66fcf1;
+  color: #ba44fe;
   text-transform: uppercase;
   text-align: justify!important;
   margin-bottom: 1.2em;
 }
-
+.r_tag{
+  text-align: center !important;
+  margin: 0;
+  font-size: 18px;
+  color: #d1d7e0;
+  text-transform: uppercase;
+  margin-bottom: 1.2em;
+}
+.e_tag{
+  text-align: center !important;
+  margin: 0;
+  font-size: 18px;
+  color: #d1d7e0;
+  text-transform: uppercase;
+  margin-bottom: 1.2em; 
+}
 .bullet {
   margin-bottom: 2em;
 }
@@ -686,12 +326,19 @@ padding: 64px 8px 4px 24px;
 }
 
 .modal a {
-  color: white;
-  text-decoration: none;
+  color: #9c02f5;
+  text-align: center !important;
+  position: relative;
+  font-size: 18px;
+  
 }
 
 
-
+@media(max-width :768px){
+  .e_tag{
+      font-size: 16px !important;
+  }
+}
 
 
 /*Small screen*/
@@ -729,6 +376,13 @@ padding: 64px 8px 4px 24px;
   .social-media-icons {
       height: 130px;
   }
+  .modal a {
+    color: #d1d7e0;
+    text-align: center !important;
+    position: relative;
+    font-size: 14px;
+    
+  }
   
 }
 
@@ -754,6 +408,16 @@ padding: 64px 8px 4px 24px;
   .modal button {
       font-size: 19px;
   }
+  .head-refn{
+    font-size: 20px !important;
+  }
+  .modal a {
+    color: #d1d7e0;
+    text-align: center !important;
+    position: relative;
+    font-size: 14px;
+    
+  }
 }
 
 
@@ -767,6 +431,13 @@ padding: 64px 8px 4px 24px;
   }
   .modal-div p {
       -webkit-line-clamp: 3;
+  }
+
+  
+}
+@media (min-width: 768px){
+  .head-refn{
+    font-size: 26px !important;
   }
 }
 
@@ -804,9 +475,9 @@ padding: 64px 8px 4px 24px;
   position: absolute;
   left:-20px;
   top: 10px;
-  color:#0b0c10 !important;
-  background-color:#66fcf1;
-  border: 5px solid #66fcf1;
+  color:#9c02f5 !important;
+  background-color:#d1d7e0;
+  border: 5px solid #d1d7e0;
   font-size: 15px;
   width: 40px;
   height:40px;
@@ -825,13 +496,13 @@ padding: 64px 8px 4px 24px;
   background: color #c5c6c7;;
   color:white;
   line-height: 25px;
-  padding: 10px 25px 20px 35px ;
+  padding: 10px 10px 20px 10px ;
   border-top:none;
   font-size:14px;
   position: relative;
 }
 .text-white{
-  color:#66fcf1;
+  color:#d1d7e0;
   text-transform: uppercase;
 }
 
@@ -845,15 +516,38 @@ padding: 64px 8px 4px 24px;
     display: block;
     margin: 0px 20px 20px 20px;
     text-align: center;
-  border-color: #45A29E;
-  color: rgb(0, 0, 0);
-  background-color: #66fcf1;
+  border-color: #8900d8;
+  color: #9c02f5;
+  background-color: #d1d7e0;
  /*background-image: linear-gradient(315deg, #facc6b 0%, #fabc3c 74%);*/
   transition: all 150ms ease-in-out;
 
 }
 .submitBtn:hover {
-  background: 	#303030;
-  box-shadow: 0 0 10px 0 #45A29E inset, 0 0 10px 4px #66fcf1;
+  background: 	#2d283e;
+  box-shadow: 0 0 10px 0 #8900d8 inset, 0 0 10px 4px #d1d7e0;
   color: rgb(255, 255, 255);
+}
+@media (min-width: 470px) and (max-width: 502px){
+  .head-refn-2{
+    margin-right: 50px !important;
+  }
+}
+@media (max-width: 470px){
+  .head-refn{
+    font-weight: 300;
+    font-size: auto !important;
+  }
+  .head-refn-2{
+    margin-right: 30px !important;
+  }
+  .category-bar nav{
+    height: 48px;
+  }
+}
+@media (max-width: 300px){
+  .head-refn{
+    font-weight: 300;
+    font-size: auto !important;
+  }
 }
