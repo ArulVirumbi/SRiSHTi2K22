@@ -2,6 +2,9 @@
 @ob_start();
 session_start();
 
+if(isset($_SESSION['admin']) && $_SESSION['admin']=="srishti22@psg"){
+
+
 require_once('../includes/dbh.inc.php');
 
 
@@ -107,3 +110,6 @@ $num_row = mysqli_num_rows($result);
     </script>
 </body>
 </html>
+<?php }else{
+      header("location:index.php ");
+} ?>
