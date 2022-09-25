@@ -51,7 +51,7 @@ if(isset($_SESSION['email'])){
     $fname = $_SESSION['fname'];
     $name = str_replace(" ","$",$fname);
     $type = $_POST['type'];
-    $returnurl = "http://localhost/srishti/payconfirm.php";
+    $returnurl = "https://srishti.psgtech.ac.in/payconfirm.php";
     $transactionid = "SRISHTI_".$type."_".$id.substr(md5(microtime()), 0, 6);
 
     $query = "INSERT INTO payment (id,name,amount,transaction_id,payment_status) VALUE ('$id','$fname','$fees','$transactionid','Created')";

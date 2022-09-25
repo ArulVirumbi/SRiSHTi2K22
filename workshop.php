@@ -220,17 +220,7 @@ session_start();
 
     <?php require_once 'header.php'; ?>
 
-    <div id="header2" class="d-flex align-items-center header2 " style="display: None !important;">
-        <div class="container d-flex align-items-center justify-content-center">
-
-            <div class="logo">
-                <h1>WORKSHOPS</h1>
-                <!-- Uncomment below if you prefer to use an image logo -->
-                <!-- <a href="index.php"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
-            </div>
-        </div>
-    </div>
-    <!-- <div id="header2" class="category-bar"> -->
+    <div id="header2"></div>
     <div class="category-bar" style="top: 0px !important">
         <nav>
             <div id="sliding-bar"></div>

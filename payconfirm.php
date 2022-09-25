@@ -38,114 +38,126 @@ if(isset($_GET['data'])){
     // $status = (int)substr($arr_response[3],0,1);
     $status = (int)substr($arr_response[3],0,1);
 
+    
 
     if($status == 1){
-    $hero = "Payment Successful!";
-    $query = "UPDATE payment SET payment_status='success' WHERE transaction_id='$transaction_id'";
-    $update = mysqli_query($conn, $query) or die(mysqli_error());
-
-    $equery = "SELECT * FROM members WHERE id='$id'";
-    $result1 = mysqli_query($conn, $equery) or die(mysqli_error());
-    $row = mysqli_fetch_array($result1);
-    $email = $row['email'];
-    $name = $row['fname'];
-
-    $type = explode("_", $decryptedresponse)[1];
-    switch ($type) {
-    
-        case "GEN":
-            $query = "UPDATE members SET genfee='paid' WHERE id='$id'";
+        $sql = "SELECT * FROM payment WHERE transaction_id='$transaction_id'";
+        $req = mysqli_query($conn, $sql) or die(mysqli_error());
+        $row1 = mysqli_fetch_array($req);
+        $pay_status = $row['payment_status'];
+        if($pay_status!="success"){
+            
+            $query = "UPDATE payment SET payment_status='success' WHERE transaction_id='$transaction_id'";
             $update = mysqli_query($conn, $query) or die(mysqli_error());
-            $_SESSION['genfee']='paid';
-            $subject = "SRiSHTi Registration Confirmation";
-            $message = "Dear ".$name.",<br/>
 
-            Greetings from IEEE SC 12951! Thank you for being a part of SRiSHTi 2K22. You have successfully made the payment for GENERAL REGISTRATION. General Registration Fee allows you to participate in all Technical, Non-Technical and Bot events and register for Paper presentations, Project expo and Hackathon.<br/>
-            <br/>
-            SRiSHTi ID: SRiSHTi22".$id."<br/>
-            <br/>
-            For more details: <a href='https://events.psgtech.ac.in/srishti'>SRiSHTi 2K22</a><br/>
-            <br/>
-            Participate in our exclusive events and take back priceless skills along with fun-filled memories!!!<br/>
-            For more details and queries: Visit <a href='https://events.psgtech.ac.in/srishti/contact.php'>SRiSHTi 2K22 - Contact</a><br/>
-            Contact:<br/>
-            BHUVANESH G - 7548826176 <br/>
-            AJAY SHEKAR D - 7358733985 <br/>
-            E-mail \t - \t teamsrishti22@gmail.com <br/>
-            <br/>
-            With Warm Regards,<br/>
-            Team SRiSHTi 2k22.
-            ";
-            break;
-        case "IND":
-            $wsname = "INDUSTRIAL AUTOMATION-IIOT";
-            break;
-        case "MAC":
-            $wsname = "MACHINE LEARNING USING PYTHON";
-            break;
-        case "AUT":
-            $wsname = "AUTOMOTIVE EMBEDDED SYSTEMS";
-            break;
-        case "EMB":
-            $wsname = "EMBEDDED SIGNAL PROCESSING";
-            break;
-        case "DRO":
-            $wsname = "DRONE BUILDING";
-            break;
-        default:
-            echo $type;
-            break;
-    }
-    if(isset($wsname)){
-        $query = "UPDATE workshops SET `$wsname`='paid' WHERE email='$email'";
-        $update = mysqli_query($conn, $query) or die(mysqli_error($conn));
-        $subject ="SRiSHTi  - Workshop Registration Confirmation";
-        $message = "Dear ".$name.",<br/>
+            $equery = "SELECT * FROM members WHERE id='$id'";
+            $result1 = mysqli_query($conn, $equery) or die(mysqli_error());
+            $row = mysqli_fetch_array($result1);
+            $email = $row['email'];
+            $name = $row['fname'];
+            $hero = "Payment Successful!";
 
-        Greetings from IEEE SC 12951! Thank you for being a part of SRiSHTi 2K22. You have successfully
-        registered for ".$wsname." workshop. Please adhere to the timings. 
-        <br/>
-        SRiSHTi ID: SRiSHTi22".$id."
-        <br/>
-        Participate in our exclusive events and take back priceless skills along with fun-filled memories!!!
-        <br/>
-        For more details and queries : Visit <a href='https://events.psgtech.ac.in/srishti/contact.php'>SRiSHTi 2K22 - Contact</a><br/>
-        Contact:<br/>
-        BHUVANESH G - 7548826176 <br/>
-        AJAY SHEKAR D - 7358733985 <br/>
-        E-mail \t - \t teamsrishti22@gmail.com <br/>
-        <br/>
-        With Warm Regards,<br/>
-        Team SRiSHTi 2k22.";
-    }
+            $type = explode("_", $decryptedresponse)[1];
+            switch ($type) {
+            
+                case "GEN":
+                    $query = "UPDATE members SET genfee='paid' WHERE id='$id'";
+                    $update = mysqli_query($conn, $query) or die(mysqli_error());
+                    $_SESSION['genfee']='paid';
+                    $subject = "SRiSHTi Registration Confirmation";
+                    $message = "Dear ".$name.",<br/>
 
-    require 'phpmailer/PHPMailerAutoload.php';
-    $mail = new PHPMailer;
-    $mail->isSMTP();                                      
-    $mail->Host = 'smtp.gmail.com';  
-    $mail->SMTPAuth = true;                               
-    $mail->Username = 'ieee.studentschapter.12951@gmail.com';                
-    $mail->Password = 'ghuphebfvixfevjm';                          
-    $mail->SMTPSecure = 'tls';                            
-    $mail->Port = 587;                                    
+                    Greetings from IEEE SC 12951! Thank you for being a part of SRiSHTi 2K22. You have successfully made the payment for GENERAL REGISTRATION. General Registration Fee allows you to participate in all Technical, Non-Technical and Bot events and register for Paper presentations, Project expo and Hackathon.<br/>
+                    <br/>
+                    SRiSHTi ID: SRiSHTi22".$id."<br/>
+                    <br/>
+                    For more details: <a href='https://srishti.psgtech.ac.in'>SRiSHTi 2K22</a><br/>
+                    <br/>
+                    Participate in our exclusive events and take back priceless skills along with fun-filled memories!!!<br/>
+                    For more details and queries: Visit <a href='https://srishti.psgtech.ac.in/contact.php'>SRiSHTi 2K22 - Contact</a><br/>
+                    Contact:<br/>
+                    BHUVANESH G - 7548826176 <br/>
+                    AJAY SHEKAR D - 7358733985 <br/>
+                    E-mail \t - \t teamsrishti22@gmail.com <br/>
+                    <br/>
+                    With Warm Regards,<br/>
+                    Team SRiSHTi 2k22.
+                    ";
+                    break;
+                case "IND":
+                    $wsname = "INDUSTRIAL AUTOMATION-IIOT";
+                    break;
+                case "MAC":
+                    $wsname = "MACHINE LEARNING USING PYTHON";
+                    break;
+                case "AUT":
+                    $wsname = "AUTOMOTIVE EMBEDDED SYSTEMS";
+                    break;
+                case "EMB":
+                    $wsname = "EMBEDDED SIGNAL PROCESSING";
+                    break;
+                case "DRO":
+                    $wsname = "DRONE BUILDING";
+                    break;
+                default:
+                    echo $type;
+                    break;
+            }
+            if(isset($wsname)){
+                $query = "UPDATE workshops SET `$wsname`='paid' WHERE email='$email'";
+                $update = mysqli_query($conn, $query) or die(mysqli_error($conn));
+                $subject ="SRiSHTi  - Workshop Registration Confirmation";
+                $message = "Dear ".$name.",<br/>
 
-    $mail->AddReplyTo("teamsrishti2k22@gmail.com");
-    $mail->From = "teamsrishti2k22@gmail.com";
-    $mail->FromName = "Team Srishti2K22";
-    $mail->AddAddress($email);
-    //$mail->addAddress('', 'Admin');     // Add a recipient
+                Greetings from IEEE SC 12951! Thank you for being a part of SRiSHTi 2K22. You have successfully
+                registered for ".$wsname." workshop. Please adhere to the timings. 
+                <br/>
+                SRiSHTi ID: SRiSHTi22".$id."
+                <br/>
+                Participate in our exclusive events and take back priceless skills along with fun-filled memories!!!
+                <br/>
+                For more details and queries : Visit <a href='https://srishti.psgtech.ac.in/contact.php'>SRiSHTi 2K22 - Contact</a><br/>
+                Contact:<br/>
+                BHUVANESH G - 7548826176 <br/>
+                AJAY SHEKAR D - 7358733985 <br/>
+                E-mail \t - \t teamsrishti22@gmail.com <br/>
+                <br/>
+                With Warm Regards,<br/>
+                Team SRiSHTi 2k22.";
+            }
 
-    $mail->isHTML(true);                                
+            require 'phpmailer/PHPMailerAutoload.php';
+            $mail = new PHPMailer;
+            $mail->isSMTP();                                      
+            $mail->Host = 'smtp.gmail.com';  
+            $mail->SMTPAuth = true;                               
+            $mail->Username = 'ieee.studentschapter.12951@gmail.com';                
+            $mail->Password = 'ghuphebfvixfevjm';                          
+            $mail->SMTPSecure = 'tls';                            
+            $mail->Port = 587;                                    
 
-    $mail->Subject = $subject;
-    $mail->Body = $message;
-    $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+            $mail->AddReplyTo("teamsrishti2k22@gmail.com");
+            $mail->From = "teamsrishti2k22@gmail.com";
+            $mail->FromName = "Team Srishti2K22";
+            $mail->AddAddress($email);
+            //$mail->addAddress('', 'Admin');     // Add a recipient
 
-    $mail->send();
+            $mail->isHTML(true);                                
 
-}else{
-    $hero = "Payment Failed";
-}
+            $mail->Subject = $subject;
+            $mail->Body = $message;
+            $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+
+            $mail->send();
+            
+            }else{
+                header("location:./index.php ");
+            }
+    
+        }else{
+            $hero = "Payment Failed";
+        }
+    
 
 ?>
 <!DOCTYPE html>
@@ -190,7 +202,7 @@ if(isset($_GET['data'])){
 <div class="thankyou-page">
     <div class="_header">
         <div class="logo">
-            <img src="https://codexcourier.com/images/banner-logo.png" alt="">
+            <!-- <img src="" alt=""> -->
         </div>
         <h1><?php echo $hero; ?></h1>
     </div>

@@ -23,211 +23,158 @@ if(!isset($_SESSION['email'])){
 
  
      
- <!-- Sign Up -->
+    <!-- Sign Up -->
     <script type="text/javascript">
- 
- $(document).ready(function(e){
-
-     $("#file").change(function() {
-     var file = this.files[0];
-     var fileType = file.type;
-     var match = ['application/pdf', 'application/msword', 'application/vnd.ms-office', 'image/jpeg', 'image/png', 'image/jpg'];
-     if(!((fileType == match[0]) || (fileType == match[1]) || (fileType == match[2]) || (fileType == match[3]) || (fileType == match[4]) || (fileType == match[5]))){
-         alert('Sorry, only PDF, DOC, JPG, JPEG, & PNG files are allowed to upload.');
-         $("#file").val('');
-         return false;
-     }
-   });
-   // Submit form data via Ajax
-   $("#supForm").on('submit', function(e){
-       e.preventDefault();
-       $.ajax({
-           type: 'POST',
-           url: 'modules/adduser.php',
-           data: new FormData(this),
-           dataType: 'json',
-           contentType: false,
-           cache: false,
-           processData:false,
-           beforeSend: function(){
-               $('.submitBtn').attr("disabled","disabled");
-               $('#add_err2').html('<p>Loading...</p>');
-           },
-           success: function(response){ //console.log(response);
-               $('.statusMsg').html('');
-               if(response.status == 1){
-                   $('#supForm')[0].reset();
-                   $('#add_err2').html('<p >'+response.message+'</p>');
-                   window.location.href = "index.php";
-               }else{
-                   alert(response.message);
-               }
-               $('#supForm').css("opacity","");
-               $(".submitBtn").removeAttr("disabled");
-           }
-       });
-     });
-   });
- </script>
- <!-- Login -->
- <script type="text/javascript">
-        		$(document).ready(function(){
-			
-			   $("#login").click(function(){
-				
-					email=$("#uemail").val();
-					password=$("#upassword").val();
-					 $.ajax({
-						type: "POST",
-						url: "pcheck.php",
-						data: "email=" + email + "&password=" + password,
-						success: function(html){
-						  if(html=='true')
-						  {
-							  
-							  $("#add_err1").html('<div class="alert alert-success"> \
-													<strong>Authenticated</strong> \ \
-												</div>');
-
-							  window.location.href = "index.php";
-						  
-						  } else if (html=='false') {
-								$("#add_err1").html('<div class="alert alert-danger"> \
-													<strong>Email not found!</strong> \ \
-												</div>');
-								
-						  
-						  } else if (html=='pass') {
-								$("#add_err1").html('<div class="alert alert-danger"> \
-													<strong>Wrong Password!</strong> \ \
-												</div>');
-								
-						  
-						  } else {
-								$("#add_err1").html('<div class="alert alert-danger"> \
-													<strong>Error</strong> processing request. Please try again. \ \
-												</div>');
-                        
-						  }
-						},
-						beforeSend:function()
-						{
-                            $("#add_err1").html("loading...");
-						}
-					});
-					 return false;
-				});
-      });
-    </script>
-        <!-- check box -->
-        <script type="text/javascript">
-            $(document).ready(function() {
-            $("#cgcheck").click(
-                function () {
-                    if ($("#cgcheck").is(":checked")) {
-                        $("#cgname").val("PSG College of Technology");
-                        $("#cgname").prop("readonly", true);
-                    }   
-                    else {
-                        $('#cgname').val("");
-                        $("#cgname").prop("readonly", false);
+        $(document).ready(function(){
+        // Submit form data via Ajax
+        $("#supForm").on('submit', function(e){
+            e.preventDefault();
+            $.ajax({
+                type: 'POST',
+                url: 'modules/adduser.php',
+                data: new FormData(this),
+                dataType: 'json',
+                contentType: false,
+                cache: false,
+                processData:false,
+                beforeSend: function(){
+                    $('.submitBtn').attr("disabled","disabled");
+                    $('#add_err2').html('<p>Loading...</p>');
+                },
+                success: function(response){ //console.log(response);
+                    $('.statusMsg').html('');
+                    if(response.status == 1){
+                        $('#supForm')[0].reset();
+                        $('#add_err2').html('<div class="alert alert-success"> \
+                                                        <strong>'+response.message+'</strong> \ \
+                                                    </div>');
+                        window.location.href = "index.php";
+                    }else{
+                        $('#add_err2').html('<div class="alert alert-success"> \
+                                                        <strong>'+response.message+'</strong> \ \
+                                                    </div>');
+                        alert(response.message);
                     }
+                    $('#supForm').css("opacity","");
+                    $(".submitBtn").removeAttr("disabled");
+                }
+            });
             });
         });
-        </script>
+    </script>
+    <!-- Login -->
+    <script type="text/javascript">
+                    $(document).ready(function(){
+                
+                $("#login").click(function(){
+                    
+                        email=$("#uemail").val();
+                        password=$("#upassword").val();
+                        $.ajax({
+                            type: "POST",
+                            url: "pcheck.php",
+                            data: "email=" + email + "&password=" + password,
+                            success: function(html){
+                            if(html=='true')
+                            {
+                                
+                                $("#add_err1").html('<div class="alert alert-success"> \
+                                                        <strong>Authenticated</strong> \ \
+                                                    </div>');
 
-        <!-- sign up -->
-
-        <script type="text/javascript">
-            $(document).ready(function(e) {
-
-                $("#file").change(function() {
-                    var file = this.files[0];
-                    var fileType = file.type;
-                    var match = ['application/pdf', 'application/msword', 'application/vnd.ms-office', 'image/jpeg', 'image/png', 'image/jpg'];
-                    if (!((fileType == match[0]) || (fileType == match[1]) || (fileType == match[2]) || (fileType == match[3]) || (fileType == match[4]) || (fileType == match[5]))) {
-                        alert('Sorry, only PDF, DOC, JPG, JPEG, & PNG files are allowed to upload.');
-                        $("#file").val('');
-                        return false;
-                    }
-                });
-                // Submit form data via Ajax
-                $("#supForm").on('submit', function(e) {
-                    e.preventDefault();
-                    $.ajax({
-                        type: 'POST',
-                        url: 'adduser.php',
-                        data: new FormData(this),
-                        dataType: 'json',
-                        contentType: false,
-                        cache: false,
-                        processData: false,
-                        beforeSend: function() {
-                            $('.submitBtn').attr("disabled", "disabled");
-                            $('#add_err2').html('<p>Loading...</p>');
-                        },
-                        success: function(response) { //console.log(response);
-                            $('.statusMsg').html('');
-                            if (response.status == 1) {
-                                $('#supForm')[0].reset();
-                                $('#add_err2').html('<p >' + response.message + '</p>');
                                 window.location.href = "index.php";
+                            
+                            } else if (html=='false') {
+                                    $("#add_err1").html('<div class="alert alert-danger"> \
+                                                        <strong>Email not found!</strong> \ \
+                                                    </div>');
+                                    
+                            
+                            } else if (html=='pass') {
+                                    $("#add_err1").html('<div class="alert alert-danger"> \
+                                                        <strong>Wrong Password!</strong> \ \
+                                                    </div>');
+                                    
+                            
                             } else {
-                                $('#add_err2').html('<p>' + response.message + '</p>');
+                                    $("#add_err1").html('<div class="alert alert-danger"> \
+                                                        <strong>Error</strong> processing request. Please try again. \ \
+                                                    </div>');
+                            
                             }
-                            $('#supForm').css("opacity", "");
-                            $(".submitBtn").removeAttr("disabled");
-                        }
+                            },
+                            beforeSend:function()
+                            {
+                                $("#add_err1").html("loading...");
+                            }
+                        });
+                        return false;
+                    });
+        });
+    </script>
+    
+    <!-- check box -->
+    <script type="text/javascript">
+        $(document).ready(function() {
+        $("#cgcheck").click(
+            function () {
+                if ($("#cgcheck").is(":checked")) {
+                    $("#cgname").val("PSG College of Technology");
+                    $("#cgname").prop("readonly", true);
+                }   
+                else {
+                    $('#cgname').val("");
+                    $("#cgname").prop("readonly", false);
+                }
+            });
+        });
+    </script>
+
+
+    <!-- reset password -->
+    <script type="text/javascript">
+                $(document).ready(function(){
+                
+                $("#request").click(function(){
+                    
+                        email=$("#remail").val();
+                        
+                        $.ajax({
+                            type: "POST",
+                            url: "includes/reset-req.inc.php",
+                            data: "email=" + email,
+                            success: function(html){
+                            if(html=='true')
+                            {
+                                
+                                $("#add_err4").html('<div class="alert alert-success"> \
+                                                        <strong>Check your Email!</strong> \ \
+                                                    </div>');
+
+                                //window.location.href = "index.php";
+                            
+                            } else if (html=='false') {
+                                    $("#add_err4").html('<div class="alert alert-danger"> \
+                                                        <strong>Email not found!</strong> \ \
+                                                    </div>');
+                                    
+                            
+                            } else {
+                                    $("#add_err4").html('<div class="alert alert-danger"> \
+                                                        <strong>Error</strong> processing request. Please try again. \ \
+                                                    </div>');
+                            
+                            }
+                            },
+                            beforeSend:function()
+                            {
+                                $("#add_err4").html("loading...");
+                            }
+                        });
+                        return false;
                     });
                 });
-            });
-        </script>
-
-
- <!-- reset password -->
- <script type="text/javascript">
-        	$(document).ready(function(){
-			
-			   $("#request").click(function(){
-				
-					email=$("#remail").val();
-					
-					 $.ajax({
-						type: "POST",
-						url: "includes/reset-req.inc.php",
-						data: "email=" + email,
-						success: function(html){
-						  if(html=='true')
-						  {
-							  
-							  $("#add_err4").html('<div class="alert alert-success"> \
-													<strong>Check your Email!</strong> \ \
-												</div>');
-
-							//window.location.href = "index.php";
-						  
-						  } else if (html=='false') {
-								$("#add_err4").html('<div class="alert alert-danger"> \
-													<strong>Email not found!</strong> \ \
-												</div>');
-								
-						  
-						  } else {
-								$("#add_err4").html('<div class="alert alert-danger"> \
-													<strong>Error</strong> processing request. Please try again. \ \
-												</div>');
-                        
-						  }
-						},
-						beforeSend:function()
-						{
-                            $("#add_err4").html("loading...");
-						}
-					});
-					 return false;
-				});
-            });
-  </script>
+    </script>
 
 
 </head>
@@ -289,10 +236,6 @@ if(!isset($_SESSION['email'])){
                         <i class='bx bxs-lock-alt'></i>
                         <input type="password"class="form-control" id="password" name="password" placeholder="Password">
                     </div>
-                        <div class="input-group">Upload your college id card(Preferably in PDF - Max 1mb)</div> 
-                       <div class="input-group">
-                         <input type="file" class="form-control upload" id="file" name="file"  placeholder="college id card"/>
-                    </div>
     
                     <button class="submitBtn" name="submit" >
                             Sign Up
@@ -316,7 +259,7 @@ if(!isset($_SESSION['email'])){
         <!-- END SIGN UP -->
         <!-- SIGN IN -->
       
-        <div class="col align-items-center flex-col sign-in">
+        <div class="col align-items-center flex-col sign-in sign-in-div">
             <div class="form-wrapper align-items-center">
                 <div class="form sign-in">
                     <form id="sign-in" style="display:block;">

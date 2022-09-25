@@ -30,7 +30,7 @@ if (isset($email)) {
     $_SESSION['genfee'] = $row['genfee'];
     $location="qrimg/".$_SESSION['login'].".png";
     if (!file_exists($location)) {
-      $text="http://localhost/srishti/adminlogin/regcheck.php?id=".$_SESSION['login'];
+      $text="https://srishti.psgtech.ac.in/adminlogin/regcheck.php?id=".$_SESSION['login'];
       QRcode::png($text, $location);
     }
    

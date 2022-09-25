@@ -229,7 +229,7 @@ session_start();
                 <div class="counter-icon">
                     <img src="assets/img/icons/bot_event-c.png" style="height: 50px; width: 50px;">
                 </div>
-                <h3><br>Bot Event</h3>
+                <h3><br>Bot Events</h3>
                 <span class="counter-value">2</span>
             </div>
         </div>
@@ -238,7 +238,7 @@ session_start();
                 <div class="counter-icon">
                     <img src="assets/img/icons/flagship-c.png" style="height: 50px; width: 50px;">
                 </div>
-                <h3>Flagship Event</h3>
+                <h3>Flagship Events</h3>
                 <span class="counter-value">2</span>
             </div>
         </div>
@@ -247,7 +247,7 @@ session_start();
                 <div class="counter-icon">
                     <img src="assets/img/icons/workshop-c.png" style="height: 50px; width: 50px;">
                 </div>
-                <h3><br>Workshop</h3>
+                <h3><br>Workshops</h3>
                 <span class="counter-value">5</span>
             </div>
         </div>
@@ -256,7 +256,7 @@ session_start();
                 <div class="counter-icon">
                     <img src="assets/img/icons/paper-pres-c.png" style="height: 50px; width: 50px;">
                 </div>
-                <h3>paper presentation</h3>
+                <h3>Paper presentations</h3>
                 <span class="counter-value">5</span>
             </div>
         </div>

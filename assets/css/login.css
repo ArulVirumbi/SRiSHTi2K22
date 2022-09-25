@@ -227,6 +227,7 @@ body {
     transform: scale(1);
 }
 
+
 .content-row {
     position: absolute;
     top: 0;
@@ -414,13 +415,16 @@ body {
         padding-bottom:60px;
     }
     .sign-in{
-        padding-bottom: 25px;
+        padding-bottom: 50px;
     }
     .sign-up-div .form-wrapper{
         margin-top: 250px;
     }
     #supform{
         margin-top: 180px;
+    }
+    .sign-up-div, .sign-in-div{
+        z-index: 999;
     }
 }
 .close{

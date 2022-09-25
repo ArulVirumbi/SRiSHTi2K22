@@ -5,7 +5,7 @@ $token = random_bytes(32);
 $userEmail = $_POST["email"];
 
 // $url = "http://events.psgtech.ac.in/srishti/create-new-password.php?selector=" . $selector . "&validator=" . bin2hex($token);
-$url = "http://localhost/srishti_final/create-new-password.php?selector=" . $selector . "&validator=" . bin2hex($token);
+$url = "https://srishti.psgtech.ac.in/create-new-password.php?selector=" . $selector . "&validator=" . bin2hex($token);
 
 $expires = date("U") + 900;
 

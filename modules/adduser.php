@@ -2,14 +2,13 @@
 @ob_start();
 session_start();
 
-$uploadDir = '../dXBsb2Fkc2ZvbGRlcg/'; 
 $response = array( 
     'status' => 0, 
     'message' => 'Form submission failed, please try again.' 
 ); 
  
 // If form is submitted 
-if(isset($_POST['name']) || isset($_POST['email']) || isset($_POST['file'])){ 
+if(isset($_POST['name']) || isset($_POST['email'])){ 
     // Get the submitted form data 
     $name = $_POST['name']; 
     $email = $_POST['email']; 
@@ -38,42 +37,6 @@ if(isset($_POST['name']) || isset($_POST['email']) || isset($_POST['file'])){
             //VALIDATION
            
         }else{ 
-            $uploadStatus = 1; 
-             
-            // Upload file 
-            $uploadedFile = ''; 
-            if(!empty($_FILES["file"]["name"])){ 
-                 
-                // File path config 
-                $fileName = basename($_FILES["file"]["name"]); 
-                $targetFilePath = $uploadDir . $fileName;
-                $fileType = pathinfo($fileName, PATHINFO_EXTENSION); 
-                 
-                $newfileName = $name."_".$department.".".$fileType;
-                $newtargetFilePath = $uploadDir . $newfileName;
-
-
-                // Allow certain file formats 
-                $allowTypes = array('pdf', 'doc', 'docx', 'jpg', 'png', 'jpeg'); 
-                if(in_array($fileType, $allowTypes)){ 
-                    // Upload file to the server 
-                    if(move_uploaded_file($_FILES["file"]["tmp_name"], $newtargetFilePath)){ 
-                        $uploadedFile = $newfileName; 
-
-                    }else{ 
-                        $uploadStatus = 0; 
-                        $response['message'] = 'Sorry, there was an error uploading your file.'; 
-                    } 
-                }else{ 
-                    $uploadStatus = 0; 
-                    $response['message'] = 'Sorry, only PDF, DOC, JPG, JPEG, & PNG files are allowed to upload.'; 
-                } 
-            }else {
-                $uploadStatus = 0; 
-                $response['message'] = 'Please submit your college id.';
-            }
-             
-            if($uploadStatus == 1){ 
                 // Include the database config file 
                 include_once '../includes/dbh.inc.php'; 
                 
@@ -85,7 +48,7 @@ if(isset($_POST['name']) || isset($_POST['email']) || isset($_POST['file'])){
                 if ($num_row < 1) {
                 $spassword = password_hash($password, PASSWORD_BCRYPT, array('cost' => 12));
                 // Insert form data in the database 
-                $insert = $conn->query("INSERT INTO members (fname,email,mobile,department,cgname,file,password,events,workshops,paperpres,flagship,genfee,accomodation) VALUES ('$name','$email','$mobile','$department','$cgname','$uploadedFile','$spassword',' ',' ',' ',' ','unpaid','$accomodation')"); 
+                $insert = $conn->query("INSERT INTO members (fname,email,mobile,department,cgname,password,events,workshops,paperpres,flagship,genfee,accomodation) VALUES ('$name','$email','$mobile','$department','$cgname','$spassword',' ',' ',' ',' ','unpaid','$accomodation')"); 
                 
                 
                 $insert_ev = $conn->query("INSERT INTO events (email) VALUE ('$email')");
@@ -108,7 +71,7 @@ if(isset($_POST['name']) || isset($_POST['email']) || isset($_POST['file'])){
                 }else {
                     $response['message'] = 'Email already in system.';
                 }
-            } 
+            
         } 
     }else{ 
          $response['message'] = 'Please fill all the mandatory fields (name and email).'; 
