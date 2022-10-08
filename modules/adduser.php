@@ -51,10 +51,10 @@ if(isset($_POST['name']) || isset($_POST['email'])){
                 $insert = $conn->query("INSERT INTO members (fname,email,mobile,department,cgname,password,events,workshops,paperpres,flagship,genfee,accomodation) VALUES ('$name','$email','$mobile','$department','$cgname','$spassword',' ',' ',' ',' ','unpaid','$accomodation')"); 
                 
                 
-                $insert_ev = $conn->query("INSERT INTO events (email) VALUE ('$email')");
-			    $insert_ws = $conn->query("INSERT INTO workshops (email) VALUE ('$email')");
-                $insert_pp = $conn->query("INSERT INTO paperpres (email) VALUE ('$email')");
-                $insert_fs = $conn->query("INSERT INTO flagship (email) VALUE ('$email')");
+                $insert_ev = $conn->query("INSERT INTO events (fname,email,mobile) VALUE ('$name','$email','$mobile')");
+			    $insert_ws = $conn->query("INSERT INTO workshops (fname,email,mobile) VALUE ('$name','$email','$mobile')");
+                $insert_pp = $conn->query("INSERT INTO paperpres (fname,email,mobile) VALUE ('$name','$email','$mobile')");
+                $insert_fs = $conn->query("INSERT INTO flagship (fname,email,mobile) VALUE ('$name','$email','$mobile')");
 			    
                  
                     if($insert){ 

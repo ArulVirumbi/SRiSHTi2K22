@@ -72,6 +72,8 @@ $num_row = mysqli_num_rows($result);
         echo '<table id="registrations" border=1>';
         echo '<tr>';
         echo '<th class="email"><a href="paperpresregistration.php?sort=email">Email</a></th>';
+        echo '<th class="fname">Name</th>';
+        echo '<th class="mobile">Mobile</th>';
         echo '<th class="event">ARIVARANGAM</th>';
         echo '<th class="event">TECHNOVATION</th>';
         echo '<th class="event">TECH-O-STER</th>';
@@ -83,6 +85,8 @@ $num_row = mysqli_num_rows($result);
           echo '<tr>';
           // echo '<td>Srishti22' . $row['email'] . '</td>';
           echo '<td>' . $row['email'] . '</td>';
+          echo '<td>' . $row['fname'] . '</td>';
+          echo '<td>' . $row['mobile'] . '</td>';
             echo '<td>' . $row['ARIVARANGAM'] . '</td>';
             echo '<td>' . $row['TECHNOVATION'] . '</td>';
             echo '<td>' . $row['TECH-O-STER'] . '</td>';
@@ -97,7 +101,7 @@ $num_row = mysqli_num_rows($result);
     ?>
   </main>
   <script>
-    document.getElementById('btnClear').addpaperpresListener('click', (ev)=>{
+    document.getElementById('btnClear').addEventListener('click', (ev)=>{
       document.getElementById('paperpres').value = '';
     })
     </script>

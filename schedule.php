@@ -141,7 +141,7 @@ session_start();
                     </div>
                     <div class="timeline-item right wow slideInRight" data-wow-delay="0.1s">
                         <div class="timeline-text">
-                            <div class="timeline-date">Euclidia<br>Round 1</div>
+                            <div class="timeline-date">Euclidea<br>Round 1</div>
                             <div class="grid-container">
                                 <div class="item-1">
                                     <img src="assets/img/icons/TECH/euclidea.PNG" style="height: 130px; width: 130px;">
@@ -158,17 +158,17 @@ session_start();
                     </div>
                     <div class="timeline-item left wow slideInLeft" data-wow-delay="0.1s">
                         <div class="timeline-text">
-                            <div class="timeline-date">Tech Hotspot<br>Round 1</div>
+                            <div class="timeline-date">Tech Fete<br>Round 1</div>
                             <div class="grid-container">
                                 <div class="item-1">
-                                    <img src="assets/img/icons/TECH/techhotspot.PNG" style="height: 130px; width: 130px;">
+                                    <img src="assets/img/icons/TECH/techfete.PNG" style="height: 130px; width: 130px;">
                                 </div>
                                 <div class="item-2">
                                     <h2>11:00 AM - 12:00 PM</h2>
                                     <p>Category : Technical Event</p>
                                 </div>
                                 <div class="item-3">
-                                    <a class="btn" href="./events.php#Tech">Go to Event</a>
+                                    <a class="btn" href="./events.php#Tech" >Go to Event</a>
                                 </div>
                             </div>
                         </div>
@@ -372,10 +372,10 @@ session_start();
                 <div class="timeline">
                     <div class="timeline-item left wow slideInLeft" data-wow-delay="0.1s">
                         <div class="timeline-text">
-                            <div class="timeline-date">Euclidia<br>Round 2 & 3</div>
+                            <div class="timeline-date">Euclidea<br>Round 2 & 3</div>
                             <div class="grid-container">
                                 <div class="item-1">
-                                    <img src="assets/img/icons/TECh/euclidea.PNG" style="height: 130px; width: 130px;">
+                                    <img src="assets/img/icons/TECH/euclidea.PNG" style="height: 130px; width: 130px;">
                                 </div>
                                 <div class="item-2">
                                     <h2>1:30 PM - 4:00 PM</h2>
@@ -406,10 +406,10 @@ session_start();
                     </div>
                     <div class="timeline-item left wow slideInRight" data-wow-delay="0.1s">
                         <div class="timeline-text">
-                            <div class="timeline-date">Tech Hotspot<br>Round 2</div>
+                            <div class="timeline-date">Tech Fete<br>Round 2</div>
                             <div class="grid-container">
                                 <div class="item-1">
-                                    <img src="assets/img/icons/TECH/techhotspot.PNG" style="height: 130px; width: 130px;">
+                                    <img src="assets/img/icons/TECH/techfete.PNG" style="height: 130px; width: 130px;">
                                 </div>
                                 <div class="item-2">
                                     <h2>2:00 PM - 3:00 PM</h2>
@@ -497,17 +497,17 @@ session_start();
                     </div>
                     <div class="timeline-item right wow slideInRight" data-wow-delay="0.1s">
                         <div class="timeline-text">
-                            <div class="timeline-date">Tech Fete<br>Round 1</div>
+                            <div class="timeline-date">Tech Hotspot<br>Round 1</div>
                             <div class="grid-container">
                                 <div class="item-1">
-                                    <img src="assets/img/icons/TECH/techfete.PNG" style="height: 130px; width: 130px;">
+                                    <img src="assets/img/icons/TECH/techhotspot.PNG" style="height: 130px; width: 130px;">
                                 </div>
                                 <div class="item-2">
                                     <h2>9:00 AM - 10:00 AM</h2>
                                     <p>Category : Technical Event</p>
                                 </div>
                                 <div class="item-3">
-                                    <a class="btn" href="./events.php#Tech" >Go to Event</a>
+                                    <a class="btn" href="./events.php#Tech">Go to Event</a>
                                 </div>
                             </div>
                         </div>
@@ -566,10 +566,10 @@ session_start();
                     
                     <div class="timeline-item right wow slideInRight" data-wow-delay="0.1s">
                         <div class="timeline-text">
-                            <div class="timeline-date">Tech Fete<br>Round 2</div>
+                            <div class="timeline-date">Tech Hotspot<br>Round 2</div>
                             <div class="grid-container">
                                 <div class="item-1">
-                                    <img src="assets/img/icons/TECH/techfete.PNG" style="height: 130px; width: 130px;">
+                                    <img src="assets/img/icons/TECH/techhotspot.PNG" style="height: 130px; width: 130px;">
                                 </div>
                                 <div class="item-2">
                                     <h2>11:30 AM - 12:30 PM</h2>
@@ -804,7 +804,7 @@ session_start();
                     
                     <div class="timeline-item left wow slideInLeft" data-wow-delay="0.1s">
                         <div class="timeline-text">
-                            <div class="timeline-date"><p style="text-transform: none; font-size:25px; font-style:normal">SRiSHTi 2K21</p>VALEDICTION</div>
+                            <div class="timeline-date"><p style="text-transform: none; font-size:25px; font-style:normal">SRiSHTi 2K22</p>VALIDECTORY</div>
                             <div class="grid-container">
                                 <div class="item-1">
                                     <img src="assets/img/icons/valediction-c.png" style="height: 100px; width: 100px;">

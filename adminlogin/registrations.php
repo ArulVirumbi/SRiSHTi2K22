@@ -85,6 +85,7 @@ $num_row = mysqli_num_rows($result);
         echo '<th class="event"><a href="registrations.php?sort=Flagship">Flagship</a></th>';
         echo '<th class="event"><a href="registrations.php?sort=genfee">General Fees</a></th>';
         echo '<th class="event"><a href="registrations.php?sort=accomodation">Accomodation</a></th>';
+        echo '<th class="event"><a href="registrations.php?sort=submitted_on">Time</a></th>';
         echo '</tr></thead>';
         while($row = mysqli_fetch_array($result)){
           echo '<tbody><tr data-ref="' . $row['id'] . '">';
@@ -100,6 +101,7 @@ $num_row = mysqli_num_rows($result);
             echo '<td>' . $row['flagship'] . '</td>';
             echo '<td>' . $row['genfee'] . '</td>';
             echo '<td>' . $row['accomodation'] . '</td>';
+            echo '<td>' . $row['submitted_on'] . '</td>';
           echo '</tr></tbody>';
         }
         echo '</table>';

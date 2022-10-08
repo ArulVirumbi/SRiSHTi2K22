@@ -244,7 +244,7 @@ session_start();
                   <div class="panel-body">
                     <p>
                     <ul>
-                      <li>Yes, each and every participant are required to register and pay the general fee.</li>
+                      <li>Participants are required to pay the general fee to register for all events except workshops.</li>
                       <li>All the participants will be given an individual Srishti ID after the payment. </li>
                       <li>General Fee for PSG Tech Students: Rs.100</li>
                       <li>General Fee for Non-PSG Tech Students: Rs.150</li>
@@ -282,7 +282,7 @@ session_start();
                     <p>
                     <ul>
                       <li>After paying the general fees, you can participate in the technical and non technical events.</li>
-                      <li>For workshops, paper presentations and flagship events, you need to pay an additional fee mentioned for the same. </li>
+                      <li>For workshops, paper presentations and flagship events, you need to pay an additional fee mentioned for the same.</li>
                     </ul>
                     </p>
                   </div>
@@ -299,7 +299,7 @@ session_start();
                 </div>
                 <div id="collapseSix" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSix">
                   <div class="panel-body">
-                    <p>All the flagship events, paper presentations and workshops require an additional fee along with the general fee.</p>
+                    <p>Flagship Events and Paper Presentations will require an additional fee that will be collected offline, on the day of the event.</p>
                   </div>
                 </div>
               </div>

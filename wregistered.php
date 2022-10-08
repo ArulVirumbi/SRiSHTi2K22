@@ -2,7 +2,7 @@
 
 session_start();
 if(isset($_SESSION['email'])){
-    if(isset($_SESSION['genfee']) && $_SESSION['genfee']=='paid'){
+    
         $wsname = $_POST['wsname'];
         $email = $_SESSION['email'];
 
@@ -21,19 +21,17 @@ if(isset($_SESSION['email'])){
             if (in_array($wsname, $ev_arr)){
                 echo 'rem';
             }else {
-                $query = "UPDATE members SET workshops=concat('$wsname' , ', ' , workshops) WHERE email = '$email'" ;
+                // $query = "UPDATE members SET workshops=concat('$wsname' , ', ' , workshops) WHERE email = '$email'" ;
                 $sql = "UPDATE workshops SET `$wsname`='yes' WHERE email = '$email'";
                 $update = mysqli_query($conn, $sql) or die(mysqli_error());
-                $result = mysqli_query($conn, $query) or die(mysqli_error());
+                // $result = mysqli_query($conn, $query) or die(mysqli_error());
                 echo 'true';
             }
 
         } else{
             echo 'false';
         }
-    }else{
-        echo 'genfee';
-    }
+    
 }else{
     echo 'false';
 }

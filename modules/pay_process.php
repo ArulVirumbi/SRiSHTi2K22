@@ -48,24 +48,29 @@ if(isset($_SESSION['email'])){
     }
 
     $id = $_SESSION['login'];
-    $fname = $_SESSION['fname'];
-    $name = str_replace(" ","$",$fname);
-    $type = $_POST['type'];
-    $returnurl = "https://srishti.psgtech.ac.in/payconfirm.php";
-    $transactionid = "SRISHTI_".$type."_".$id.substr(md5(microtime()), 0, 6);
+    if($id==0){
+        echo 'false';
+    }else {
 
-    $query = "INSERT INTO payment (id,name,amount,transaction_id,payment_status) VALUE ('$id','$fname','$fees','$transactionid','Created')";
-    $result = mysqli_query($conn, $query) or die(mysqli_error());
+        $fname = $_SESSION['fname'];
+        $name = str_replace(" ","$",$fname);
+        $type = $_POST['type'];
+        $returnurl = "https://srishti.psgtech.ac.in/payconfirm.php";
+        // $returnurl = "http://localhost/srishti2k22/payconfirm.php";
+        $transactionid = "SRISHTI_".$type."_".$id.substr(md5(microtime()), 0, 6);
 
-    $data = "srishtiid=SRISHTI22".$id." name=".$name." email=".$email." categoryid=17 transactionid=".$transactionid." fees=".$fees." returnurl=".$returnurl;
-    $hash = base64_encode(hash('sha256',$data,TRUE));
-    $finalstr = $data.$hash;
+        $query = "INSERT INTO payment (id,name,amount,transaction_id,payment_status) VALUE ('$id','$fname','$fees','$transactionid','Created')";
+        $result = mysqli_query($conn, $query) or die(mysqli_error());
 
-    $encdata = encryptData($finalstr);
-    $url = "https://ecampus.psgtech.ac.in/payapp?payment=".$encdata;
+        $data = "srishtiid=SRISHTI22".$id." name=".$name." email=".$email." categoryid=17 transactionid=".$transactionid." fees=".$fees." returnurl=".$returnurl;
+        $hash = base64_encode(hash('sha256',$data,TRUE));
+        $finalstr = $data.$hash;
 
-    echo $url;
+        $encdata = encryptData($finalstr);
+        $url = "https://ecampus.psgtech.ac.in/payapp?payment=".$encdata;
 
+        echo $url;
+    }
     }else{
         echo 'false';
     }

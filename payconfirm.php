@@ -32,19 +32,24 @@ if(isset($_GET['data'])){
     // echo substr($arr_response[3],0,1);
     // echo '<br>';
     // echo 0;
+    // $id1 = $arr_response[0];
     $id = substr($arr_response[0] , 9);
     $category = $arr_response[1];
     $transaction_id = $arr_response[2];
     // $status = (int)substr($arr_response[3],0,1);
     $status = (int)substr($arr_response[3],0,1);
 
-    
+    if($id==0){
+        echo '<h2>contact support</h2>';
+        echo '<a href="contact.php#contact"> CONTACT </a>';
 
-    if($status == 1){
+    }else{
+
+    if($status == 1 ){
         $sql = "SELECT * FROM payment WHERE transaction_id='$transaction_id'";
         $req = mysqli_query($conn, $sql) or die(mysqli_error());
         $row1 = mysqli_fetch_array($req);
-        $pay_status = $row['payment_status'];
+        $pay_status = $row1['payment_status'];
         if($pay_status!="success"){
             
             $query = "UPDATE payment SET payment_status='success' WHERE transaction_id='$transaction_id'";
@@ -106,13 +111,16 @@ if(isset($_GET['data'])){
             if(isset($wsname)){
                 $query = "UPDATE workshops SET `$wsname`='paid' WHERE email='$email'";
                 $update = mysqli_query($conn, $query) or die(mysqli_error($conn));
-                $subject ="SRiSHTi  - Workshop Registration Confirmation";
+                $sql1 = "UPDATE members SET workshops=concat('$wsname' , ', ' , workshops) WHERE email = '$email'" ;
+                $result = mysqli_query($conn, $sql1) or die(mysqli_error());
+
+                $subject ="SRiSHTi - Workshop Registration Confirmation";
                 $message = "Dear ".$name.",<br/>
 
                 Greetings from IEEE SC 12951! Thank you for being a part of SRiSHTi 2K22. You have successfully
                 registered for ".$wsname." workshop. Please adhere to the timings. 
-                <br/>
-                SRiSHTi ID: SRiSHTi22".$id."
+                <br/><br/>
+                SRiSHTi ID: SRiSHTi22".$id."<br/>
                 <br/>
                 Participate in our exclusive events and take back priceless skills along with fun-filled memories!!!
                 <br/>
@@ -132,7 +140,7 @@ if(isset($_GET['data'])){
             $mail->Host = 'smtp.gmail.com';  
             $mail->SMTPAuth = true;                               
             $mail->Username = 'ieee.studentschapter.12951@gmail.com';                
-            $mail->Password = 'ghuphebfvixfevjm';                          
+            $mail->Password = 'ccjofjtucywsqgsr';                          
             $mail->SMTPSecure = 'tls';                            
             $mail->Port = 587;                                    
 
@@ -251,7 +259,9 @@ if(isset($_GET['data'])){
 </html>
 
 
-<?php }else{
+<?php
+    }
+}else{
     header("location:index.php ");
 }
 ?>

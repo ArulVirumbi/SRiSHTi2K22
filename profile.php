@@ -2,16 +2,17 @@
 @ob_start();
 session_start();
 
-$email = $_SESSION['email'];
+// $email = $_SESSION['email'];
 
-if (isset($email)) {
+if (isset($_SESSION['email'])) {
+  
+  $email = $_SESSION['email'];
 
-  include "phpqrcode/qrlib.php";
   include_once 'includes/dbh.inc.php';
 
 
   $query = "SELECT * FROM members WHERE email = '$email'";
-  $result = mysqli_query($conn, $query) or die(mysqli_error($conn));
+  $result = mysqli_query($conn, $query) or die(mysqli_error());
   $num_row = mysqli_num_rows($result);
   $row = mysqli_fetch_array($result);
 
@@ -28,11 +29,6 @@ if (isset($email)) {
     $_SESSION['paperpres'] = $row['paperpres'];
     $_SESSION['flagship'] = $row['flagship'];
     $_SESSION['genfee'] = $row['genfee'];
-    $location="qrimg/".$_SESSION['login'].".png";
-    if (!file_exists($location)) {
-      $text="https://srishti.psgtech.ac.in/adminlogin/regcheck.php?id=".$_SESSION['login'];
-      QRcode::png($text, $location);
-    }
    
 
   } else {
@@ -174,7 +170,7 @@ if (isset($email)) {
             <div class="card minheight">
               <div class="card-body d-flex align-items-center justify-content-center text-center">
                 <div class="d-flex flex-column align-items-center text-center pad-15">
-                  <img src="<?php echo $location ?>" class="img-radius" alt="User-Profile-Image">
+                  <img src="assets/img/gender-neutral-user.png" class="img-radius" alt="User-Profile-Image" style="min-width: 75px">
                   <div class="mt-3">
                     <h4>
                       <?php echo $_SESSION['fname']; ?>
@@ -200,7 +196,7 @@ if (isset($email)) {
                     <h6 class="mb-0">Srishti ID</h6>
                   </div>
                   <div class="col-sm-8 text-secondary">
-                    <?php echo "SRISHTI21" . $_SESSION['login']; ?>
+                    <?php echo "SRISHTI22" . $_SESSION['login']; ?>
                   </div>
                 </div>
                 <hr>

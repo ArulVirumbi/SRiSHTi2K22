@@ -70,7 +70,7 @@ if(!mysqli_num_rows($select)) {
     $mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
     $mail->SMTPAuth = true;                               // Enable SMTP authentication
     $mail->Username = 'ieee.studentschapter.12951@gmail.com';                 // SMTP username
-    $mail->Password = 'ghuphebfvixfevjm';                           // SMTP password
+    $mail->Password = 'ccjofjtucywsqgsr';                           // SMTP password
     $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
     $mail->Port = 587;                                    // TCP port to connect to
 

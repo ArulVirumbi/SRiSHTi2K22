@@ -44,6 +44,9 @@ body {
   font-size: 26px ;
 }
 
+.download{
+  color: #9c02f5;
+}
 
 /* Footer ====================================*/
 
@@ -142,6 +145,7 @@ body {
   color: #9c02f5;
   transition: 0.5s;
 }
+
 
 .category h2 {
   color: #d1d7e0;

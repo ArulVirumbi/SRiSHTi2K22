@@ -82,22 +82,26 @@ $num_row = mysqli_num_rows($result);
         echo '<table id="registrations" border=1>';
         echo '<tr>';
         echo '<th class="email"><a href="workshopregistration.php?sort=email">Email</a></th>';
-        echo '<th class="workshop">INDUSTRIAL IOT</th>';
-        echo '<th class="workshop">INTELLIGENT LEARNING</th>';
+        echo '<th class="fname">Name</th>';
+        echo '<th class="mobile">Mobile</th>';
+        echo '<th class="workshop">INDUSTRIAL AUTOMATION-IIOT</th>';
+        echo '<th class="workshop">MACHINE LEARNING USING PYTHON</th>';
         echo '<th class="workshop">AUTOMOTIVE EMBEDDED SYSTEMS</th>';
-        echo '<th class="workshop">EMBEDDED SIGNAL PROCESSING USING ARM CORE</th>';
-        echo '<th class="workshop">DRONE WORKSHOP</th>';
+        echo '<th class="workshop">EMBEDDED SIGNAL PROCESSING</th>';
+        echo '<th class="workshop">DRONE BUILDING</th>';
         
         echo '</tr>';
         while($row = mysqli_fetch_array($result)){
           //echo '<tr data-ref="' . $row['id'] . '">';
           echo '<tr>';
           echo '<td>' . $row['email'] . '</td>';
-            echo '<td>' . $row['INDUSTRIAL IOT'] . '</td>';
-            echo '<td>' . $row['INTELLIGENT LEARNING'] . '</td>';
+          echo '<td>' . $row['fname'] . '</td>';
+          echo '<td>' . $row['mobile'] . '</td>';
+            echo '<td>' . $row['INDUSTRIAL AUTOMATION-IIOT'] . '</td>';
+            echo '<td>' . $row['MACHINE LEARNING USING PYTHON'] . '</td>';
             echo '<td>' . $row['AUTOMOTIVE EMBEDDED SYSTEMS'] . '</td>';
-            echo '<td>' . $row['EMBEDDED SIGNAL PROCESSING USING ARM CORE'] . '</td>';
-            echo '<td>' . $row['DRONE WORKSHOP'] . '</td>';
+            echo '<td>' . $row['EMBEDDED SIGNAL PROCESSING'] . '</td>';
+            echo '<td>' . $row['DRONE BUILDING'] . '</td>';
           echo '</tr>';
         }
         echo '</table>';

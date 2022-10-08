@@ -39,6 +39,17 @@ session_start();
     <link href="assets/css/navbar.css" rel="stylesheet">
     <link href="assets/css/footer.css" rel="stylesheet">
     <link href="assets/css/background.css" rel="stylesheet">
+    <style type="text/css">
+        marquee {
+            width:100%;
+            direction:left;
+            color: white;
+            font-size: 22px;
+            font-family: "Play", sans-serif;
+            padding-top: 18px;
+            font-weight: bold;
+        }
+    </style>
 
 
     <link rel="stylesheet" href="https://unpkg.com/flickity@2.0/dist/flickity.min.css">
@@ -70,7 +81,7 @@ session_start();
                 registerEvent(evname);
             });
             $("#btn_6").click(function() {
-                evname = "READY SET SCAVENGE";
+                evname = "SHERLOCKS CIRCLE";
                 registerEvent(evname);
             });
             $("#btn_7").click(function() {
@@ -78,7 +89,7 @@ session_start();
                 registerEvent(evname);
             });
             $("#btn_8").click(function() {
-                evname = "ILLUSTRIQUE";
+                evname = "ILLUSTRATIQUE";
                 registerEvent(evname);
             });
             $("#btn_9").click(function() {
@@ -90,7 +101,7 @@ session_start();
                 registerEvent(evname);
             });
             $("#btn_11").click(function() {
-                evname = "SHERLOCKS CIRCLE";
+                evname = "READY SET SCAVANGE";
                 registerEvent(evname);
             });
             $("#btn_12").click(function() {
@@ -98,23 +109,24 @@ session_start();
                 registerFlagEvent(fsname);
             });
             $("#btn_13").click(function() {
-                fsname = "BOT CLAR";
-                registerFlagEvent(fsname);
-            });
-            $("#btn_14").click(function() {
-                fsname = "MAZEMICE";
-                registerFlagEvent(fsname);
-            });
-            $("#btn_15").click(function() {
                 fsname = "HACKATHON";
                 registerFlagEvent(fsname);
             });
+            $("#btn_14").click(function() {
+                fsname = "BOTCLAR";
+                registerFlagEvent(fsname);
+            });
+            $("#btn_15").click(function() {
+                fsname = "MAZEMICE";
+                registerFlagEvent(fsname);
+            });
+            
         });
 
 
-        function register_alert(evname) {
-            alert(`You have Registered for ${evname}`);
-        }
+        // function register_alert(evname) {
+        //     alert(`You have Registered for ${evname}`);
+        // }
         
         function generalfee(){
             ftype="GEN";
@@ -151,7 +163,7 @@ session_start();
                 success: function(html) {
                     if (html == 'true') {
 
-                        register_alert(evname);
+                        alert(`You have Registered for ${evname}`);
 
                     } else if (html == 'rem') {
 
@@ -181,7 +193,8 @@ session_start();
                 success: function(html) {
                     if (html == 'true') {
 
-                        register_alert(evname);
+                        alert(`You have Registered for ${fsname}`);
+
 
                     } else if (html == 'rem') {
 
@@ -266,6 +279,16 @@ session_start();
                 <a href="#Bot">BOT EVENTS</a>
             </nav>
         </div>
+        <?php if(isset($_SESSION['genfee']) && $_SESSION['genfee']=="unpaid"){?>
+        <!-- Marquee Section Begin -->
+    <section class="services spad" style="padding-bottom: 50px; padding-top: 0px;" id="Day1">
+        <marquee scrollamount="10" onmouseover="this.stop()" onmouseleave="this.start()">
+            Please pay the General Fee to register for Events. 
+        </marquee>
+    </section>
+    <!-- Marquee Section End -->
+    <?php } ?>
+
 
         <div class="card-area container">
             <!-- <div class="container"> -->
@@ -372,7 +395,7 @@ session_start();
                                     <div class="matter tech_1">
                                         <div class="m_cnt">
                                             <p>
-                                                Get ready to be flabbergasted by the high bars we have set which requires your mind to be upgraded from Ordinary to Extraordinary in Duo Models!
+                                                Get ready to be flabbergasted by the high bars we have set, which requires your mind to go from Ordinary to Extraordinary in Duo Models!
                                             </p>
                                         </div>
                                         <div class="m_btn">
@@ -445,7 +468,7 @@ session_start();
                                 </div>
                                 <div class="image">
                                     <div class="img-div">
-                                        <img class="event-logo" src="assets/img/icons/NON-TECH/sherlock_s circle.PNG" alt="">
+                                        <img class="event-logo" src="assets/img/icons/NON-TECH/sherlock_s circle.png" alt="">
                                         <h2 class="text card-title  text-center" style="text-align: center;">SHERLOCK'S CIRCLE</h2>
                                         <h2 class="turn-on " style="text-align: center;">CLICK HERE</h2>
                                     </div>
@@ -473,8 +496,8 @@ session_start();
                                 </div>
                                 <div class="image">
                                     <div class="img-div">
-                                        <img class="event-logo" src="assets/img/icons/NON-TECH/flutter shutter.PNG" alt="">
-                                        <h2 class="text card-title  text-center" style="text-align: center;">FLUTTER-SHUTTER
+                                        <img class="event-logo" src="assets/img/icons/NON-TECH/flutter shutter.png" alt="">
+                                        <h2 class="text card-title  text-center top-20" style="text-align: center;">FLUTTER-SHUTTER (PHOTOGRAPHY)
                                         </h2>
                                         <h2 class="turn-on " style="text-align: center;">CLICK HERE</h2>
                                     </div>
@@ -501,8 +524,8 @@ session_start();
                                 </div>
                                 <div class="image">
                                     <div class="img-div">
-                                        <img class="event-logo" src="assets/img/icons/NON-TECH/illustrique.PNG" alt="">
-                                        <h2 class="text card-title  text-center" style="text-align: center;">ILLUSTRIQUE</h2>
+                                        <img class="event-logo" src="assets/img/icons/NON-TECH/illustrique.png" alt="">
+                                        <h2 class="text card-title  text-center" style="text-align: center;">ILLUSTRATIQUE</h2>
                                         <h2 class="turn-on " style="text-align: center;">CLICK HERE</h2>
                                     </div>
                                 </div>
@@ -518,7 +541,7 @@ session_start();
                                     <div class="matter non_tech_1">
                                         <div class="m_cnt">
                                             <p>
-                                                Unleash your hidden talents to decipher clues from words and get ready to go along a roller coaster ride of fun and trading!! Word Blitz, an event to showcase your electrifying skills with nail biting connections.
+                                                Unleash your hidden talents to decipher clues from words and get ready to go along a roller coaster ride of fun and trading!! 
                                             </p>
                                         </div>
                                         <div class="m_btn">
@@ -529,7 +552,7 @@ session_start();
                                 </div>
                                 <div class="image">
                                     <div class="img-div">
-                                        <img class="event-logo" src="assets/img/icons/NON-TECH/wordblitz.PNG" alt="">
+                                        <img class="event-logo" src="assets/img/icons/NON-TECH/wordblitz.png" alt="">
                                         <h2 class="text card-title  text-center" style="text-align: center;">WORD-BLITZ</h2>
                                         <h2 class="turn-on " style="text-align: center;">CLICK HERE</h2>
                                     </div>
@@ -554,7 +577,7 @@ session_start();
                                 </div>
                                 <div class="image">
                                     <div class="img-div">
-                                        <img class="event-logo" src="assets/img/icons/NON-TECH/synchron.PNG" alt="">
+                                        <img class="event-logo" src="assets/img/icons/NON-TECH/synchron.png" alt="">
                                         <h2 class="text card-title  text-center" style="text-align: center;">SYNCHRON</h2>
                                         <h2 class="turn-on " style="text-align: center;">CLICK HERE</h2>
                                     </div>
@@ -572,8 +595,8 @@ session_start();
                                         <div class="m_cnt">
                                             <p>
                                                 Hey Potterheads!!
-                                                Harry needs your help to save the mankind by killing Voldemort!!
-                                                Come, play the exclusive treasure hunt by finding the Horcruxes and win the battle with your Orating skills!! </p>
+                                                Harry needs your help to save the mankind !!
+                                                Come, play the exclusive treasure hunt to find the Horcruxes and win the battle with your Orating skills!! </p>
                                         </div>
                                         <div class="m_btn"> <button id="div-11" type="button" class="btn btn-success">View Details</button></div>
                                         <!-- <a id="div-1" class="inside-page__btn inside-page__btn-2" style="color: #d1d7e0;">View details</a> -->
@@ -581,7 +604,7 @@ session_start();
                                 </div>
                                 <div class="image">
                                     <div class="img-div">
-                                        <img class="event-logo" src="assets/img/icons/NON-TECH/ready set scavenge.PNG" alt="">
+                                        <img class="event-logo" src="assets/img/icons/NON-TECH/ready set scavenge.png" alt="">
                                         <h2 class="text card-title  text-center" style="text-align: center;">READY SET SCAVENGE</h2>
                                         <h2 class="turn-on " style="text-align: center;">CLICK HERE</h2>
                                     </div>
@@ -605,7 +628,7 @@ session_start();
                                     <div class="matter flag_1">
                                         <div class="m_cnt">
                                             <p>
-                                                Use this platform to bring your innovative ideas to life. Let this be an arena for passionate engineers to unleash your critical thinking skills and become an expertise in your area of interest.
+                                                An arena for passionate engineers to unleash your critical thinking skills and become an expertise in your area of interest.
                                         </div>
                                         <div class="m_btn">
                                             <button id="div-12" type="button" class="btn btn-success">View Details</button>
@@ -616,7 +639,7 @@ session_start();
                                 <div class="image">
                                     <div class="img-div">
                                         <img class="event-logo" src="assets/img/icons/FLAG/technodium.PNG" alt="">
-                                        <h2 class="text card-title  text-center" style="text-align: center;">TECHNODIUM</h2>
+                                        <h2 class="text card-title  text-center top-20" style="text-align: center;">TECHNODIUM </br>(PROJECT EXPO)</h2>
                                         <h2 class="turn-on " style="text-align: center;">CLICK HERE</h2>
                                     </div>
                                 </div>
@@ -1085,7 +1108,7 @@ session_start();
             </div>
             <h4 style="font-size: 20px; color: white;">There's a treasure waiting for the winners.</h4><br>
             <!--<button class="coming_soon">Coming soon</button>-->
-            <center><button type="button" class="submitBtn" id="btn_12"><b>Register</b></button></center>
+            <center><button type="button" class="submitBtn" id="btn_2"><b>Register</b></button></center>
         </div>
     </div>
     <div id="id-modal-3" class="modal">
@@ -1775,7 +1798,7 @@ session_start();
             </div>
             <h4 style="font-size: 20px; color: white;">There's a treasure waiting for the winners.</h4><br>
             <!--<button class="coming_soon">Coming soon</button>-->
-            <center><button type="button" class="submitBtn" id="btn_2"><b>Register</b></button></center>
+            <center><button type="button" class="submitBtn" id="btn_6"><b>Register</b></button></center>
         </div>
     </div>
 
@@ -1930,14 +1953,14 @@ session_start();
             </div>
             <h4 style="font-size: 20px; color: white;">There's a treasure waiting for the winners.</h4><br>
             <!--<button class="coming_soon">Coming soon</button>-->
-            <center><button type="button" class="submitBtn" id="btn_11"><b>Register</b></button></center>
+            <center><button type="button" class="submitBtn" id="btn_7"><b>Register</b></button></center>
         </div>
     </div>
 
     <div id="id-modal-8" class="modal">
         <div class="modal-content">
             <span class="modal_close modal_close_8">&times;</span>
-            <h4>ILLUSTRIQUE</h4>
+            <h4>ILLUSTRATIQUE</h4>
             <h6 class="e_tag">" Design is so simple, that's why it is so complicated."</h6>
             <div class="description grid-lg-12 grid-md-12 grid-sm-12 grid-xs-12">
                 <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
@@ -1953,7 +1976,7 @@ session_start();
                                 <p>
                                     Design is intelligence made visible. Do you sense that your design skill
                                     is not acknowledged? It's about time to come through. This event is just
-                                    for you! Welcome to Illustrique, a battle for those who flair at design.
+                                    for you! Welcome to Illustratique, a battle for those who flair at design.
                                     Enter the combat, and be victorious in the art. Everything that happens in
                                     our life is in design, then why can't we design it? Just be innovative and
                                     plan the way to conquer.
@@ -2081,7 +2104,7 @@ session_start();
             </div>
             <h4 style="font-size: 20px; color: white;">There's a treasure waiting for the winners.</h4><br>
             <!--<button class="coming_soon">Coming soon</button>-->
-            <center><button type="button" class="submitBtn" id="btn_6"><b>Register</b></button></center>
+            <center><button type="button" class="submitBtn" id="btn_8"><b>Register</b></button></center>
         </div>
     </div>
 
@@ -2243,7 +2266,7 @@ session_start();
             </div>
             <h4 style="font-size: 20px; color: white;">There's a treasure waiting for the winners.</h4><br>
             <!--<button class="coming_soon">Coming soon</button>-->
-            <center><button type="button" class="submitBtn" id="btn_7"><b>Register</b></button></center>
+            <center><button type="button" class="submitBtn" id="btn_9"><b>Register</b></button></center>
         </div>
     </div>
 
@@ -2409,7 +2432,7 @@ session_start();
             </div>
             <h4 style="font-size: 20px; color: white;">There's a treasure waiting for the winners.</h4><br>
             <!--<button class="coming_soon">Coming soon</button>-->
-            <center><button type="button" class="submitBtn" id="btn_8"><b>Register</b></button></center>
+            <center><button type="button" class="submitBtn" id="btn_10"><b>Register</b></button></center>
         </div>
     </div>
 
@@ -2564,7 +2587,7 @@ session_start();
             </div>
             <h4 style="font-size: 20px; color: white;">There's a treasure waiting for the winners.</h4><br>
             <!--<button class="coming_soon">Coming soon</button>-->
-            <center><button type="button" class="submitBtn" id="btn_9"><b>Register</b></button></center>
+            <center><button type="button" class="submitBtn" id="btn_11"><b>Register</b></button></center>
         </div>
     </div>
 
@@ -2732,14 +2755,14 @@ session_start();
             </div>
             <h4 style="font-size: 20px; color: white;">There's a treasure waiting for the winners.</h4><br>
             <!--<button class="coming_soon">Coming soon</button>-->
-            <center><button type="button" class="submitBtn" id="btn_10"><b>Register</b></button></center>
+            <center><button type="button" class="submitBtn" id="btn_12"><b>Register</b></button></center>
         </div>
     </div>
     <div id="id-modal-13" class="modal">
         <div class="modal-content">
             <span class="modal_close modal_close_13">&times;</span>
             <h4>HACKATHON</h4>
-            <h6 class="e_tag">"Think. Code. Innovate or Techie n we know it" </h6>
+            <h6 class="e_tag">"Think. Code. Innovate." </h6>
             <div class="description grid-lg-12 grid-md-12 grid-sm-12 grid-xs-12">
                 <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
                     <div class="panel panel-default">
@@ -2851,7 +2874,7 @@ session_start();
                                 <p>
 
                                 <h5>DATE</h5>
-                                <div>30 OCTOBER 2022</div><br>
+                                <div>29 and 30 OCTOBER 2022</div><br>
                                 <h5>TIME</h5>
                                 <div>11:00 AM</div><br>
                                 </p>
@@ -2886,7 +2909,7 @@ session_start();
             </div>
             <h4 style="font-size: 20px; color: white;">There's a treasure waiting for the winners.</h4><br>
             <!--<button class="coming_soon">Coming soon</button>-->
-            <center><button type="button" class="submitBtn" id="btn_10"><b>Register</b></button></center>
+            <center><button type="button" class="submitBtn" id="btn_13"><b>Register</b></button></center>
         </div>
     </div>
     <div id="id-modal-14" class="modal">
@@ -2981,7 +3004,7 @@ session_start();
                                     <li>In the event of tie of both score and time, keep a playback until there is a clear winner.</li>
                                     <li>The scoring criteria will be announced at the outset of the event</li>
                                 </ol>
-                                <center><a href="assets/specification/Botclar.pdf">DOWNLOAD SPECIFICATION SHEET</a></center><br><br>
+                                <center><a href="assets/specification/Botclar.pdf" class="download" >DOWNLOAD SPECIFICATION SHEET</a></center><br><br>
                                 <h5>TEAM SIZE</h5>
                                 1-4 Participants<br>
                                 </p>
@@ -3040,7 +3063,7 @@ session_start();
             </div>
             <h4 style="font-size: 20px; color: white;">There's a treasure waiting for the winners.</h4><br>
             <!--<button class="coming_soon">Coming soon</button>-->
-            <center><button type="button" class="submitBtn" id="btn_10"><b>Register</b></button></center>
+            <center><button type="button" class="submitBtn" id="btn_14"><b>Register</b></button></center>
         </div>
     </div>
     <div id="id-modal-15" class="modal">
@@ -3139,7 +3162,7 @@ session_start();
                                     <li>The participant's knowledge about the bot they have designed will be tested.</li>
 
                                 </ol>
-                                <center> <a href="assets/specification/MazeMice.pdf">DOWNLOAD SPECIFICATION SHEET</a></center><br><br>
+                                <center> <a href="assets/specification/MazeMice.pdf" class="download" >DOWNLOAD SPECIFICATION SHEET</a></center><br><br>
                                 <h5>TEAM SIZE</h5>
                                 1-4 Participants<br>
                                 </p>
@@ -3197,7 +3220,7 @@ session_start();
             </div>
             <h4 style="font-size: 20px; color: white;">There's a treasure waiting for the winners.</h4><br>
             <!--<button class="coming_soon">Coming soon</button>-->
-            <center><button type="button" class="submitBtn" id="btn_10"><b>Register</b></button></center>
+            <center><button type="button" class="submitBtn" id="btn_15"><b>Register</b></button></center>
         </div>
     </div>
     </div>

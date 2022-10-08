@@ -38,6 +38,17 @@ session_start();
     <link href="assets/css/footer.css" rel="stylesheet">
     <link href="assets/css/common-styles.css" rel="stylesheet">
     <link href="assets/css/background.css" rel="stylesheet">
+    <style type="text/css">
+        marquee {
+            width:100%;
+            direction:left;
+            color: white;
+            font-size: 22px;
+            font-family: "Play", sans-serif;
+            padding-top: 18px;
+            font-weight: bold;
+        }
+    </style>
 
 
     <link rel="stylesheet" href="https://unpkg.com/flickity@2.0/dist/flickity.min.css">
@@ -156,7 +167,7 @@ session_start();
                 data: "wsname=" + wsname,
                 success: function(html) {
                     if (html == 'true') {
-                        var val1 = confirm("Confirm to pay general fee. \n Do not close the page before the payment confirmation.");
+                        var val1 = confirm("Confirm to pay workshop fee. \n Do not close the page before the payment confirmation.");
                         if (val1 == true) {
                             let wstype = wsname.substring(0, 3).toUpperCase();
                             wsfees(wstype);
@@ -165,14 +176,10 @@ session_start();
 
                         alert("Already Registered");
 
-                    } else if (html == 'genfee') {
-                        var val2 = confirm("You Need to pay General fee! \n Do not close the page before the payment confirmation.");
-                        if (val2 == true) {
-                            wsfees("GEN");
-                        }
                     } else {
                         alert("Login before registering to a Event");
                         window.location.href = "login.php";
+                        // alert(html);
                     }
                 }
 
@@ -229,6 +236,16 @@ session_start();
         </nav>
     </div>
 
+    <?php if(isset($_SESSION['genfee']) && $_SESSION['genfee']=="unpaid"){?>
+        <!-- Marquee Section Begin -->
+    <section class="services spad" style="padding-bottom: 50px; padding-top: 0px;" id="Day1">
+        <marquee scrollamount="10" onmouseover="this.stop()" onmouseleave="this.start()">
+            Please pay the General Fee to register for Paper Presentations. 
+        </marquee>
+    </section>
+    <!-- Marquee Section End -->
+    <?php } ?>
+
 
 
     <div class="card-area container">
@@ -279,7 +296,7 @@ session_start();
                                     <div class="m_cnt">
                                         <p>
 
-                                            TECHNOVATION brings out the technical skills of young engineers by providing a platform to present their prodigious ideas based on hardware technologies.
+                                            TECHNOVATION brings out the technical skills of young engineers by providing a platform to present their prodigious ideas on hardware-technologies.
 
                                         </p>
 
@@ -409,7 +426,7 @@ session_start();
                                 <div class="matter work_1">
                                     <div class="m_cnt">
                                         <p>
-                                            Looking for a fun yet informative workshop that helps improve your practical knowledge? Look no more, Join us and learn in detail about the construction and working of drones.
+                                            Looking for a fun yet informative workshop that helps improve your knowledge? Look no more, Join us to learn about the construction and working of drones.
                                         </p>
                                     </div>
                                     <div class="m_btn">
@@ -533,7 +550,7 @@ session_start();
                                     <div class="m_cnt">
 
                                         <p>
-                                            Industrial Automation. Get trained in the use of control systems and various tools for handling different types of machinery and processes used in industries.
+                                            Get trained in the use of control systems and various tools for handling different types of machinery and processes used in industries.
                                         </p>
                                     </div>
                                     <div class="m_btn">
@@ -984,7 +1001,7 @@ session_start();
                                     <li><a style="color: white;" href=" tel:+9197515 86191 ">ANUBHARATHI V S - 97515 86191
                                         </a></li>
                                     <li><a style="color: white;" href=" tel:+9186101 34467">MUGESH KUMAR N - 86101 34467 </a></li>
-                                    <li><a style="color: white;" href=" tel:+9193614 46010">MOHAMED ASLAM - 93614 46010
+                                    <li><a style="color: white;" href=" tel:+9197897 42208">MOHAMED ASLAM K - 97897 42208
                                         </a></li>
                                 </ul><br>
                                 </p>
@@ -1308,7 +1325,7 @@ session_start();
                                 <h5>DRONE BUILDING</h5>
                                 <i class="fa fa" style="font-size:10px"></i>The workshop focuses on the live construction of the drone with its theory in parallel. A racing drone is built, which is relatively less complex compared to the other industrial standard drones,. This is specifically chosen for beginners who have a budding interest in drone theory. The workshop will consist of assembling a drone and study of its internal parts, and the theory behind it, with live demonstrations. The participants can learn various aspects of drone building like Basics of Drone theory, Building of a Drone, Mechanics of a drone, Physics behind the working of a drone, and Electronics of Drones.
                                 <br><br>
-                                <h5>Fees:</h5>Each participant must pay a workshop fee of <b>Rs.800</b> exclusive of the general fee to register for the workshop.
+                                <h5>Fees:</h5>Each participant must pay a workshop fee of <b>Rs.800</b> to register for the workshop.
 
 
                                 <br><br>
@@ -1441,7 +1458,7 @@ session_start();
                                 <i class="fa fa" style="font-size:10px"></i>The workshop will focus on the fundamentals of Machine Learning, the knowledge of Python which is needed to implement Machine Learning Algorithms, and the implementation of Machine Learning Algorithms in Python which will give the participants a hands-on-experience and help them gain the required confidence and the knowledge to take up an AI Project in future. This workshop is perfect for beginners in Machine Learning, especially I and II Year students.
 
                                 <br><br>
-                                <h5>Fees:</h5>Each participant must pay a workshop fee of <b>Rs.600</b> exclusive of the general fee to register for the workshop.
+                                <h5>Fees:</h5>Each participant must pay a workshop fee of <b>Rs.600</b> to register for the workshop.
 
 
                                 <br><br>
@@ -1578,7 +1595,7 @@ session_start();
                                 <i class="fa fa" style="font-size:10px"></i>The automotive industry is the sixth largest economy in the world today, producing around 70 million cars every year and making an important contribution to government revenues all around the world. The main objective of this workshop is to provide an understanding of the technology essential to the design and implementation of an embedded system using suitable hardware and software tools for automotive applications. The auto industry needs electrical, Electronics, and computer engineers in ever-increasing numbers to deal with various electronics in the modern car.
 
                                 <br><br>
-                                <h5>Fees:</h5>Each participant must pay a workshop fee of <b>Rs.400</b> exclusive of the general fee to register for the workshop.
+                                <h5>Fees:</h5>Each participant must pay a workshop fee of <b>Rs.400</b>  to register for the workshop.
 
 
                                 <br><br>
@@ -1710,9 +1727,10 @@ session_start();
                         <div id="collapse41" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingfour">
                             <div class="panel-body">
                                 <p>
-                                    Participants will be educated in the field of Embedded Signal Processing and its applications; they will be given hands-on-experience in choosing the right processor core: ARM Cortex-A (for Multimedia Applications) / ARM Cortex-R core for Real-Time Applications) / ARM Cortex-M core for Control Applications). Product Prototyping hands-on like E-Bike and IoT applications helps the participants to experience the Embedded Product Design Life Cycle, which accelerates them to create similar but better products soon after the workshop.<br>
+                                    Participants will be educated in the field of Embedded Signal Processing and its applications; they will be given hands-on-experience in choosing the right processor core: ARM Cortex-A (for Multimedia Applications) / ARM Cortex-R core for Real-Time Applications) / ARM Cortex-M core for Control Applications). Product Prototyping hands-on like E-Bike and IoT applications helps the participants to experience the Embedded Product Design Life Cycle, which accelerates them to create similar but better products soon after the workshop.<br><br>
+                                    The workshop validates by highlighting the contribution of Embedded Signal Processing in Intelligent Transportation System (ITS) for smart mobility which is an automotive IoT feature.<br>
                                     <br>
-                                <h5>Fees:</h5>Each participant must pay a workshop fee of <b>Rs.600</b> exclusive of the general fee to register for the workshop.<br>
+                                <h5>Fees:</h5>Each participant must pay a workshop fee of <b>Rs.600</b> to register for the workshop.<br>
                                 </p>
                             </div>
                         </div>
@@ -1845,7 +1863,7 @@ session_start();
                                     Schneider IIOT Solutions & Hands-On: EcoStruxure Augmented Operator Advisor & Node-Red Reduce Time to Market and Improve Quality using Automation
                                     "<br>
                                     <br>
-                                <h5>Fees:</h5>Each participant must pay a workshop fee of <b>Rs.600</b> exclusive of the general fee to register for the workshop.<br>
+                                <h5>Fees:</h5>Each participant must pay a workshop fee of <b>Rs.600</b> to register for the workshop.<br>
                                 </p>
                             </div>
                         </div>
@@ -1950,10 +1968,7 @@ session_start();
             <center><button type="button" class="submitBtn" id="btn_10"><b>Register</b></button></center>
         </div>
 
-            <!--<button class="coming_soon">Coming soon</button>-->
-            <center><button type="button" class="submitBtn" id="btn_10"><b>Register</b></button></center>
-        </div>
-
+           
 
 
 

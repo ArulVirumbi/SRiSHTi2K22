@@ -72,9 +72,11 @@ $num_row = mysqli_num_rows($result);
         echo '<table id="registrations" border=1>';
         echo '<tr>';
         echo '<th class="email"><a href="flagshipregistration.php?sort=email">Email</a></th>';
+        echo '<th class="fname">Name</th>';
+        echo '<th class="mobile">Mobile</th>';
         echo '<th class="event">MAZEMICE</th>';
         echo '<th class="event">BOTCLAR</th>';
-        echo '<th class="event">TECH-IT-OUT</th>';
+        echo '<th class="event">TECHNODIUM  </th>';
         echo '<th class="event">HACKATHON</th>';
         echo '</tr>';
         while($row = mysqli_fetch_array($result)){
@@ -82,9 +84,11 @@ $num_row = mysqli_num_rows($result);
           echo '<tr>';
           // echo '<td>Srishti22' . $row['email'] . '</td>';
           echo '<td>' . $row['email'] . '</td>';
+          echo '<td>' . $row['fname'] . '</td>';
+          echo '<td>' . $row['mobile'] . '</td>';
             echo '<td>' . $row['MAZEMICE'] . '</td>';
             echo '<td>' . $row['BOTCLAR'] . '</td>';
-            echo '<td>' . $row['TECH-IT-OUT'] . '</td>';
+            echo '<td>' . $row['TECHNODIUM'] . '</td>';
             echo '<td>' . $row['HACKATHON'] . '</td>';
           echo '</tr>';
         }
