@@ -24,7 +24,7 @@ if(isset($_SESSION['email'])){
             if (in_array($wsname, $ev_arr)){
                 echo 'rem';
             }else {
-                if ($count1['ws_count']>80){
+                if ($count1['ws_count']>79){
                     echo 'full';
                     // echo $count1['ws_count'];
                 }

@@ -16,11 +16,11 @@ if(isset($_SESSION['email'])){
         $count = mysqli_query($conn, $count_query) or die(mysqli_error($conn));
         $count1 = mysqli_fetch_array($count);
 
-        $max_count=100;
+        $max_count=1000;
         if($evname=='SHERLOCKS CIRCLE'){
-            $max_count=160;
+            $max_count=130;
         }else if($evname=='READY SET SCAVANGE'){
-            $max_count=120;
+            $max_count=100;
         }
 
         if ($num_row = 1) {
