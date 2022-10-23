@@ -174,10 +174,16 @@ session_start();
                         if (val == true) {
                             generalfee();
                         }
+
+                    } else if (html == 'full') {
+                        alert("Oops! We're sorry. All the slots are full for this Event. Thank you for checking out.");
+
                     } else {
 
-                        alert("Login before registering to a Event")
+                        alert("Login before registering to a Event");
                         window.location.href = "login.php";
+                        // alert(html);
+
 
                     }
                 }

@@ -107,6 +107,9 @@ session_start();
         function register_alert(ppname) {
             alert(`You have Registered for ${ppname}`);
         }
+        function register_full() {
+            alert(`Registrations Full! Thank You!`);
+        }
 
         function wsfees(wsname) {
             ftype = wsname;
@@ -173,13 +176,15 @@ session_start();
                             wsfees(wstype);
                         }
                     } else if (html == 'rem') {
-
                         alert("Already Registered");
+
+                    } else if (html == 'full') {
+                        alert("Oops! We're sorry. All the slots are full for this Workshop. Thank you for checking out.");
 
                     } else {
                         alert("Login before registering to a Event");
-                        window.location.href = "login.php";
                         // alert(html);
+                        window.location.href = "login.php";
                     }
                 }
 
@@ -1100,6 +1105,7 @@ session_start();
                                     9. The judges’ decision is final and no correspondence will be entered into.
                                     <br><br>
                                 </div>
+                                <center><a href="https://drive.google.com/file/d/12WBbOOfA3B18eVUJx9gt5UhQwBsVphso/view?usp=sharing" target="_blank" class="download" >DOWNLOAD SAMPLE POSTER</a></center><br><br>
                                 </p>
                             </div>
                         </div>

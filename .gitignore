@@ -1,0 +1,4 @@
+.gitignore
+includes/reset-req.inc.php
+modules/sendmsg.php
+payconfirm.php
